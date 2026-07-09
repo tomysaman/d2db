@@ -1,0 +1,213 @@
+/* =====================================================
+   ITEM SET PAGE — set card + piece styles
+   ===================================================== */
+
+.sets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 18px;
+}
+
+.set-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: var(--shadow-card);
+}
+
+.set-card:hover {
+  border-color: var(--border-glow);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+.set-card.is-new { border-left: 3px solid var(--violet); }
+
+.set-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.set-name {
+  font-family: var(--font-display);
+  font-size: 1.14rem;
+  font-weight: 600;
+  color: var(--teal-bright);
+}
+.set-card.is-new .set-name { color: var(--violet-bright); }
+
+.set-level { font-size: 0.82rem; color: var(--text-muted); white-space: nowrap; }
+
+.set-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.set-pieces-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.set-piece-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 58px;
+}
+
+.set-piece-icon-wrap {
+  width: 44px;
+  height: 44px;
+  background: var(--bg-filter);
+  border: 1px solid var(--pill-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.set-piece-icon-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.set-piece-icon-fallback { color: var(--text-muted); font-size: 1.1rem; }
+
+.set-piece-name {
+  font-size: 0.66rem;
+  text-align: center;
+  color: var(--text-secondary);
+  line-height: 1.2;
+}
+
+.set-bonus-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.set-bonus-line {
+  font-size: 0.94rem;
+  color: var(--text-primary);
+  padding-left: 12px;
+  position: relative;
+}
+.set-bonus-line::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  font-size: 0.6rem;
+  color: var(--violet-dim);
+}
+
+.set-bonus-more {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding-left: 12px;
+}
+
+/* ── Modal: set detail ── */
+.modal-set-pieces { display: flex; flex-direction: column; gap: 16px; }
+
+.modal-piece {
+  display: flex;
+  gap: 14px;
+  padding: 12px 14px;
+  background: var(--bg-filter);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.modal-piece-icon-wrap {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  background: var(--bg-card);
+  border: 1px solid var(--pill-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.modal-piece-icon-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.modal-piece-icon-fallback { color: var(--text-muted); font-size: 1.4rem; }
+
+.modal-piece-body { flex: 1; min-width: 0; }
+
+.modal-piece-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.modal-piece-name {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  color: var(--teal-bright);
+}
+
+.modal-piece-type {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.modal-piece-stats {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.modal-piece-stats li {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  padding-left: 12px;
+  position: relative;
+}
+.modal-piece-stats li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  font-size: 0.5rem;
+  color: var(--teal-dim);
+}
+
+.modal-full-bonus {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.modal-full-bonus li {
+  font-size: 1.02rem;
+  color: var(--violet-bright);
+  padding-left: 14px;
+  position: relative;
+}
+.modal-full-bonus li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  font-size: 0.6rem;
+  color: var(--violet-dim);
+}

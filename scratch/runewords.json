@@ -1,0 +1,2495 @@
+[
+  {
+    "name": "Ancients' Pledge",
+    "item_types": "Shields",
+    "ladder_note": null,
+    "runes": [
+      "Ral Rune",
+      "Ort Rune",
+      "Tal Rune"
+    ],
+    "required_level": "21",
+    "stats": [
+      "+50% Enhanced Defense",
+      "Cold Resist +43%",
+      "Lightning Resist +48%",
+      "Fire Resist +48%",
+      "Poison Resist +48%",
+      "+10% Damage Taken Goes To Mana"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/ancients-pledge"
+  },
+  {
+    "name": "Authority",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Hel Rune",
+      "Shael Rune",
+      "Ral Rune"
+    ],
+    "required_level": "29",
+    "stats": [
+      "2% Chance to cast level 10 Psychic Ward when struck",
+      "10% Chance to cast level 15 Miasma Chain on striking",
+      "+2 to Warlock Skills",
+      "+20% Faster Hit Recovery",
+      "+40–60% Enhanced Damage",
+      "Fire Resist +30%",
+      "Requirements -15%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/authority"
+  },
+  {
+    "name": "Beast",
+    "item_types": "Axes, Scepters, Hammers",
+    "ladder_note": null,
+    "runes": [
+      "Ber Rune",
+      "Tir Rune",
+      "Um Rune",
+      "Mal Rune",
+      "Lum Rune"
+    ],
+    "required_level": "63",
+    "stats": [
+      "Level 9 Fanaticism Aura When Equipped",
+      "+40% Increased Attack Speed",
+      "+240–270% Enhanced Damage",
+      "+20% Chance of Crushing Blow",
+      "+25% Chance of Open Wounds",
+      "+3 to Werebear",
+      "+3 to Lycanthropy",
+      "Prevent Monster Heal",
+      "25–40 to Strength",
+      "+10 to Energy",
+      "+2 to Mana after each Kill",
+      "Level 13 Summon Grizzly (5/5 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/beast"
+  },
+  {
+    "name": "Black",
+    "item_types": "Clubs, Hammers, Maces",
+    "ladder_note": null,
+    "runes": [
+      "Thul Rune",
+      "Io Rune",
+      "Nef Rune"
+    ],
+    "required_level": "35",
+    "stats": [
+      "+15% Increased Attack Speed",
+      "+120% Enhanced Damage",
+      "+200 to Attack Rating",
+      "Adds 3-14 cold damage",
+      "+40% Chance of Crushing Blow",
+      "Knockback",
+      "+10 to Vitality",
+      "Magic Damage Reduced by 2",
+      "Level 4 Corpse Explosion (12/12 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/black"
+  },
+  {
+    "name": "Bone",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Sol Rune",
+      "Um Rune",
+      "Um Rune"
+    ],
+    "required_level": "47",
+    "stats": [
+      "15% Chance to cast level 10 Bone Armor when struck",
+      "15% Chance to cast level 10 Bone Spear on striking",
+      "+2 to Necromancer Skill Levels",
+      "100–150 to Mana",
+      "All Resistances +30",
+      "Damage Reduced by 7"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/bone"
+  },
+  {
+    "name": "Bramble",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Ral Rune",
+      "Ohm Rune",
+      "Sur Rune",
+      "Eth Rune"
+    ],
+    "required_level": "61",
+    "stats": [
+      "Level 15–21 Thorns Aura When Equipped",
+      "+50% Faster Hit Recovery",
+      "25–50% to Poison Skill Damage",
+      "+300 Defense",
+      "Increase Maximum Mana 5%",
+      "Regenerate Mana 15%",
+      "+5% to Maximum Cold Resist",
+      "Fire Resist +30%",
+      "Poison Resist +100%",
+      "+13 Life after each Kill",
+      "Level 13 Spirit of Barbs (33/33 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/bramble"
+  },
+  {
+    "name": "Brand",
+    "item_types": "Missile Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Jah Rune",
+      "Lo Rune",
+      "Mal Rune",
+      "Gul Rune"
+    ],
+    "required_level": "65",
+    "stats": [
+      "35% Chance to cast level 14 Amplify Damage when struck",
+      "100% Chance to cast level 18 Bone Spear on striking",
+      "Fires Explosive Arrows or Bolts",
+      "+260–340% Enhanced Damage",
+      "Ignore Target's Defense",
+      "20% Bonus to Attack Rating",
+      "280–330% Damage to Demons",
+      "+20% Deadly Strike",
+      "Prevent Monster Heal",
+      "Knockback"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/brand"
+  },
+  {
+    "name": "Breath of the Dying",
+    "item_types": "Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Vex Rune",
+      "Hel Rune",
+      "El Rune",
+      "Eld Rune",
+      "Zod Rune",
+      "Eth Rune"
+    ],
+    "required_level": "69",
+    "stats": [
+      "Indestructible",
+      "50% Chance to cast level 20 Poison Nova when you Kill an Enemy",
+      "+60% Increased Attack Speed",
+      "+350–400% Enhanced Damage",
+      "-25% Target Defense",
+      "+50 to Attack Rating",
+      "+200% Damage to Undead",
+      "+50 to Attack Rating against Undead",
+      "7% Mana stolen per hit",
+      "12–15% Life stolen per hit",
+      "Prevent Monster Heal",
+      "+30 to all Attributes",
+      "+1 to Light Radius",
+      "Requirements -20%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/breath-of-the-dying"
+  },
+  {
+    "name": "Bulwark",
+    "item_types": "Helmets",
+    "ladder_note": "Ladder only",
+    "runes": [
+      "Shael Rune",
+      "Io Rune",
+      "Sol Rune"
+    ],
+    "required_level": "35",
+    "stats": [
+      "+20% Faster Hit Recovery",
+      "4–6% Life stolen per hit",
+      "75–100% Enhanced Defense",
+      "+10 to Vitality",
+      "Increase Maximum Life 5%",
+      "Replenish Life +30",
+      "Physical Damage Received Reduced by 10–15%",
+      "Damage Reduced by 7"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/bulwark"
+  },
+  {
+    "name": "Call to Arms",
+    "item_types": "Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Amn Rune",
+      "Ral Rune",
+      "Mal Rune",
+      "Ist Rune",
+      "Ohm Rune"
+    ],
+    "required_level": "57",
+    "stats": [
+      "+1 to All Skills",
+      "+40% Increased Attack Speed",
+      "+250–290% Enhanced Damage",
+      "Adds 5-30 fire damage",
+      "7% Life stolen per hit",
+      "2–6 to Battle Command",
+      "1–6 to Battle Orders",
+      "1–4 to Battle Cry",
+      "Prevent Monster Heal",
+      "Replenish Life +12",
+      "30% Better Chance of Getting Magic Items"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/call-to-arms"
+  },
+  {
+    "name": "Chains of Honor",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Dol Rune",
+      "Um Rune",
+      "Ber Rune",
+      "Ist Rune"
+    ],
+    "required_level": "63",
+    "stats": [
+      "+2 to All Skills",
+      "+200% Damage to Demons",
+      "+100% Damage to Undead",
+      "8% Life stolen per hit",
+      "+70% Enhanced Defense",
+      "+20 to Strength",
+      "Replenish Life +7",
+      "All Resistances +65",
+      "Physical Damage Received Reduced by 8%",
+      "25% Better Chance of Getting Magic Items"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/chains-of-honor"
+  },
+  {
+    "name": "Chaos",
+    "item_types": "Claws",
+    "ladder_note": null,
+    "runes": [
+      "Fal Rune",
+      "Ohm Rune",
+      "Um Rune"
+    ],
+    "required_level": "57",
+    "stats": [
+      "9% Chance to cast level 11 Frozen Orb on striking",
+      "11% Chance to cast level 9 Charged Bolt on striking",
+      "+35% Increased Attack Speed",
+      "+290–340% Enhanced Damage",
+      "Adds 216-471 magic damage",
+      "+25% Chance of Open Wounds",
+      "+1 to Whirlwind",
+      "+10 to Strength",
+      "+15 Life after each Demon Kill"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/chaos"
+  },
+  {
+    "name": "Coven",
+    "item_types": "Helmets",
+    "ladder_note": null,
+    "runes": [
+      "Ist Rune",
+      "Ral Rune",
+      "Io Rune"
+    ],
+    "required_level": "51",
+    "stats": [
+      "5% Chance to cast level 10 Sigil: Lethargy when struck",
+      "+1 to All Skills",
+      "+20% Faster Cast Rate",
+      "30–50% Enhanced Defense",
+      "+10 to Vitality",
+      "Fire Resist +30%",
+      "1–5 Life after each Kill",
+      "26–40% Better Chance of Getting Magic Items"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/coven"
+  },
+  {
+    "name": "Crescent Moon",
+    "item_types": "Axes, Swords, Polearms",
+    "ladder_note": null,
+    "runes": [
+      "Shael Rune",
+      "Um Rune",
+      "Tir Rune"
+    ],
+    "required_level": "47",
+    "stats": [
+      "10% Chance to cast level 17 Chain Lightning on striking",
+      "7% Chance to cast level 13 Static Field on striking",
+      "+20% Increased Attack Speed",
+      "+180–220% Enhanced Damage",
+      "Ignore Target's Defense",
+      "-35% to Enemy Lightning Resistance",
+      "+25% Chance of Open Wounds",
+      "9–11 Magic Absorb",
+      "+2 to Mana after each Kill",
+      "Level 18 Summon Spirit Wolf (30/30 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/crescent-moon"
+  },
+  {
+    "name": "Cure",
+    "item_types": "Helmets",
+    "ladder_note": "Ladder only",
+    "runes": [
+      "Shael Rune",
+      "Io Rune",
+      "Tal Rune"
+    ],
+    "required_level": "35",
+    "stats": [
+      "Level 1 Cleansing Aura When Equipped",
+      "+20% Faster Hit Recovery",
+      "75–100% Enhanced Defense",
+      "+10 to Vitality",
+      "Increase Maximum Life 5%",
+      "Poison Resist 40–60%",
+      "Poison Length Reduced by 50%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/cure"
+  },
+  {
+    "name": "Death",
+    "item_types": "Swords, Axes",
+    "ladder_note": null,
+    "runes": [
+      "Hel Rune",
+      "El Rune",
+      "Vex Rune",
+      "Ort Rune",
+      "Gul Rune"
+    ],
+    "required_level": "55",
+    "stats": [
+      "Indestructible",
+      "100% Chance to cast level 44 Chain Lightning when you Die",
+      "25% Chance to cast level 18 Glacial Spike on attack",
+      "+300–385% Enhanced Damage",
+      "20% Bonus to Attack Rating",
+      "+50 to Attack Rating",
+      "Adds 1-50 lightning damage",
+      "7% Mana stolen per hit",
+      "+50% Chance of Crushing Blow",
+      "+49% Deadly Strike (Based on Character Level)",
+      "+1 to Light Radius",
+      "Level 22 Blood Golem (15/15 Charges)",
+      "Requirements -20%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/death"
+  },
+  {
+    "name": "Delirium",
+    "item_types": "Helmets",
+    "ladder_note": null,
+    "runes": [
+      "Lem Rune",
+      "Ist Rune",
+      "Io Rune"
+    ],
+    "required_level": "51",
+    "stats": [
+      "1% Chance to cast level 50 Delirium when struck",
+      "6% Chance to cast level 14 Mind Blast when struck",
+      "14% Chance to cast level 13 Terror when struck",
+      "11% Chance to cast level 18 Confuse on striking",
+      "+2 to All Skills",
+      "+261 Defense",
+      "+10 to Vitality",
+      "50% Extra Gold from Monsters",
+      "25% Better Chance of Getting Magic Items",
+      "Level 17 Attract (60/60 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/delirium"
+  },
+  {
+    "name": "Destruction",
+    "item_types": "Polearms, Swords",
+    "ladder_note": null,
+    "runes": [
+      "Vex Rune",
+      "Lo Rune",
+      "Ber Rune",
+      "Jah Rune",
+      "Ko Rune"
+    ],
+    "required_level": "65",
+    "stats": [
+      "23% Chance to cast level 12 Volcano on striking",
+      "5% Chance to cast level 23 Molten Boulder on striking",
+      "100% Chance to cast level 45 Meteor when you Die",
+      "15% Chance to cast level 22 Nova on attack",
+      "+350% Enhanced Damage",
+      "Ignore Target's Defense",
+      "Adds 100-180 magic damage",
+      "7% Mana stolen per hit",
+      "+20% Chance of Crushing Blow",
+      "+20% Deadly Strike",
+      "Prevent Monster Heal",
+      "+10 to Dexterity"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/destruction"
+  },
+  {
+    "name": "Doom",
+    "item_types": "Axes, Polearms, Hammers",
+    "ladder_note": null,
+    "runes": [
+      "Hel Rune",
+      "Ohm Rune",
+      "Um Rune",
+      "Lo Rune",
+      "Cham Rune"
+    ],
+    "required_level": "67",
+    "stats": [
+      "5% Chance to cast level 18 Volcano on striking",
+      "Level 12 Holy Freeze Aura When Equipped",
+      "+2 to All Skills",
+      "+45% Increased Attack Speed",
+      "+330–370% Enhanced Damage",
+      "-40–60% to Enemy Cold Resistance",
+      "+20% Deadly Strike",
+      "+25% Chance of Open Wounds",
+      "Prevent Monster Heal",
+      "Freezes target +3",
+      "Requirements -20%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/doom"
+  },
+  {
+    "name": "Dragon",
+    "item_types": "Shields",
+    "ladder_note": null,
+    "runes": [
+      "Sur Rune",
+      "Lo Rune",
+      "Sol Rune"
+    ],
+    "required_level": "61",
+    "stats": [
+      "20% Chance to cast level 18 Venom when struck",
+      "12% Chance to cast level 15 Hydra on striking",
+      "Level 14 Holy Fire Aura When Equipped",
+      "+360 Defense",
+      "+230 Defense vs. Missile",
+      "+37 to Strength (Based on Character Level)",
+      "+3–5 to all Attributes",
+      "+50 to Mana",
+      "+5% to Maximum Lightning Resist",
+      "Damage Reduced by 7"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/dragon-shields"
+  },
+  {
+    "name": "Dragon",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Sur Rune",
+      "Lo Rune",
+      "Sol Rune"
+    ],
+    "required_level": "61",
+    "stats": [
+      "20% Chance to cast level 18 Venom when struck",
+      "12% Chance to cast level 15 Hydra on striking",
+      "Level 14 Holy Fire Aura When Equipped",
+      "+360 Defense",
+      "+230 Defense vs. Missile",
+      "+37 to Strength (Based on Character Level)",
+      "+3–5 to all Attributes",
+      "Increase Maximum Mana 5%",
+      "+5% to Maximum Lightning Resist",
+      "Damage Reduced by 7"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/dragon-body-armor"
+  },
+  {
+    "name": "Dream",
+    "item_types": "Shields",
+    "ladder_note": null,
+    "runes": [
+      "Io Rune",
+      "Jah Rune",
+      "Pul Rune"
+    ],
+    "required_level": "65",
+    "stats": [
+      "10% Chance to cast level 15 Confuse when struck",
+      "Level 15 Holy Shock Aura When Equipped",
+      "20–30% Faster Hit Recovery",
+      "+30% Enhanced Defense",
+      "150–220 Defense",
+      "+10 to Vitality",
+      "+50 to Life",
+      "+61 to Mana (Based on Character Level)",
+      "All Resistances +5–20",
+      "12–25% Better Chance of Getting Magic Items"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/dream-shields"
+  },
+  {
+    "name": "Dream",
+    "item_types": "Helmets",
+    "ladder_note": null,
+    "runes": [
+      "Io Rune",
+      "Jah Rune",
+      "Pul Rune"
+    ],
+    "required_level": "65",
+    "stats": [
+      "10% Chance to cast level 15 Confuse when struck",
+      "Level 15 Holy Shock Aura When Equipped",
+      "20–30% Faster Hit Recovery",
+      "+30% Enhanced Defense",
+      "150–220 Defense",
+      "+10 to Vitality",
+      "Increase Maximum Life 5%",
+      "+61 to Mana (Based on Character Level)",
+      "All Resistances +5–20",
+      "12–25% Better Chance of Getting Magic Items"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/dream-helmets"
+  },
+  {
+    "name": "Duress",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Shael Rune",
+      "Um Rune",
+      "Thul Rune"
+    ],
+    "required_level": "47",
+    "stats": [
+      "+40% Faster Hit Recovery",
+      "+10–20% Enhanced Damage",
+      "Adds 37-133 cold damage",
+      "+15% Chance of Crushing Blow",
+      "+33% Chance of Open Wounds",
+      "150–200% Enhanced Defense",
+      "-20% Slower Stamina Drain",
+      "Cold Resist +45%",
+      "Lightning Resist +15%",
+      "Fire Resist +15%",
+      "Poison Resist +15%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/duress"
+  },
+  {
+    "name": "Edge",
+    "item_types": "Missile Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Tir Rune",
+      "Tal Rune",
+      "Amn Rune"
+    ],
+    "required_level": "25",
+    "stats": [
+      "Level 15 Thorns Aura When Equipped",
+      "+35% Increased Attack Speed",
+      "320–380% Damage to Demons",
+      "+280% Damage to Undead",
+      "+75 poison damage over 5 seconds",
+      "7% Life stolen per hit",
+      "Prevent Monster Heal",
+      "+5–10 to all Attributes",
+      "+2 to Mana after each Kill",
+      "Reduces all Vendor Prices 15%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/edge"
+  },
+  {
+    "name": "Enigma",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Jah Rune",
+      "Ith Rune",
+      "Ber Rune"
+    ],
+    "required_level": "65",
+    "stats": [
+      "+2 to All Skills",
+      "+45% Faster Run/Walk",
+      "+1 to Teleport",
+      "750–775 Defense",
+      "+74 to Strength (Based on Character Level)",
+      "Increase Maximum Life 5%",
+      "Physical Damage Received Reduced by 8%",
+      "+14 Life after each Kill",
+      "+15% Damage Taken Goes To Mana",
+      "99% Better Chance of Getting Magic Items (Based on Character Level)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/enigma"
+  },
+  {
+    "name": "Enlightenment",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Pul Rune",
+      "Ral Rune",
+      "Sol Rune"
+    ],
+    "required_level": "45",
+    "stats": [
+      "5% Chance to cast level 15 Blaze when struck",
+      "5% Chance to cast level 15 Fire Ball on striking",
+      "+2 to Sorceress Skill Levels",
+      "+1 to Warmth",
+      "+30% Enhanced Defense",
+      "Fire Resist +30%",
+      "Damage Reduced by 7"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/enlightenment"
+  },
+  {
+    "name": "Eternity",
+    "item_types": "Melee Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Amn Rune",
+      "Ber Rune",
+      "Ist Rune",
+      "Sol Rune",
+      "Sur Rune"
+    ],
+    "required_level": "63",
+    "stats": [
+      "Indestructible",
+      "+260–310% Enhanced Damage",
+      "+9 to Minimum Damage",
+      "7% Life stolen per hit",
+      "+20% Chance of Crushing Blow",
+      "Hit Blinds Target",
+      "Slows Target by 33%",
+      "Replenish Life +16",
+      "Regenerate Mana 16%",
+      "Cannot Be Frozen",
+      "30% Better Chance of Getting Magic Items",
+      "Level 8 Revive (88/88 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/eternity"
+  },
+  {
+    "name": "Exile",
+    "item_types": "Auric Shields",
+    "ladder_note": null,
+    "runes": [
+      "Vex Rune",
+      "Ohm Rune",
+      "Ist Rune",
+      "Dol Rune"
+    ],
+    "required_level": "57",
+    "stats": [
+      "15% Chance to cast level 5 Life Tap on striking",
+      "Level 13–16 Defiance Aura When Equipped",
+      "+2 to Offensive Auras (Paladin Only)",
+      "+30% Faster Block Rate",
+      "Freezes target",
+      "220–260% Enhanced Defense",
+      "Replenish Life +7",
+      "+5% to Maximum Cold Resist",
+      "+5% to Maximum Fire Resist",
+      "25% Better Chance of Getting Magic Items",
+      "Repairs 1 durability in 4 seconds"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/exile"
+  },
+  {
+    "name": "Faith",
+    "item_types": "Missile Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Ohm Rune",
+      "Jah Rune",
+      "Lem Rune",
+      "Eld Rune"
+    ],
+    "required_level": "65",
+    "stats": [
+      "Level 12–15 Fanaticism Aura When Equipped",
+      "1–2 to All Skills",
+      "+330% Enhanced Damage",
+      "Ignore Target's Defense",
+      "300% Bonus to Attack Rating",
+      "+75% Damage to Undead",
+      "+50 to Attack Rating against Undead",
+      "+120 fire damage",
+      "All Resistances +15",
+      "10% Reanimate as: Returned",
+      "75% Extra Gold from Monsters"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/faith"
+  },
+  {
+    "name": "Famine",
+    "item_types": "Axes, Hammers",
+    "ladder_note": null,
+    "runes": [
+      "Fal Rune",
+      "Ohm Rune",
+      "Ort Rune",
+      "Jah Rune"
+    ],
+    "required_level": "65",
+    "stats": [
+      "+30% Increased Attack Speed",
+      "+320–370% Enhanced Damage",
+      "Ignore Target's Defense",
+      "Adds 180-200 magic damage",
+      "Adds 50-200 fire damage",
+      "Adds 51-250 lightning damage",
+      "Adds 50-200 cold damage",
+      "12% Life stolen per hit",
+      "Prevent Monster Heal",
+      "+10 to Strength"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/famine"
+  },
+  {
+    "name": "Flickering Flame",
+    "item_types": "Helmets",
+    "ladder_note": null,
+    "runes": [
+      "Nef Rune",
+      "Pul Rune",
+      "Vex Rune"
+    ],
+    "required_level": "55",
+    "stats": [
+      "Level 4–8 Resist Fire Aura When Equipped",
+      "+3 to Fire Skills",
+      "-10–15% to Enemy Fire Resistance",
+      "+30% Enhanced Defense",
+      "+30 Defense vs. Missile",
+      "50–75 to Mana",
+      "+5% to Maximum Fire Resist",
+      "Half Freeze Duration",
+      "Poison Length Reduced by 50%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/flickering-flame"
+  },
+  {
+    "name": "Fortitude",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "El Rune",
+      "Sol Rune",
+      "Dol Rune",
+      "Lo Rune"
+    ],
+    "required_level": "59",
+    "stats": [
+      "20% Chance to cast level 15 Chilling Armor when struck",
+      "+25% Faster Cast Rate",
+      "+300% Enhanced Damage",
+      "+200% Enhanced Defense",
+      "+15 Defense",
+      "8–12 to Life (Based on Character Level)",
+      "Replenish Life +7",
+      "+5% to Maximum Lightning Resist",
+      "All Resistances +25–30",
+      "Damage Reduced by 7",
+      "+12% Damage Taken Goes To Mana",
+      "+1 to Light Radius"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/fortitude-body-armor"
+  },
+  {
+    "name": "Fortitude",
+    "item_types": "Weapons",
+    "ladder_note": null,
+    "runes": [
+      "El Rune",
+      "Sol Rune",
+      "Dol Rune",
+      "Lo Rune"
+    ],
+    "required_level": "59",
+    "stats": [
+      "20% Chance to cast level 15 Chilling Armor when struck",
+      "+25% Faster Cast Rate",
+      "+300% Enhanced Damage",
+      "+9 to Minimum Damage",
+      "+50 to Attack Rating",
+      "+20% Deadly Strike",
+      "Hit Causes Monster to Flee +25%",
+      "+200% Enhanced Defense",
+      "8–12 to Life (Based on Character Level)",
+      "All Resistances +25–30",
+      "+12% Damage Taken Goes To Mana",
+      "+1 to Light Radius"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/fortitude-weapons"
+  },
+  {
+    "name": "Fury",
+    "item_types": "Melee Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Jah Rune",
+      "Gul Rune",
+      "Eth Rune"
+    ],
+    "required_level": "65",
+    "stats": [
+      "+40% Increased Attack Speed",
+      "+209% Enhanced Damage",
+      "Ignore Target's Defense",
+      "-25% Target Defense",
+      "20% Bonus to Attack Rating",
+      "6% Life stolen per hit",
+      "+33% Deadly Strike",
+      "+66% Chance of Open Wounds",
+      "+5 to Frenzy (Barbarian Only)",
+      "Prevent Monster Heal"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/fury"
+  },
+  {
+    "name": "Gloom",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Fal Rune",
+      "Um Rune",
+      "Pul Rune"
+    ],
+    "required_level": "47",
+    "stats": [
+      "15% Chance to cast level 3 Dim Vision when struck",
+      "+10% Faster Hit Recovery",
+      "200–260% Enhanced Defense",
+      "+10 to Strength",
+      "All Resistances +45",
+      "Half Freeze Duration",
+      "+5% Damage Taken Goes To Mana",
+      "-3 to Light Radius"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/gloom"
+  },
+  {
+    "name": "Grief",
+    "item_types": "Swords, Axes",
+    "ladder_note": null,
+    "runes": [
+      "Eth Rune",
+      "Tir Rune",
+      "Lo Rune",
+      "Mal Rune",
+      "Ral Rune"
+    ],
+    "required_level": "59",
+    "stats": [
+      "35% Chance to cast level 15 Venom on striking",
+      "30–40% Increased Attack Speed",
+      "Damage 340–400",
+      "Ignore Target's Defense",
+      "-25% Target Defense",
+      "+185% Damage to Demons (Based on Character Level)",
+      "Adds 5-30 fire damage",
+      "-20–25% to Enemy Poison Resistance",
+      "+20% Deadly Strike",
+      "Prevent Monster Heal",
+      "+2 to Mana after each Kill",
+      "10–15 Life after each Kill"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/grief"
+  },
+  {
+    "name": "Ground",
+    "item_types": "Helmets",
+    "ladder_note": "Ladder only",
+    "runes": [
+      "Shael Rune",
+      "Io Rune",
+      "Ort Rune"
+    ],
+    "required_level": "35",
+    "stats": [
+      "+20% Faster Hit Recovery",
+      "75–100% Enhanced Defense",
+      "+10 to Vitality",
+      "Increase Maximum Life 5%",
+      "Lightning Resist 40–60%",
+      "Lightning Absorb 10–15%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/ground"
+  },
+  {
+    "name": "Hand of Justice",
+    "item_types": "Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Sur Rune",
+      "Cham Rune",
+      "Amn Rune",
+      "Lo Rune"
+    ],
+    "required_level": "67",
+    "stats": [
+      "100% Chance to cast level 36 Blaze when you Level-Up",
+      "100% Chance to cast level 48 Meteor when you Die",
+      "Level 16 Holy Fire Aura When Equipped",
+      "+33% Increased Attack Speed",
+      "+280–330% Enhanced Damage",
+      "Ignore Target's Defense",
+      "-20% to Enemy Fire Resistance",
+      "7% Life stolen per hit",
+      "+20% Deadly Strike",
+      "Hit Blinds Target",
+      "Freezes target +3"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/hand-of-justice"
+  },
+  {
+    "name": "Harmony",
+    "item_types": "Missile Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Tir Rune",
+      "Ith Rune",
+      "Sol Rune",
+      "Ko Rune"
+    ],
+    "required_level": "39",
+    "stats": [
+      "Level 10 Vigor Aura When Equipped",
+      "+200–275% Enhanced Damage",
+      "+9 damage",
+      "Adds 55-160 fire damage",
+      "Adds 55-160 lightning damage",
+      "Adds 55-160 cold damage",
+      "2–6 to Valkyrie",
+      "+10 to Dexterity",
+      "Regenerate Mana 20%",
+      "+2 to Mana after each Kill",
+      "+2 to Light Radius",
+      "Level 20 Revive (25/25 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/harmony"
+  },
+  {
+    "name": "Heart of the Oak",
+    "item_types": "Staves, Maces",
+    "ladder_note": null,
+    "runes": [
+      "Ko Rune",
+      "Vex Rune",
+      "Pul Rune",
+      "Thul Rune"
+    ],
+    "required_level": "55",
+    "stats": [
+      "+3 to All Skills",
+      "+40% Faster Cast Rate",
+      "+75% Damage to Demons",
+      "+100 to Attack Rating against Demons",
+      "Adds 3-14 cold damage",
+      "7% Mana stolen per hit",
+      "+10 to Dexterity",
+      "Replenish Life +20",
+      "Increase Maximum Mana 15%",
+      "All Resistances +30–40",
+      "Level 4 Oak Sage (25/25 Charges)",
+      "Level 14 Raven (60/60 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/heart-of-the-oak"
+  },
+  {
+    "name": "Hearth",
+    "item_types": "Helmets",
+    "ladder_note": "Ladder only",
+    "runes": [
+      "Shael Rune",
+      "Io Rune",
+      "Thul Rune"
+    ],
+    "required_level": "35",
+    "stats": [
+      "+20% Faster Hit Recovery",
+      "75–100% Enhanced Defense",
+      "+10 to Vitality",
+      "Increase Maximum Life 5%",
+      "Cold Resist 40–60%",
+      "Cold Absorb 10–15%",
+      "Cannot Be Frozen"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/hearth"
+  },
+  {
+    "name": "Holy Thunder",
+    "item_types": "Scepters",
+    "ladder_note": null,
+    "runes": [
+      "Eth Rune",
+      "Ral Rune",
+      "Ort Rune",
+      "Tal Rune"
+    ],
+    "required_level": "21",
+    "stats": [
+      "+60% Enhanced Damage",
+      "+10 to Maximum Damage",
+      "-25% Target Defense",
+      "Adds 5-30 fire damage",
+      "Adds 21-110 lightning damage",
+      "+75 poison damage over 5 seconds",
+      "+3 to Holy Shock (Paladin Only)",
+      "+5% to Maximum Lightning Resist",
+      "Lightning Resist +60%",
+      "Level 7 Chain Lightning (60/60 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/holy-thunder"
+  },
+  {
+    "name": "Honor",
+    "item_types": "Melee Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Amn Rune",
+      "El Rune",
+      "Ith Rune",
+      "Tir Rune",
+      "Sol Rune"
+    ],
+    "required_level": "27",
+    "stats": [
+      "+1 to All Skills",
+      "+160% Enhanced Damage",
+      "+9 damage",
+      "+250 to Attack Rating",
+      "7% Life stolen per hit",
+      "+25% Deadly Strike",
+      "+10 to Strength",
+      "Replenish Life +10",
+      "+2 to Mana after each Kill",
+      "+1 to Light Radius"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/honor"
+  },
+  {
+    "name": "Hysteria",
+    "item_types": "Body Armor",
+    "ladder_note": "Ladder only",
+    "runes": [
+      "Shael Rune",
+      "Ko Rune",
+      "Eld Rune"
+    ],
+    "required_level": "39",
+    "stats": [
+      "+65% Faster Run/Walk",
+      "+40% Increased Attack Speed",
+      "+20% Faster Hit Recovery",
+      "+6 to Evade",
+      "+10 to Dexterity",
+      "50% Slower Stamina Drain",
+      "All Resistances +10"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/hysteria"
+  },
+  {
+    "name": "Ice",
+    "item_types": "Missile Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Amn Rune",
+      "Shael Rune",
+      "Jah Rune",
+      "Lo Rune"
+    ],
+    "required_level": "65",
+    "stats": [
+      "100% Chance to cast level 40 Blizzard when you Level-Up",
+      "25% Chance to cast level 22 Frost Nova on striking",
+      "Level 18 Holy Freeze Aura When Equipped",
+      "+20% Increased Attack Speed",
+      "+140–210% Enhanced Damage",
+      "Ignore Target's Defense",
+      "25–30% to Cold Skill Damage",
+      "-20% to Enemy Cold Resistance",
+      "7% Life stolen per hit",
+      "+20% Deadly Strike",
+      "309% Extra Gold from Monsters (Based on Character Level)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/ice"
+  },
+  {
+    "name": "Infinity",
+    "item_types": "Polearms, Spears",
+    "ladder_note": null,
+    "runes": [
+      "Ber Rune",
+      "Mal Rune",
+      "Ber Rune",
+      "Ist Rune"
+    ],
+    "required_level": "63",
+    "stats": [
+      "50% Chance to cast level 20 Chain Lightning when you Kill an Enemy",
+      "Level 12 Conviction Aura When Equipped",
+      "+35% Faster Run/Walk",
+      "+255–325% Enhanced Damage",
+      "-45–55% to Enemy Lightning Resistance",
+      "+40% Chance of Crushing Blow",
+      "Prevent Monster Heal",
+      "+49 to Vitality (Based on Character Level)",
+      "30% Better Chance of Getting Magic Items",
+      "Level 21 Cyclone Armor (30/30 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/infinity"
+  },
+  {
+    "name": "Insight",
+    "item_types": "Polearms, Staves, Missile Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Ral Rune",
+      "Tir Rune",
+      "Tal Rune",
+      "Sol Rune"
+    ],
+    "required_level": "27",
+    "stats": [
+      "Level 12–17 Meditation Aura When Equipped",
+      "+35% Faster Cast Rate",
+      "+200–260% Enhanced Damage",
+      "+9 to Minimum Damage",
+      "180–250% Bonus to Attack Rating",
+      "Adds 5-30 fire damage",
+      "+75 poison damage over 5 seconds",
+      "1–6 to Critical Strike",
+      "+5 to all Attributes",
+      "+2 to Mana after each Kill",
+      "23% Better Chance of Getting Magic Items"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/insight"
+  },
+  {
+    "name": "King's Grace",
+    "item_types": "Swords, Scepters",
+    "ladder_note": null,
+    "runes": [
+      "Amn Rune",
+      "Ral Rune",
+      "Thul Rune"
+    ],
+    "required_level": "25",
+    "stats": [
+      "+100% Enhanced Damage",
+      "+150 to Attack Rating",
+      "+100% Damage to Demons",
+      "+100 to Attack Rating against Demons",
+      "+50% Damage to Undead",
+      "+100 to Attack Rating against Undead",
+      "Adds 5-30 fire damage",
+      "Adds 3-14 cold damage",
+      "7% Life stolen per hit"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/kings-grace"
+  },
+  {
+    "name": "Kingslayer",
+    "item_types": "Swords, Axes",
+    "ladder_note": null,
+    "runes": [
+      "Mal Rune",
+      "Um Rune",
+      "Gul Rune",
+      "Fal Rune"
+    ],
+    "required_level": "53",
+    "stats": [
+      "+30% Increased Attack Speed",
+      "+230–270% Enhanced Damage",
+      "-25% Target Defense",
+      "20% Bonus to Attack Rating",
+      "+33% Chance of Crushing Blow",
+      "+50% Chance of Open Wounds",
+      "+1 to Vengeance",
+      "Prevent Monster Heal",
+      "+10 to Strength",
+      "40% Extra Gold from Monsters"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/kingslayer"
+  },
+  {
+    "name": "Last Wish",
+    "item_types": "Swords, Hammers, Axes",
+    "ladder_note": null,
+    "runes": [
+      "Jah Rune",
+      "Mal Rune",
+      "Jah Rune",
+      "Sur Rune",
+      "Jah Rune",
+      "Ber Rune"
+    ],
+    "required_level": "65",
+    "stats": [
+      "6% Chance to cast level 11 Fade when struck",
+      "10% Chance to cast level 18 Life Tap on striking",
+      "20% Chance to cast level 20 Charged Bolt on attack",
+      "Level 17 Might Aura When Equipped",
+      "+330–375% Enhanced Damage",
+      "Ignore Target's Defense",
+      "60–70% Chance of Crushing Blow",
+      "Prevent Monster Heal",
+      "Hit Blinds Target",
+      "49% Better Chance of Getting Magic Items (Based on Character Level)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/last-wish"
+  },
+  {
+    "name": "Lawbringer",
+    "item_types": "Swords, Hammers, Scepters",
+    "ladder_note": null,
+    "runes": [
+      "Amn Rune",
+      "Lem Rune",
+      "Ko Rune"
+    ],
+    "required_level": "43",
+    "stats": [
+      "20% Chance to cast level 15 Decrepify on striking",
+      "Level 16–18 Sanctuary Aura When Equipped",
+      "-50% Target Defense",
+      "Adds 150-210 fire damage",
+      "Adds 130-180 cold damage",
+      "7% Life stolen per hit",
+      "Slain Monsters Rest in Peace",
+      "200–250 Defense vs. Missile",
+      "+10 to Dexterity",
+      "75% Extra Gold from Monsters"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/lawbringer"
+  },
+  {
+    "name": "Leaf",
+    "item_types": "Staves",
+    "ladder_note": null,
+    "runes": [
+      "Tir Rune",
+      "Ral Rune"
+    ],
+    "required_level": "19",
+    "stats": [
+      "+3 to Fire Skills",
+      "Adds 5-30 fire damage",
+      "+3 to Inferno (Sorceress Only)",
+      "+3 to Warmth (Sorceress Only)",
+      "+3 to Fire Bolt (Sorceress Only)",
+      "+198 Defense (Based on Character Level)",
+      "Cold Resist +33%",
+      "+2 to Mana after each Kill"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/leaf"
+  },
+  {
+    "name": "Lionheart",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Hel Rune",
+      "Lum Rune",
+      "Fal Rune"
+    ],
+    "required_level": "41",
+    "stats": [
+      "+20% Enhanced Damage",
+      "+25 to Strength",
+      "+15 to Dexterity",
+      "+20 to Vitality",
+      "+10 to Energy",
+      "+50 to Life",
+      "All Resistances +30",
+      "Requirements -15%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/lionheart"
+  },
+  {
+    "name": "Lore",
+    "item_types": "Helmets",
+    "ladder_note": null,
+    "runes": [
+      "Ort Rune",
+      "Sol Rune"
+    ],
+    "required_level": "27",
+    "stats": [
+      "+1 to All Skills",
+      "+10 to Energy",
+      "Lightning Resist +30%",
+      "Damage Reduced by 7",
+      "+2 to Mana after each Kill",
+      "+2 to Light Radius"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/lore"
+  },
+  {
+    "name": "Malice",
+    "item_types": "Melee Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Ith Rune",
+      "El Rune",
+      "Eth Rune"
+    ],
+    "required_level": "15",
+    "stats": [
+      "+33% Enhanced Damage",
+      "+9 to Maximum Damage",
+      "-25% Target Defense",
+      "+50 to Attack Rating",
+      "+100% Chance of Open Wounds",
+      "Prevent Monster Heal",
+      "-100 to Monster Defense Per Hit",
+      "Drain Life -5"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/malice"
+  },
+  {
+    "name": "Mania",
+    "item_types": "Weapons",
+    "ladder_note": "Ladder only",
+    "runes": [
+      "Shael Rune",
+      "Ko Rune",
+      "Eld Rune"
+    ],
+    "required_level": "39",
+    "stats": [
+      "5% Chance to cast level 1 Burst of Speed on striking",
+      "Level 1 Fanaticism Aura When Equipped",
+      "+30% Increased Attack Speed",
+      "+180–200% Enhanced Damage",
+      "+75% Damage to Undead",
+      "+50 to Attack Rating against Undead",
+      "+10 to Dexterity"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/mania"
+  },
+  {
+    "name": "Melody",
+    "item_types": "Missile Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Shael Rune",
+      "Ko Rune",
+      "Nef Rune"
+    ],
+    "required_level": "39",
+    "stats": [
+      "+3 to Bow and Crossbow Skills (Amazon Only)",
+      "+20% Increased Attack Speed",
+      "+50% Enhanced Damage",
+      "+300% Damage to Undead",
+      "+3 to Slow Missiles (Amazon Only)",
+      "+3 to Dodge (Amazon Only)",
+      "+3 to Critical Strike (Amazon Only)",
+      "Knockback",
+      "+10 to Dexterity"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/melody"
+  },
+  {
+    "name": "Memory",
+    "item_types": "Staves",
+    "ladder_note": null,
+    "runes": [
+      "Lum Rune",
+      "Io Rune",
+      "Sol Rune",
+      "Eth Rune"
+    ],
+    "required_level": "37",
+    "stats": [
+      "+3 to Sorceress Skill Levels",
+      "+33% Faster Cast Rate",
+      "+9 to Minimum Damage",
+      "-25% Target Defense",
+      "+3 to Energy Shield (Sorceress Only)",
+      "+2 to Static Field (Sorceress Only)",
+      "+50% Enhanced Defense",
+      "+10 to Vitality",
+      "+10 to Energy",
+      "Increase Maximum Mana 20%",
+      "Magic Damage Reduced by 7"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/memory"
+  },
+  {
+    "name": "Metamorphosis",
+    "item_types": "Helmets",
+    "ladder_note": "Ladder only",
+    "runes": [
+      "Io Rune",
+      "Cham Rune",
+      "Fal Rune"
+    ],
+    "required_level": "67",
+    "stats": [
+      "100% Chance to cast level 1 Mark of the Wolf on striking",
+      "100% Chance to cast level 1 Mark of the Bear on striking",
+      "+5 to Shape Shifting Skills (Druid Only)",
+      "+25% Chance of Crushing Blow",
+      "50–80% Enhanced Defense",
+      "+10 to Strength",
+      "+10 to Vitality",
+      "All Resistances +10",
+      "Cannot Be Frozen"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/metamorphosis"
+  },
+  {
+    "name": "Mist",
+    "item_types": "Missile Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Cham Rune",
+      "Shael Rune",
+      "Gul Rune",
+      "Thul Rune",
+      "Ith Rune"
+    ],
+    "required_level": "67",
+    "stats": [
+      "Level 8–12 Concentration Aura When Equipped",
+      "+3 to All Skills",
+      "+20% Increased Attack Speed",
+      "+100% Piercing Attack",
+      "+325–375% Enhanced Damage",
+      "+9 to Maximum Damage",
+      "20% Bonus to Attack Rating",
+      "Adds 3-14 cold damage",
+      "Freezes target +3",
+      "+24 to Vitality",
+      "All Resistances +40"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/mist"
+  },
+  {
+    "name": "Mosaic",
+    "item_types": "Claws",
+    "ladder_note": "Disabled in ladder",
+    "runes": [
+      "Mal Rune",
+      "Gul Rune",
+      "Amn Rune"
+    ],
+    "required_level": "53",
+    "stats": [
+      "+50% chance for finishing moves to not consume charges",
+      "+2 to Martial Arts (Assassin Only)",
+      "+20% Increased Attack Speed",
+      "+200–250% Enhanced Damage",
+      "20% Bonus to Attack Rating",
+      "8–15% to Cold Skill Damage",
+      "8–15% to Lightning Skill Damage",
+      "8–15% to Fire Skill Damage",
+      "7% Life stolen per hit",
+      "Prevent Monster Heal"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/mosaic"
+  },
+  {
+    "name": "Myth",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Hel Rune",
+      "Amn Rune",
+      "Nef Rune"
+    ],
+    "required_level": "25",
+    "stats": [
+      "3% Chance to cast level 1 Howl when struck",
+      "10% Chance to cast level 1 Taunt on striking",
+      "+2 to Barbarian Skill Levels",
+      "+30 Defense vs. Missile",
+      "Replenish Life +10",
+      "Attacker Takes Damage of 14",
+      "Requirements -15%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/myth"
+  },
+  {
+    "name": "Nadir",
+    "item_types": "Helmets",
+    "ladder_note": null,
+    "runes": [
+      "Nef Rune",
+      "Tir Rune"
+    ],
+    "required_level": "13",
+    "stats": [
+      "+50% Enhanced Defense",
+      "+10 Defense",
+      "+30 Defense vs. Missile",
+      "+5 to Strength",
+      "+2 to Mana after each Kill",
+      "-33% Extra Gold from Monsters",
+      "-3 to Light Radius",
+      "Level 13 Cloak of Shadows (9/9 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/nadir"
+  },
+  {
+    "name": "Oath",
+    "item_types": "Swords, Axes, Maces",
+    "ladder_note": null,
+    "runes": [
+      "Shael Rune",
+      "Pul Rune",
+      "Mal Rune",
+      "Lum Rune"
+    ],
+    "required_level": "49",
+    "stats": [
+      "Indestructible",
+      "30% Chance to cast level 20 Bone Spirit on striking",
+      "+50% Increased Attack Speed",
+      "+210–340% Enhanced Damage",
+      "+75% Damage to Demons",
+      "+100 to Attack Rating against Demons",
+      "Prevent Monster Heal",
+      "+10 to Energy",
+      "10–15 Magic Absorb",
+      "Level 16 Heart of Wolverine (20/20 Charges)",
+      "Level 17 Iron Golem (14/14 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/oath"
+  },
+  {
+    "name": "Obedience",
+    "item_types": "Polearms, Spears",
+    "ladder_note": null,
+    "runes": [
+      "Hel Rune",
+      "Ko Rune",
+      "Thul Rune",
+      "Eth Rune",
+      "Fal Rune"
+    ],
+    "required_level": "41",
+    "stats": [
+      "30% Chance to cast level 21 Enchant when you Kill an Enemy",
+      "+40% Faster Hit Recovery",
+      "+370% Enhanced Damage",
+      "-25% Target Defense",
+      "Adds 3-14 cold damage",
+      "-25% to Enemy Fire Resistance",
+      "+40% Chance of Crushing Blow",
+      "200–300 Defense",
+      "+10 to Strength",
+      "+10 to Dexterity",
+      "All Resistances +20–30",
+      "Requirements -20%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/obedience"
+  },
+  {
+    "name": "Obsession",
+    "item_types": "Staves",
+    "ladder_note": null,
+    "runes": [
+      "Zod Rune",
+      "Ist Rune",
+      "Lem Rune",
+      "Lum Rune",
+      "Io Rune",
+      "Nef Rune"
+    ],
+    "required_level": "69",
+    "stats": [
+      "Indestructible",
+      "24% Chance to cast level 10 Weaken when struck",
+      "+4 to All Skills",
+      "+65% Faster Cast Rate",
+      "+60% Faster Hit Recovery",
+      "Knockback",
+      "+10 to Vitality",
+      "+10 to Energy",
+      "Increase Maximum Life 15–25%",
+      "Regenerate Mana 15–30%",
+      "All Resistances +60–70",
+      "75% Extra Gold from Monsters",
+      "30% Better Chance of Getting Magic Items"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/obsession"
+  },
+  {
+    "name": "Passion",
+    "item_types": "Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Dol Rune",
+      "Ort Rune",
+      "Eld Rune",
+      "Lem Rune"
+    ],
+    "required_level": "43",
+    "stats": [
+      "+25% Increased Attack Speed",
+      "+160–210% Enhanced Damage",
+      "50–80% Bonus to Attack Rating",
+      "+75% Damage to Undead",
+      "+50 to Attack Rating against Undead",
+      "Adds 1-50 lightning damage",
+      "+1 to Berserk",
+      "+1 to Zeal",
+      "Hit Blinds Target +10",
+      "Hit Causes Monster to Flee +25%",
+      "75% Extra Gold from Monsters",
+      "Level 3 Heart of Wolverine (12/12 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/passion"
+  },
+  {
+    "name": "Pattern",
+    "item_types": "Claws",
+    "ladder_note": null,
+    "runes": [
+      "Tal Rune",
+      "Ort Rune",
+      "Thul Rune"
+    ],
+    "required_level": "23",
+    "stats": [
+      "+30% Faster Block Rate",
+      "+40–80% Enhanced Damage",
+      "10% Bonus to Attack Rating",
+      "Adds 12-32 fire damage",
+      "Adds 1-50 lightning damage",
+      "Adds 3-14 cold damage",
+      "+75 poison damage over 5 seconds",
+      "+6 to Strength",
+      "+6 to Dexterity",
+      "All Resistances +15"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/pattern"
+  },
+  {
+    "name": "Peace",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Shael Rune",
+      "Thul Rune",
+      "Amn Rune"
+    ],
+    "required_level": "29",
+    "stats": [
+      "4% Chance to cast level 5 Slow Missiles when struck",
+      "2% Chance to cast level 15 Valkyrie on striking",
+      "+2 to Amazon Skill Levels",
+      "+20% Faster Hit Recovery",
+      "+2 to Critical Strike",
+      "Cold Resist +30%",
+      "Attacker Takes Damage of 14"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/peace"
+  },
+  {
+    "name": "Phoenix",
+    "item_types": "Shields",
+    "ladder_note": null,
+    "runes": [
+      "Vex Rune",
+      "Vex Rune",
+      "Lo Rune",
+      "Jah Rune"
+    ],
+    "required_level": "65",
+    "stats": [
+      "100% Chance to cast level 40 Blaze when you Level-Up",
+      "40% Chance to cast level 22 Firestorm on striking",
+      "Level 10–15 Redemption Aura When Equipped",
+      "+350–400% Enhanced Damage",
+      "-28% to Enemy Fire Resistance",
+      "350–400 Defense vs. Missile",
+      "+50 to Life",
+      "+5% to Maximum Lightning Resist",
+      "+10% to Maximum Fire Resist",
+      "15–21 Fire Absorb"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/phoenix-shields"
+  },
+  {
+    "name": "Phoenix",
+    "item_types": "Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Vex Rune",
+      "Vex Rune",
+      "Lo Rune",
+      "Jah Rune"
+    ],
+    "required_level": "65",
+    "stats": [
+      "100% Chance to cast level 40 Blaze when you Level-Up",
+      "40% Chance to cast level 22 Firestorm on striking",
+      "Level 10–15 Redemption Aura When Equipped",
+      "+350–400% Enhanced Damage",
+      "Ignore Target's Defense",
+      "14% Mana stolen per hit",
+      "-28% to Enemy Fire Resistance",
+      "+20% Deadly Strike",
+      "350–400 Defense vs. Missile",
+      "15–21 Fire Absorb"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/phoenix-weapons"
+  },
+  {
+    "name": "Plague",
+    "item_types": "Swords, Daggers, Claws",
+    "ladder_note": null,
+    "runes": [
+      "Cham Rune",
+      "Shael Rune",
+      "Um Rune"
+    ],
+    "required_level": "67",
+    "stats": [
+      "20% Chance to cast level 12 Lower Resist when struck",
+      "25% Chance to cast level 15 Poison Nova on striking",
+      "Level 13–17 Cleansing Aura When Equipped",
+      "1–2 to All Skills",
+      "+20% Increased Attack Speed",
+      "+220–320% Enhanced Damage",
+      "-23% to Enemy Poison Resistance",
+      "+37% Deadly Strike (Based on Character Level)",
+      "+25% Chance of Open Wounds",
+      "Freezes target +3"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/plague"
+  },
+  {
+    "name": "Pride",
+    "item_types": "Polearms, Spears",
+    "ladder_note": null,
+    "runes": [
+      "Cham Rune",
+      "Sur Rune",
+      "Io Rune",
+      "Lo Rune"
+    ],
+    "required_level": "67",
+    "stats": [
+      "25% Chance to cast level 17 Fire Wall when struck",
+      "Level 16–20 Concentration Aura When Equipped",
+      "260–300% Bonus to Attack Rating",
+      "+99% Damage to Demons (Based on Character Level)",
+      "Adds 50-280 lightning damage",
+      "+20% Deadly Strike",
+      "Hit Blinds Target",
+      "Freezes target +3",
+      "+10 to Vitality",
+      "Replenish Life +8",
+      "185% Extra Gold from Monsters (Based on Character Level)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/pride"
+  },
+  {
+    "name": "Principle",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Ral Rune",
+      "Gul Rune",
+      "Eld Rune"
+    ],
+    "required_level": "53",
+    "stats": [
+      "100% Chance to cast level 5 Holy Bolt on striking",
+      "+2 to Paladin Skill Levels",
+      "+50% Damage to Undead",
+      "100–150 to Life",
+      "15% Slower Stamina Drain",
+      "+5% to Maximum Poison Resist",
+      "Fire Resist +30%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/principle"
+  },
+  {
+    "name": "Prudence",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Mal Rune",
+      "Tir Rune"
+    ],
+    "required_level": "49",
+    "stats": [
+      "+25% Faster Hit Recovery",
+      "140–170% Enhanced Defense",
+      "All Resistances +25–35",
+      "Damage Reduced by 3",
+      "Magic Damage Reduced by 17",
+      "+2 to Mana after each Kill",
+      "+1 to Light Radius",
+      "Repairs 1 durability in 4 seconds"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/prudence"
+  },
+  {
+    "name": "Radiance",
+    "item_types": "Helmets",
+    "ladder_note": null,
+    "runes": [
+      "Nef Rune",
+      "Sol Rune",
+      "Ith Rune"
+    ],
+    "required_level": "27",
+    "stats": [
+      "+75% Enhanced Defense",
+      "+30 Defense vs. Missile",
+      "+10 to Vitality",
+      "+10 to Energy",
+      "+33 to Mana",
+      "Damage Reduced by 7",
+      "Magic Damage Reduced by 3",
+      "+15% Damage Taken Goes To Mana",
+      "+5 to Light Radius"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/radiance"
+  },
+  {
+    "name": "Rain",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Ort Rune",
+      "Mal Rune",
+      "Ith Rune"
+    ],
+    "required_level": "49",
+    "stats": [
+      "5% Chance to cast level 15 Cyclone Armor when struck",
+      "5% Chance to cast level 15 Twister on striking",
+      "+2 to Druid Skill Levels",
+      "100–150 to Mana",
+      "Lightning Resist +30%",
+      "Magic Damage Reduced by 7",
+      "+15% Damage Taken Goes To Mana"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/rain"
+  },
+  {
+    "name": "Rhyme",
+    "item_types": "Shields",
+    "ladder_note": null,
+    "runes": [
+      "Shael Rune",
+      "Eth Rune"
+    ],
+    "required_level": "29",
+    "stats": [
+      "+40% Faster Block Rate",
+      "20% Increased Chance of Blocking",
+      "Regenerate Mana 15%",
+      "All Resistances +25",
+      "Cannot Be Frozen",
+      "50% Extra Gold from Monsters",
+      "25% Better Chance of Getting Magic Items"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/rhyme"
+  },
+  {
+    "name": "Rift",
+    "item_types": "Polearms, Scepters",
+    "ladder_note": null,
+    "runes": [
+      "Hel Rune",
+      "Ko Rune",
+      "Lem Rune",
+      "Gul Rune"
+    ],
+    "required_level": "53",
+    "stats": [
+      "20% Chance to cast level 16 Tornado on striking",
+      "16% Chance to cast level 21 Frozen Orb on attack",
+      "20% Bonus to Attack Rating",
+      "Adds 160-250 magic damage",
+      "Adds 60-180 fire damage",
+      "5–10 to Strength",
+      "15–20 to Dexterity",
+      "5–10 to Vitality",
+      "5–10 to Energy",
+      "+38% Damage Taken Goes To Mana",
+      "75% Extra Gold from Monsters",
+      "Level 15 Iron Maiden (40/40 Charges)",
+      "Requirements -20%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/rift"
+  },
+  {
+    "name": "Ritual",
+    "item_types": "Daggers",
+    "ladder_note": null,
+    "runes": [
+      "Amn Rune",
+      "Shael Rune",
+      "Ohm Rune"
+    ],
+    "required_level": "57",
+    "stats": [
+      "13% Chance to cast level 1 Sigil: Death when struck",
+      "+40% Increased Attack Speed",
+      "+250–320% Enhanced Damage",
+      "200–260% Bonus to Attack Rating",
+      "150–250% Damage to Demons",
+      "7% Life stolen per hit",
+      "Slain Monsters Rest in Peace",
+      "3–5 Life after each Kill"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/ritual"
+  },
+  {
+    "name": "Sanctuary",
+    "item_types": "Shields",
+    "ladder_note": null,
+    "runes": [
+      "Ko Rune",
+      "Ko Rune",
+      "Mal Rune"
+    ],
+    "required_level": "49",
+    "stats": [
+      "+20% Faster Hit Recovery",
+      "+20% Faster Block Rate",
+      "20% Increased Chance of Blocking",
+      "130–160% Enhanced Defense",
+      "+250 Defense vs. Missile",
+      "+20 to Dexterity",
+      "All Resistances +50–70",
+      "Magic Damage Reduced by 7",
+      "Level 12 Slow Missiles (60/60 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/sanctuary"
+  },
+  {
+    "name": "Silence",
+    "item_types": "Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Dol Rune",
+      "Eld Rune",
+      "Hel Rune",
+      "Ist Rune",
+      "Tir Rune",
+      "Vex Rune"
+    ],
+    "required_level": "55",
+    "stats": [
+      "+2 to All Skills",
+      "+20% Increased Attack Speed",
+      "+20% Faster Hit Recovery",
+      "+200% Enhanced Damage",
+      "+75% Damage to Undead",
+      "+50 to Attack Rating against Undead",
+      "11% Mana stolen per hit",
+      "Hit Blinds Target +33",
+      "Hit Causes Monster to Flee +25%",
+      "All Resistances +75",
+      "+2 to Mana after each Kill",
+      "30% Better Chance of Getting Magic Items",
+      "Requirements -20%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/silence"
+  },
+  {
+    "name": "Smoke",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Nef Rune",
+      "Lum Rune"
+    ],
+    "required_level": "37",
+    "stats": [
+      "+20% Faster Hit Recovery",
+      "+75% Enhanced Defense",
+      "+280 Defense vs. Missile",
+      "+10 to Energy",
+      "All Resistances +50",
+      "-1 to Light Radius",
+      "Level 6 Weaken (18/18 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/smoke"
+  },
+  {
+    "name": "Spirit",
+    "item_types": "Shields",
+    "ladder_note": null,
+    "runes": [
+      "Tal Rune",
+      "Thul Rune",
+      "Ort Rune",
+      "Amn Rune"
+    ],
+    "required_level": "25",
+    "stats": [
+      "+2 to All Skills",
+      "25–35% Faster Cast Rate",
+      "+55% Faster Hit Recovery",
+      "+250 Defense vs. Missile",
+      "+22 to Vitality",
+      "89–112 to Mana",
+      "Cold Resist +35%",
+      "Lightning Resist +35%",
+      "Poison Resist +35%",
+      "3–8 Magic Absorb",
+      "Attacker Takes Damage of 14"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/spirit-shields"
+  },
+  {
+    "name": "Spirit",
+    "item_types": "Swords",
+    "ladder_note": null,
+    "runes": [
+      "Tal Rune",
+      "Thul Rune",
+      "Ort Rune",
+      "Amn Rune"
+    ],
+    "required_level": "25",
+    "stats": [
+      "+2 to All Skills",
+      "25–35% Faster Cast Rate",
+      "+55% Faster Hit Recovery",
+      "Adds 1-50 lightning damage",
+      "Adds 3-14 cold damage",
+      "+75 poison damage over 5 seconds",
+      "7% Life stolen per hit",
+      "+250 Defense vs. Missile",
+      "+22 to Vitality",
+      "89–112 to Mana",
+      "3–8 Magic Absorb"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/spirit-weapons"
+  },
+  {
+    "name": "Splendor",
+    "item_types": "Shields",
+    "ladder_note": null,
+    "runes": [
+      "Eth Rune",
+      "Lum Rune"
+    ],
+    "required_level": "37",
+    "stats": [
+      "+1 to All Skills",
+      "+10% Faster Cast Rate",
+      "+20% Faster Block Rate",
+      "60–100% Enhanced Defense",
+      "+10 to Energy",
+      "Regenerate Mana 15%",
+      "50% Extra Gold from Monsters",
+      "20% Better Chance of Getting Magic Items",
+      "+3 to Light Radius"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/splendor"
+  },
+  {
+    "name": "Stealth",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Tal Rune",
+      "Eth Rune"
+    ],
+    "required_level": "17",
+    "stats": [
+      "+25% Faster Run/Walk",
+      "+25% Faster Cast Rate",
+      "+25% Faster Hit Recovery",
+      "+6 to Dexterity",
+      "Regenerate Mana 15%",
+      "+15 Maximum Stamina",
+      "Poison Resist +30%",
+      "Magic Damage Reduced by 3"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/stealth"
+  },
+  {
+    "name": "Steel",
+    "item_types": "Swords, Axes, Maces",
+    "ladder_note": null,
+    "runes": [
+      "Tir Rune",
+      "El Rune"
+    ],
+    "required_level": "13",
+    "stats": [
+      "+25% Increased Attack Speed",
+      "+20% Enhanced Damage",
+      "+3 damage",
+      "+50 to Attack Rating",
+      "+50% Chance of Open Wounds",
+      "+2 to Mana after each Kill",
+      "+1 to Light Radius"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/steel"
+  },
+  {
+    "name": "Stone",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Shael Rune",
+      "Um Rune",
+      "Pul Rune",
+      "Lum Rune"
+    ],
+    "required_level": "47",
+    "stats": [
+      "+60% Faster Hit Recovery",
+      "250–290% Enhanced Defense",
+      "+300 Defense vs. Missile",
+      "+16 to Strength",
+      "+16 to Vitality",
+      "+10 to Energy",
+      "All Resistances +15",
+      "Level 16 Molten Boulder (80/80 Charges)",
+      "Level 16 Clay Golem (16/16 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/stone"
+  },
+  {
+    "name": "Strength",
+    "item_types": "Melee Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Amn Rune",
+      "Tir Rune"
+    ],
+    "required_level": "25",
+    "stats": [
+      "+35% Enhanced Damage",
+      "7% Life stolen per hit",
+      "+25% Chance of Crushing Blow",
+      "+20 to Strength",
+      "+10 to Vitality",
+      "+2 to Mana after each Kill"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/strength"
+  },
+  {
+    "name": "Temper",
+    "item_types": "Helmets",
+    "ladder_note": "Ladder only",
+    "runes": [
+      "Shael Rune",
+      "Io Rune",
+      "Ral Rune"
+    ],
+    "required_level": "35",
+    "stats": [
+      "+20% Faster Hit Recovery",
+      "75–100% Enhanced Defense",
+      "+10 to Vitality",
+      "Increase Maximum Life 5%",
+      "Fire Resist 40–60%",
+      "Fire Absorb 10–15%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/temper"
+  },
+  {
+    "name": "Treachery",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Shael Rune",
+      "Thul Rune",
+      "Lem Rune"
+    ],
+    "required_level": "43",
+    "stats": [
+      "5% Chance to cast level 15 Fade when struck",
+      "25% Chance to cast level 15 Venom on striking",
+      "+2 to Assassin Skill Levels",
+      "+45% Increased Attack Speed",
+      "+20% Faster Hit Recovery",
+      "Cold Resist +30%",
+      "50% Extra Gold from Monsters"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/treachery"
+  },
+  {
+    "name": "Unbending Will",
+    "item_types": "Swords",
+    "ladder_note": null,
+    "runes": [
+      "Fal Rune",
+      "Io Rune",
+      "Ith Rune",
+      "Eld Rune",
+      "El Rune",
+      "Hel Rune"
+    ],
+    "required_level": "41",
+    "stats": [
+      "18% Chance to cast level 18 Taunt on striking",
+      "+3 to Combat Skills (Barbarian Only)",
+      "20–30% Increased Attack Speed",
+      "+300–350% Enhanced Damage",
+      "+9 to Maximum Damage",
+      "+50 to Attack Rating",
+      "+75% Damage to Undead",
+      "+50 to Attack Rating against Undead",
+      "8–10% Life stolen per hit",
+      "Prevent Monster Heal",
+      "+10 to Strength",
+      "+10 to Vitality",
+      "Damage Reduced by 8",
+      "+1 to Light Radius",
+      "Requirements -20%"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/unbending-will"
+  },
+  {
+    "name": "Venom",
+    "item_types": "Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Tal Rune",
+      "Dol Rune",
+      "Mal Rune"
+    ],
+    "required_level": "49",
+    "stats": [
+      "Ignore Target's Defense",
+      "+273 poison damage over 6 seconds",
+      "7% Mana stolen per hit",
+      "Prevent Monster Heal",
+      "Hit Causes Monster to Flee +25%",
+      "Level 13 Poison Nova (11/11 Charges)",
+      "Level 15 Poison Explosion (27/27 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/venom"
+  },
+  {
+    "name": "Vigilance",
+    "item_types": "Grimoires, Shields, Voodoo Heads, Auric Shields",
+    "ladder_note": null,
+    "runes": [
+      "Dol Rune",
+      "Gul Rune"
+    ],
+    "required_level": "53",
+    "stats": [
+      "5% Chance to cast level 10 Ring of Fire when struck",
+      "+10% Faster Run/Walk",
+      "+30% Faster Block Rate",
+      "75–100% Enhanced Defense",
+      "20–40 to Life",
+      "Replenish Life +7",
+      "20–40 to Mana",
+      "+5% to Maximum Poison Resist",
+      "All Resistances +25–35"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/vigilance"
+  },
+  {
+    "name": "Voice of Reason",
+    "item_types": "Swords, Maces",
+    "ladder_note": null,
+    "runes": [
+      "Lem Rune",
+      "Ko Rune",
+      "El Rune",
+      "Eld Rune"
+    ],
+    "required_level": "43",
+    "stats": [
+      "15% Chance to cast level 13 Frozen Orb on striking",
+      "18% Chance to cast level 20 Ice Blast on striking",
+      "+50 to Attack Rating",
+      "220–350% Damage to Demons",
+      "355–375% Damage to Undead",
+      "+50 to Attack Rating against Undead",
+      "Adds 100-220 cold damage",
+      "-24% to Enemy Cold Resistance",
+      "+10 to Dexterity",
+      "Cannot Be Frozen",
+      "75% Extra Gold from Monsters",
+      "+1 to Light Radius"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/voice-of-reason"
+  },
+  {
+    "name": "Void",
+    "item_types": "Daggers",
+    "ladder_note": null,
+    "runes": [
+      "Thul Rune",
+      "Zod Rune",
+      "Ist Rune"
+    ],
+    "required_level": "69",
+    "stats": [
+      "Indestructible",
+      "+2 to All Skills",
+      "+40% Faster Cast Rate",
+      "Adds 3-14 cold damage",
+      "10–15% to Magic Skill Damage",
+      "1–3 to Abyss",
+      "+8–12 to all Attributes",
+      "30% Better Chance of Getting Magic Items",
+      "Level 4 Decrepify (35/35 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/void"
+  },
+  {
+    "name": "Wealth",
+    "item_types": "Body Armor",
+    "ladder_note": null,
+    "runes": [
+      "Lem Rune",
+      "Ko Rune",
+      "Tir Rune"
+    ],
+    "required_level": "43",
+    "stats": [
+      "+10 to Dexterity",
+      "+2 to Mana after each Kill",
+      "300% Extra Gold from Monsters",
+      "100% Better Chance of Getting Magic Items"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/wealth"
+  },
+  {
+    "name": "White",
+    "item_types": "Wands",
+    "ladder_note": null,
+    "runes": [
+      "Dol Rune",
+      "Io Rune"
+    ],
+    "required_level": "35",
+    "stats": [
+      "+3 to Poison and Bone Skills (Necromancer Only)",
+      "+20% Faster Cast Rate",
+      "+2 to Bone Spear (Necromancer Only)",
+      "+4 to Skeleton Mastery (Necromancer Only)",
+      "+3 to Bone Armor (Necromancer Only)",
+      "Hit Causes Monster to Flee +25%",
+      "+10 to Vitality",
+      "+13 to Mana",
+      "Magic Damage Reduced by 4"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/white"
+  },
+  {
+    "name": "Wind",
+    "item_types": "Melee Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Sur Rune",
+      "El Rune"
+    ],
+    "required_level": "61",
+    "stats": [
+      "10% Chance to cast level 9 Tornado on striking",
+      "+20% Faster Run/Walk",
+      "+40% Increased Attack Speed",
+      "+15% Faster Hit Recovery",
+      "+120–160% Enhanced Damage",
+      "-50% Target Defense",
+      "+50 to Attack Rating",
+      "Hit Blinds Target",
+      "+1 to Light Radius",
+      "Level 13 Twister (127/127 Charges)"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/wind"
+  },
+  {
+    "name": "Wisdom",
+    "item_types": "Helmets",
+    "ladder_note": null,
+    "runes": [
+      "Pul Rune",
+      "Ith Rune",
+      "Eld Rune"
+    ],
+    "required_level": "45",
+    "stats": [
+      "+33% Piercing Attack",
+      "15–25% Bonus to Attack Rating",
+      "4–8% Mana stolen per hit",
+      "+30% Enhanced Defense",
+      "+10 to Energy",
+      "15% Slower Stamina Drain",
+      "Cannot Be Frozen",
+      "+5 to Mana after each Kill",
+      "+15% Damage Taken Goes To Mana"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/wisdom"
+  },
+  {
+    "name": "Wrath",
+    "item_types": "Missile Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Pul Rune",
+      "Lum Rune",
+      "Ber Rune",
+      "Mal Rune"
+    ],
+    "required_level": "63",
+    "stats": [
+      "30% Chance to cast level 1 Decrepify on striking",
+      "5% Chance to cast level 10 Life Tap on striking",
+      "+375% Damage to Demons",
+      "+100 to Attack Rating against Demons",
+      "250–300% Damage to Undead",
+      "Adds 85-120 magic damage",
+      "Adds 41-240 lightning damage",
+      "+20% Chance of Crushing Blow",
+      "Prevent Monster Heal",
+      "+10 to Energy",
+      "Cannot Be Frozen"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/wrath"
+  },
+  {
+    "name": "Zephyr",
+    "item_types": "Missile Weapons",
+    "ladder_note": null,
+    "runes": [
+      "Ort Rune",
+      "Eth Rune"
+    ],
+    "required_level": "21",
+    "stats": [
+      "7% Chance to cast level 1 Twister when struck",
+      "+25% Faster Run/Walk",
+      "+25% Increased Attack Speed",
+      "+33% Enhanced Damage",
+      "-25% Target Defense",
+      "+66 to Attack Rating",
+      "Adds 1-50 lightning damage",
+      "+25 Defense"
+    ],
+    "url": "https://maxroll.gg/d2/database/runewords/zephyr"
+  }
+]
