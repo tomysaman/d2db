@@ -231,32 +231,7 @@ function render() {
 }
 
 function renderGrouped(list, container) {
-  const groups = {};
-  const groupOrder = [];
-
-  list.forEach(rw => {
-    const primaryCat = getPrimaryCategory(rw);
-    if (!groups[primaryCat]) {
-      groups[primaryCat] = [];
-      groupOrder.push(primaryCat);
-    }
-    groups[primaryCat].push(rw);
-  });
-
-  groupOrder.forEach(cat => {
-    const hdr = document.createElement('div');
-    hdr.className = 'category-header';
-    hdr.innerHTML = `<span class="category-header-text">${cat}</span><span class="category-header-line"></span>`;
-    container.appendChild(hdr);
-    groups[cat].forEach(rw => container.appendChild(buildCard(rw)));
-  });
-}
-
-function getPrimaryCategory(rw) {
-  for (const cat of CATEGORY_ORDER) {
-    if (rw.itemTypes.includes(cat)) return cat;
-  }
-  return rw.itemTypes[0] || 'Other';
+  list.forEach(rw => container.appendChild(buildCard(rw)));
 }
 
 function buildCard(rw) {

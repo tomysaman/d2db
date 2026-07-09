@@ -411,29 +411,6 @@ body.rune-icons .toggle-icon-img { display: inline; }
   color: var(--teal-bright);
 }
 
-.category-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 30px 0 14px;
-}
-.category-header:first-child { margin-top: 0; }
-
-.category-header-text {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--violet-bright);
-  white-space: nowrap;
-}
-
-.category-header-line {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, var(--violet-dim), transparent);
-}
-
 /* ══════════════════════════════════════════
    BADGES
 ══════════════════════════════════════════ */
