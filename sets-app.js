@@ -199,6 +199,12 @@ function iconMarkup(icon, name, sizeClass) {
   return `<span class="${sizeClass}">✦</span>`;
 }
 
+function formatPartialBonus(line) {
+  const m = line.match(/^(.*)\s+\((\d+)\s*Items?\)$/i);
+  if (!m) return `<div class="partial-bonus-line">${line}</div>`;
+  return `<div class="partial-bonus-line"><span class="partial-bonus-tag">${m[2]} Items</span>${m[1]}</div>`;
+}
+
 function buildCard(s) {
   const card = document.createElement('div');
   card.className = `set-card tier-${s.tier}` + (s.isNew ? ' is-new' : '');
@@ -221,7 +227,14 @@ function buildCard(s) {
         </div>
       `).join('')}
     </div>
+    ${s.partialBonuses.length ? `
+    <div class="set-bonus-preview set-partial-bonus-preview">
+      <div class="set-bonus-label">Partial Set Bonuses</div>
+      ${s.partialBonuses.slice(0, 3).map(formatPartialBonus).join('')}
+      ${s.partialBonuses.length > 3 ? `<div class="set-bonus-more">+${s.partialBonuses.length - 3} more…</div>` : ''}
+    </div>` : ''}
     <div class="set-bonus-preview">
+      <div class="set-bonus-label">Full Set Bonus</div>
       ${s.fullBonuses.slice(0, 3).map(b => `<div class="set-bonus-line">${b}</div>`).join('')}
       ${s.fullBonuses.length > 3 ? `<div class="set-bonus-more">+${s.fullBonuses.length - 3} more…</div>` : ''}
     </div>
@@ -243,6 +256,12 @@ function openModal(s) {
         <span class="badge badge-type" style="font-size:0.82rem;padding:4px 12px;">${s.pieceCount} Piece${s.pieceCount > 1 ? 's' : ''}</span>
         ${s.isNew ? `<span class="badge badge-new" style="font-size:0.82rem;padding:4px 12px;">Reign of the Warlock</span>` : ''}
       </div>
+
+      ${s.partialBonuses.length ? `
+      <div class="modal-section-label">Partial Set Bonuses</div>
+      <div class="modal-partial-bonuses">
+        ${s.partialBonuses.map(formatPartialBonus).join('')}
+      </div>` : ''}
 
       <div class="modal-section-label">Full Set Bonus</div>
       <ul class="modal-full-bonus">

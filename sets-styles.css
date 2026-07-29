@@ -150,6 +150,22 @@
   gap: 4px;
 }
 
+.set-bonus-preview + .set-bonus-preview {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.set-bonus-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
 .set-bonus-line {
   font-size: 0.94rem;
   color: var(--text-primary);
@@ -170,6 +186,30 @@
   color: var(--text-muted);
   font-style: italic;
   padding-left: 12px;
+}
+
+.partial-bonus-line {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.94rem;
+  color: var(--text-primary);
+}
+
+.partial-bonus-tag {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: rgba(224,168,96,0.1);
+  border: 1px solid #7a5a30;
+  border-radius: 10px;
+  padding: 1px 8px;
+  white-space: nowrap;
 }
 
 /* ── Modal: set detail ── */
@@ -241,6 +281,16 @@
   top: 0.4em;
   font-size: 0.5rem;
   color: var(--teal-dim);
+}
+
+.modal-partial-bonuses {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-partial-bonuses .partial-bonus-line {
+  font-size: 1rem;
 }
 
 .modal-full-bonus {

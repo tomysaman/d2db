@@ -143,6 +143,52 @@ SET_TIER = {
     "Warlord's Glory": "Normal",
 }
 
+# Partial (2/3/4/5-item) set bonuses, scraped verbatim from each set's maxroll.gg
+# page — the original setitems.json scrape captured only the item-level piece
+# stats' "(N Items)" qualifiers, not the ones on the aggregate set-bonus block,
+# so this had to be re-collected separately. fullBonuses (below) already
+# reflects the correct cumulative/final value for stacking bonuses (e.g.
+# Immortal King's "+450 to Attack Rating"), so these partial lines are kept as
+# their own independent list rather than reconciled against it — for stacking
+# stats they intentionally show the incremental per-threshold amount instead.
+SET_PARTIAL_BONUSES = {
+    "Aldur's Watchtower": ["150% Bonus to Attack Rating (2 Items)", "50% Better Chance of Getting Magic Items (3 Items)"],
+    "Angelic Raiment": ["+10 to Dexterity (2 Items)", "+50 to Mana (3 Items)"],
+    "Arcanna's Tricks": ["+50 to Mana (2 Items)", "+50 to Life (3 Items)", "Regenerate Mana 12% (3 Items)"],
+    "Arctic Gear": ["+5 to Strength (2 Items)", "+50 to Life (3 Items)"],
+    "Bane's Garments": ["+80% Enhanced Damage (2 Items)"],
+    "Berserker's Arsenal": ["+50 to Life (2 Items)"],
+    "Bul-Kathos' Children": [],
+    "Cathan's Traps": ["Adds 15-20 fire damage (2 Items)", "Regenerate Mana 16% (2 Items)", "Lightning Resist +25% (3 Items)"],
+    "Civerb's Vestments": ["Fire Resist +25% (2 Items)"],
+    "Cleglaw's Brace": ["+50 Defense (2 Items)"],
+    "Cow King's Leathers": ["+100 Defense (2 Items)", "Poison Resist +25% (2 Items)"],
+    "Death's Disguise": ["8% Life stolen per hit (2 Items)"],
+    "Griswold's Legacy": ["+20 to Strength (2 Items)", "+30 to Dexterity (3 Items)"],
+    "Heaven's Brethren": ["10% Life stolen per hit (2 Items)", "+297 to Maximum Fire Damage (Based on Character Level) (3 Items)", "Replenish Life +30 (3 Items)"],
+    "Horazon's Splendor": ["+20 to Dexterity (2 Items)", "+30 to Energy (3 Items)", "+300 Defense (4 Items)"],
+    "Hsarus' Defense": ["Attacker Takes Damage of 5 (2 Items)"],
+    "Hwanin's Majesty": ["+100 Defense (2 Items)", "+200 Defense (3 Items)"],
+    "Immortal King": ["+50 to Attack Rating (2 Items)", "+75 to Attack Rating (3 Items)", "+125 to Attack Rating (4 Items)", "+200 to Attack Rating (5 Items)"],
+    "Infernal Tools": ["+8 poison damage over 3 seconds (2 Items)"],
+    "Iratha's Finery": ["+50 Defense (2 Items)", "+20% Faster Run/Walk (3 Items)", "+24% Piercing Attack (3 Items)"],
+    "Isenhart's Armory": ["+10 to Strength (2 Items)", "+10 to Dexterity (3 Items)"],
+    "M'avina's Battle Hymn": ["+20 to Strength (2 Items)", "+30 to Dexterity (3 Items)"],
+    "Milabrega's Regalia": ["+75 to Attack Rating (2 Items)", "+198 to Maximum Lightning Damage (Based on Character Level) (2 Items)", "+125 to Attack Rating (3 Items)", "Cannot Be Frozen (3 Items)"],
+    "Naj's Ancient Vestige": ["+175 Defense (2 Items)", "148% Better Chance of Getting Magic Items (Based on Character Level) (2 Items)"],
+    "Natalya's Odium": ["Magic Damage Reduced by 15 (2 Items)", "+200 Defense (3 Items)"],
+    "Orphan's Call": ["+35 to Life (2 Items)", "Attacker Takes Damage of 5 (3 Items)"],
+    "Sander's Folly": ["+50 Defense (2 Items)", "+75 to Attack Rating (3 Items)"],
+    "Sazabi's Grand Tribute": ["+40% Faster Run/Walk (2 Items)", "Poison Length Reduced by 75% (2 Items)"],
+    "Sigon's Complete Steel": ["10% Life stolen per hit (2 Items)", "+100 Defense (3 Items)"],
+    "Tal Rasha's Wrappings": ["Replenish Life +10 (2 Items)", "65% Better Chance of Getting Magic Items (3 Items)", "+25% Faster Hit Recovery (4 Items)"],
+    "Tancred's Battlegear": ["+15 lightning damage (2 Items)", "5% Life stolen per hit (3 Items)"],
+    "The Disciple": ["+150 Defense (2 Items)", "+22 poison damage over 3 seconds (3 Items)", "+10 to Strength (4 Items)"],
+    "Trang-Oul's Avatar": ["+18 to Fire Ball (2 Items)", "Regenerate Mana 15% (2 Items)", "+13 to Fire Wall (3 Items)", "Regenerate Mana 15% (3 Items)", "+10 to Meteor (4 Items)", "Regenerate Mana 15% (4 Items)"],
+    "Vidala's Rig": ["+75 to Attack Rating (2 Items)", "7% Mana stolen per hit (2 Items)", "+15 to Dexterity (3 Items)"],
+    "Warlord's Glory": ["15% Life stolen per hit (2 Items)", "+150 Defense (3 Items)"],
+}
+
 PARTIAL_RE = re.compile(r"^(.*?)\s*\((\d+)\s*[Ii]tems?\)\s*$")
 
 # broad slot category classifier for individual pieces
@@ -238,6 +284,7 @@ for sid, sname in enumerate(set_order, start=1):
         "level": max(levels) if levels else None,
         "pieceCount": len(pieces),
         "fullBonuses": items[0].get("set_bonuses") or [],
+        "partialBonuses": SET_PARTIAL_BONUSES.get(sname, []),
         "pieces": pieces,
     })
 
