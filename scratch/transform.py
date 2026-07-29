@@ -103,7 +103,7 @@ RUNEWORD_STAT_OVERRIDES = {
     # the item. Value at level 1 = 8*1 = 8, at level 99 = 12*99 = 1188.
     "Fortitude": {
         "8–12 to Life (Based on Character Level)":
-            "(8-12 Per Character Level) 8-1188 to Life",
+            "+(8-12 Per Character Level) 8-1188 to Life",
     },
     "Grief": {
         "+185% Damage to Demons (Based on Character Level)":
