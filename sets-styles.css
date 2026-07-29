@@ -54,8 +54,16 @@
 
 .sets-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+}
+
+@media (max-width: 900px) {
+  .sets-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .sets-grid { grid-template-columns: 1fr; }
 }
 
 .set-card {
@@ -213,7 +221,19 @@
 }
 
 /* ── Modal: set detail ── */
-.modal-set-pieces { display: flex; flex-direction: column; gap: 16px; }
+/* Sets modal is wider than the shared default, so pieces list is
+   more useful as two columns rather than one long stacked column. */
+.modal-box { max-width: 1280px; }
+
+.modal-set-pieces {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .modal-set-pieces { grid-template-columns: 1fr; }
+}
 
 .modal-piece {
   display: flex;
@@ -281,6 +301,27 @@
   top: 0.4em;
   font-size: 0.5rem;
   color: var(--teal-dim);
+}
+
+.modal-bonus-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 28px;
+}
+
+.modal-bonus-col:first-child {
+  border-right: 1px solid var(--border);
+  padding-right: 28px;
+}
+
+@media (max-width: 720px) {
+  .modal-bonus-columns { grid-template-columns: 1fr; gap: 20px; }
+  .modal-bonus-col:first-child {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding-right: 0;
+    padding-bottom: 16px;
+  }
 }
 
 .modal-partial-bonuses {

@@ -258,15 +258,24 @@ function openModal(s) {
       </div>
 
       ${s.partialBonuses.length ? `
-      <div class="modal-section-label">Partial Set Bonuses</div>
-      <div class="modal-partial-bonuses">
-        ${s.partialBonuses.map(formatPartialBonus).join('')}
-      </div>` : ''}
-
+      <div class="modal-bonus-columns">
+        <div class="modal-bonus-col">
+          <div class="modal-section-label">Partial Set Bonuses</div>
+          <div class="modal-partial-bonuses">
+            ${s.partialBonuses.map(formatPartialBonus).join('')}
+          </div>
+        </div>
+        <div class="modal-bonus-col">
+          <div class="modal-section-label">Full Set Bonus</div>
+          <ul class="modal-full-bonus">
+            ${s.fullBonuses.map(b => `<li>${b}</li>`).join('')}
+          </ul>
+        </div>
+      </div>` : `
       <div class="modal-section-label">Full Set Bonus</div>
       <ul class="modal-full-bonus">
         ${s.fullBonuses.map(b => `<li>${b}</li>`).join('')}
-      </ul>
+      </ul>`}
 
       <div class="modal-section-label">Pieces</div>
       <div class="modal-set-pieces">
