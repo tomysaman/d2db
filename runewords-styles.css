@@ -82,19 +82,20 @@
 .rune-tag-img { width: 26px; height: 26px; object-fit: contain; }
 .rune-tag-label { font-family: var(--font-body); font-weight: 600; font-size: 0.86rem; color: var(--teal-bright); }
 
-body.rune-icons .rune-tag-label,
-body.rune-icons .modal-rune-tag .rune-tag-label { display: none; }
-body:not(.rune-icons) .rune-tag-img,
-body:not(.rune-icons) .modal-rune-tag .rune-tag-img { display: none; }
+/* Icon/text toggle applies to the card list only — the modal always shows
+   both the icon and the rune name, regardless of the toggle. */
+body.rune-icons .rune-tag .rune-tag-label { display: none; }
+body:not(.rune-icons) .rune-tag .rune-tag-img { display: none; }
 
-/* Icon mode: bare icons, no square box */
-body.rune-icons .rune-tag,
-body.rune-icons .modal-rune-tag {
+/* Icon mode: bare icons, no square box (card list only — the modal keeps
+   its boxed style and shows the rune name alongside the larger icon) */
+body.rune-icons .rune-tag {
   background: transparent;
   border-color: transparent;
   padding: 2px;
 }
 
+.modal-rune-tag .rune-tag-img { width: 38px; height: 38px; }
 body.rune-icons .rune-tag-img { width: 38px; height: 38px; }
 
 .rune-arrow, .modal-rune-arrow { color: var(--text-muted); font-size: 0.9rem; }
