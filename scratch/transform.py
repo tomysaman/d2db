@@ -62,6 +62,38 @@ CATEGORY_ORDER = [
     "Dagger", "Claw", "Wand", "Staff", "Missile Weapon", "Melee Weapon", "Weapon",
 ]
 
+# "(Based on Character Level)" stats collapse the per-level formula into a
+# single flat max value, which loses the min-max range and per-level rate.
+# Where a reference source confirmed the exact rate/range (cross-checked
+# against maxroll.gg's own numbers — same max value, just floor-rounded in
+# our flat scrape), rewrite in the more informative
+# "+(N Per Character Level) LO-HI Stat" form instead. Left as flat text where
+# the rate/range couldn't be independently confirmed.
+RUNEWORD_STAT_OVERRIDES = {
+    "Death": {
+        "+49% Deadly Strike (Based on Character Level)":
+            "+(0.5 Per Character Level) 0.5-49.5% Deadly Strike",
+    },
+    "Enigma": {
+        "+74 to Strength (Based on Character Level)":
+            "+(0.75 Per Character Level) 0-74 to Strength",
+        "99% Better Chance of Getting Magic Items (Based on Character Level)":
+            "(1 Per Character Level) 1-99% Better Chance of Getting Magic Items",
+    },
+    "Grief": {
+        "+185% Damage to Demons (Based on Character Level)":
+            "+(1.875 Per Character Level) 1.875-185.625% Damage to Demons",
+    },
+    "Leaf": {
+        "+198 Defense (Based on Character Level)":
+            "+(2 Per Character Level) 2-198 Defense",
+    },
+    "Plague": {
+        "+37% Deadly Strike (Based on Character Level)":
+            "+(0.375 Per Character Level) 0.375-37.125% Deadly Strike",
+    },
+}
+
 rw_raw = json.load(open(os.path.join(SCRATCH, "runewords.json")))
 
 runewords = []
@@ -72,6 +104,7 @@ for i, r in enumerate(rw_raw, start=1):
     ladder = ladder_note == "Ladder only"
     disabled_ladder = ladder_note == "Disabled in ladder"
     is_new = any("Warlock" in s or "Sigil:" in s or "Abyss" in s for s in r["stats"])
+    overrides = RUNEWORD_STAT_OVERRIDES.get(r["name"], {})
     runewords.append({
         "id": i,
         "name": r["name"],
@@ -82,7 +115,7 @@ for i, r in enumerate(rw_raw, start=1):
         "ladder": ladder,
         "ladderDisabled": disabled_ladder,
         "isNew": is_new,
-        "stats": r["stats"],
+        "stats": [overrides.get(s, s) for s in r["stats"]],
         "url": r.get("url"),
     })
 
@@ -100,6 +133,84 @@ with open(os.path.join(ROOT, "data/runewords-data.js"), "w") as f:
 
 # ─────────────────────────── SET ITEMS ───────────────────────────
 CLASS_NAMES = ["Amazon", "Assassin", "Barbarian", "Druid", "Necromancer", "Paladin", "Sorceress", "Warlock"]
+
+# Same "(Based on Character Level)" -> "+(N Per Character Level) LO-HI Stat"
+# rewrite as RUNEWORD_STAT_OVERRIDES above, keyed by (set name, piece name).
+# Only covers cases independently confirmed against maxroll.gg's own numbers.
+SET_STAT_OVERRIDES = {
+    ("Angelic Raiment", "Angelic Halo"): {
+        "+1188 to Attack Rating (Based on Character Level) (2 Items)":
+            "+(12 Per Character Level) 144-1188 to Attack Rating (2 Items)",
+    },
+    ("Arcanna's Tricks", "Arcanna's Head"): {
+        "+297 Defense (Based on Character Level) (2 Items)":
+            "+(3 Per Character Level) 3-297 Defense (2 Items)",
+    },
+    ("Arctic Gear", "Arctic Furs"): {
+        "+297 Defense (Based on Character Level) (2 Items)":
+            "+(3 Per Character Level) 3-297 Defense (2 Items)",
+    },
+    ("Arctic Gear", "Arctic Horn"): {
+        "+792 to Attack Rating (Based on Character Level) (2 Items)":
+            "+(8 Per Character Level) 8-792 to Attack Rating (2 Items)",
+    },
+    ("Berserker's Arsenal", "Berserker's Hauberk"): {
+        "+297 Defense (Based on Character Level) (2 Items)":
+            "+(3 Per Character Level) 3-297 Defense (2 Items)",
+    },
+    ("Berserker's Arsenal", "Berserker's Headgear"): {
+        "+792 to Attack Rating (Based on Character Level) (2 Items)":
+            "+(8 Per Character Level) 48-792 to Attack Rating (2 Items)",
+    },
+    ("Cathan's Traps", "Cathan's Visage"): {
+        "+198 Defense (Based on Character Level) (2 Items)":
+            "+(2 Per Character Level) 2-198 Defense (2 Items)",
+    },
+    ("Civerb's Vestments", "Civerb's Cudgel"): {
+        "+99 to Maximum Damage (Based on Character Level)":
+            "+(1 Per Character Level) 1-99 to Maximum Damage",
+    },
+    ("Cleglaw's Brace", "Cleglaw's Pincers"): {
+        "+990 to Attack Rating (Based on Character Level) (2 Items)":
+            "+(10 Per Character Level) 10-990 to Attack Rating (2 Items)",
+    },
+    ("Cleglaw's Brace", "Cleglaw's Tooth"): {
+        "+123 to Maximum Damage (Based on Character Level) (2 Items)":
+            "+(1.25 Per Character Level) 1-123 to Maximum Damage (2 Items)",
+    },
+    ("Hsarus' Defense", "Hsarus' Iron Fist"): {
+        "+247 Defense (Based on Character Level) (2 Items)":
+            "+(2.5 Per Character Level) 2-247 Defense (2 Items)",
+    },
+    ("Hsarus' Defense", "Hsarus' Iron Heel"): {
+        "+990 to Attack Rating (Based on Character Level) (2 Items)":
+            "+(10 Per Character Level) 10-990 to Attack Rating (2 Items)",
+    },
+    ("Hsarus' Defense", "Hsarus' Iron Stay"): {
+        "+247 Defense (Based on Character Level) (2 Items)":
+            "+(2.5 Per Character Level) 2-247 Defense (2 Items)",
+    },
+    ("Infernal Tools", "Infernal Cranium"): {
+        "+198 Defense (Based on Character Level) (2 Items)":
+            "+(2 Per Character Level) 2-198 Defense (2 Items)",
+    },
+    ("Infernal Tools", "Infernal Torch"): {
+        "+990 to Attack Rating (Based on Character Level) (2 Items)":
+            "+(10 Per Character Level) 10-990 to Attack Rating (2 Items)",
+    },
+    ("Iratha's Finery", "Iratha's Coil"): {
+        "+198 Defense (Based on Character Level) (2 Items)":
+            "+(2 Per Character Level) 2-198 Defense (2 Items)",
+    },
+    ("Isenhart's Armory", "Isenhart's Lightbrand"): {
+        "+495 to Attack Rating (Based on Character Level) (2 Items)":
+            "+(5 Per Character Level) 5-495 to Attack Rating (2 Items)",
+    },
+    ("Vidala's Rig", "Vidala's Barb"): {
+        "+792 to Attack Rating (Based on Character Level) (2 Items)":
+            "+(8 Per Character Level) 8-792 to Attack Rating (2 Items)",
+    },
+}
 
 SET_TIER_ORDER = ["Normal", "Exceptional", "Elite"]
 
@@ -264,12 +375,13 @@ for sid, sname in enumerate(set_order, start=1):
         if not icon_path:
             missing_icons += 1
 
+        piece_overrides = SET_STAT_OVERRIDES.get((sname, it["name"]), {})
         pieces.append({
             "name": it["name"],
             "type": it["item_type"],
             "category": classify_category(it["item_type"]),
             "reqLevel": req_level,
-            "stats": it.get("stats") or [],
+            "stats": [piece_overrides.get(s, s) for s in (it.get("stats") or [])],
             "meta": meta,
             "icon": icon_path,
             "url": it.get("url"),
