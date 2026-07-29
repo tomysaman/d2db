@@ -113,8 +113,16 @@ body::before {
   font-weight: 600;
   color: var(--teal-bright);
   letter-spacing: 0.05em;
-  line-height: 1.1;
+  line-height: 1.15;
+  text-transform: uppercase;
   text-shadow: 0 0 30px rgba(95,214,208,0.35);
+}
+
+/* Oversized initials — the D, II and C stand taller than the rest of the word. */
+.title-cap {
+  font-size: 1.34em;
+  line-height: 0;
+  vertical-align: baseline;
 }
 
 .site-subtitle {

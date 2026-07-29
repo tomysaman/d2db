@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diablo II Codex — Item Sets</title>
+  <title>Diablo II Codex — Cube Recipes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="sets-styles.css" />
+  <link rel="stylesheet" href="recipes-styles.css" />
 </head>
 <body>
 
@@ -16,7 +16,7 @@
   <header class="site-header">
     <div class="header-inner">
       <div class="header-title-block">
-        <div class="header-sigil">❖</div>
+        <div class="header-sigil">⬡</div>
         <div>
           <h1 class="site-title"><span class="title-cap">D</span>iablo<span class="title-cap">II</span> <span class="title-cap">C</span>odex</h1>
           <p class="site-subtitle">Diablo II: Resurrected — Including Reign of the Warlock (2026)</p>
@@ -24,8 +24,8 @@
       </div>
       <nav class="site-nav">
         <a href="index.html" class="nav-link">Runewords</a>
-        <a href="sets.html" class="nav-link active">Item Sets</a>
-        <a href="recipes.html" class="nav-link">Cube Recipes</a>
+        <a href="sets.html" class="nav-link">Item Sets</a>
+        <a href="recipes.html" class="nav-link active">Cube Recipes</a>
       </nav>
     </div>
   </header>
@@ -37,22 +37,17 @@
       <div class="filter-block filter-search-block">
         <label class="filter-label">Search</label>
         <div class="search-stats-row">
-          <input type="text" id="searchInput" class="search-input" placeholder="Set name, piece, or stat..." autocomplete="off" />
+          <input type="text" id="searchInput" class="search-input" placeholder="Recipe, ingredient, or result..." autocomplete="off" />
           <div class="header-stats" id="headerStats">
-            <span class="stat-pill" id="statTotal">— sets</span>
+            <span class="stat-pill" id="statTotal">— recipes</span>
             <span class="stat-pill" id="statShown">— shown</span>
           </div>
         </div>
       </div>
 
       <div class="filter-block">
-        <label class="filter-label">Tier</label>
-        <div class="pill-group" id="tierFilter"></div>
-      </div>
-
-      <div class="filter-block">
-        <label class="filter-label">Class</label>
-        <div class="pill-group" id="classFilter"></div>
+        <label class="filter-label">Category</label>
+        <div class="pill-group" id="categoryFilter"></div>
       </div>
 
       <div class="filter-block filter-source-ladder-row">
@@ -75,16 +70,17 @@
 
   <!-- ═══════════════════════════════════ RESULTS ══ -->
   <main class="results-section">
+
     <div class="sort-bar">
       <span class="sort-label">Sort by:</span>
-      <button class="sort-btn active" data-sort="name">Name</button>
-      <button class="sort-btn" data-sort="level">Required Level</button>
-      <button class="stat-view-toggle" id="statViewToggle"><span id="statToggleLabel">Expand All Stats</span></button>
+      <button class="sort-btn active" data-sort="category">Category</button>
+      <button class="sort-btn" data-sort="name">Name</button>
     </div>
-    <div id="setsGrid" class="sets-grid"></div>
+
+    <div id="recipesGrid" class="recipes-category-groups"></div>
     <div id="emptyState" class="empty-state hidden">
-      <div class="empty-icon">❖</div>
-      <p>No sets match your current filters.</p>
+      <div class="empty-icon">⬡</div>
+      <p>No recipes match your current filters.</p>
       <button class="reset-btn" onclick="resetAll()">Reset Filters</button>
     </div>
   </main>
@@ -101,7 +97,7 @@
     <p>Data sourced from Diablo II: Resurrected — Reign of the Warlock. Fan-made reference tool.</p>
   </footer>
 
-  <script src="data/sets-data.js"></script>
-  <script src="sets-app.js"></script>
+  <script src="data/recipes-data.js"></script>
+  <script src="recipes-app.js"></script>
 </body>
 </html>
