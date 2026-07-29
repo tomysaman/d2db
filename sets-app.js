@@ -12,14 +12,44 @@ let state = {
     klass: 'all',
     content: 'all'
   },
-  sort: 'name'
+  sort: 'name',
+  showAllStats: false
 };
 
 function init() {
   buildTierPills();
   buildClassPills();
   wireEvents();
+  initStatViewToggle();
   render();
+}
+
+function statPreviewHtml(items, mapFn, moreClass) {
+  if (state.showAllStats) return items.map(mapFn).join('');
+  const shown = items.slice(0, 3).map(mapFn).join('');
+  const more = items.length > 3 ? `<div class="${moreClass}">+${items.length - 3} more…</div>` : '';
+  return shown + more;
+}
+
+function initStatViewToggle() {
+  const btn = document.getElementById('statViewToggle');
+  const label = document.getElementById('statToggleLabel');
+
+  const saved = localStorage && localStorage.getItem('statPreviewView');
+  state.showAllStats = saved === 'all';
+  updateStatToggleUI(btn, label);
+
+  btn.addEventListener('click', () => {
+    state.showAllStats = !state.showAllStats;
+    if (localStorage) localStorage.setItem('statPreviewView', state.showAllStats ? 'all' : 'preview');
+    updateStatToggleUI(btn, label);
+    render();
+  });
+}
+
+function updateStatToggleUI(btn, label) {
+  btn.classList.toggle('active', state.showAllStats);
+  label.textContent = state.showAllStats ? 'Collapse Stats' : 'Expand All Stats';
 }
 
 function buildTierPills() {
@@ -230,13 +260,11 @@ function buildCard(s) {
     ${s.partialBonuses.length ? `
     <div class="set-bonus-preview set-partial-bonus-preview">
       <div class="set-bonus-label">Partial Set Bonuses</div>
-      ${s.partialBonuses.slice(0, 3).map(formatPartialBonus).join('')}
-      ${s.partialBonuses.length > 3 ? `<div class="set-bonus-more">+${s.partialBonuses.length - 3} more…</div>` : ''}
+      ${statPreviewHtml(s.partialBonuses, formatPartialBonus, 'set-bonus-more')}
     </div>` : ''}
     <div class="set-bonus-preview">
       <div class="set-bonus-label">Full Set Bonus</div>
-      ${s.fullBonuses.slice(0, 3).map(b => `<div class="set-bonus-line">${b}</div>`).join('')}
-      ${s.fullBonuses.length > 3 ? `<div class="set-bonus-more">+${s.fullBonuses.length - 3} more…</div>` : ''}
+      ${statPreviewHtml(s.fullBonuses, b => `<div class="set-bonus-line">${b}</div>`, 'set-bonus-more')}
     </div>
   `;
   card.addEventListener('click', () => openModal(s));

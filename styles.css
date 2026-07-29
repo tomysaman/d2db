@@ -492,6 +492,26 @@ body.rune-icons .rune-btn.selected .rune-icon-img {
   color: var(--teal-bright);
 }
 
+.stat-view-toggle {
+  margin-left: auto;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-border);
+  padding: 5px 14px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.stat-view-toggle:hover { border-color: var(--teal); color: var(--teal-bright); }
+.stat-view-toggle.active {
+  background: var(--pill-active);
+  border-color: var(--pill-active-border);
+  color: var(--teal-bright);
+  box-shadow: var(--shadow-glow);
+}
+
 /* ══════════════════════════════════════════
    BADGES
 ══════════════════════════════════════════ */

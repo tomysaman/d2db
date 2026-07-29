@@ -18,7 +18,8 @@ let state = {
     ladder: 'all',
     selectedRunes: new Set()
   },
-  sort: 'category'
+  sort: 'category',
+  showAllStats: false
 };
 
 function init() {
@@ -26,6 +27,7 @@ function init() {
   buildRuneGrid();
   wireEvents();
   initRuneViewToggle();
+  initStatViewToggle();
   wireRuneTagTooltips(document.getElementById('runewordGrid'));
   wireRuneTagTooltips(document.getElementById('modal'));
   render();
@@ -305,12 +307,18 @@ function buildCard(rw) {
     </div>
     <div class="rw-runes">${formatRunes(rw.runes)}</div>
     <div class="rw-stats-preview">
-      ${rw.stats.slice(0, 3).map(s => `<div class="rw-stat-line">${s}</div>`).join('')}
-      ${rw.stats.length > 3 ? `<div class="rw-stat-more">+${rw.stats.length - 3} more…</div>` : ''}
+      ${statPreviewHtml(rw.stats, s => `<div class="rw-stat-line">${s}</div>`, 'rw-stat-more')}
     </div>
   `;
   card.addEventListener('click', () => openModal(rw));
   return card;
+}
+
+function statPreviewHtml(items, mapFn, moreClass) {
+  if (state.showAllStats) return items.map(mapFn).join('');
+  const shown = items.slice(0, 3).map(mapFn).join('');
+  const more = items.length > 3 ? `<div class="${moreClass}">+${items.length - 3} more…</div>` : '';
+  return shown + more;
 }
 
 function formatRunes(runes) {
@@ -408,6 +416,27 @@ function initRuneViewToggle() {
     label.textContent = isIcons ? 'Show Text' : 'Show Icons';
     if (localStorage) localStorage.setItem('runeView', isIcons ? 'icons' : 'text');
   });
+}
+
+function initStatViewToggle() {
+  const btn = document.getElementById('statViewToggle');
+  const label = document.getElementById('statToggleLabel');
+
+  const saved = localStorage && localStorage.getItem('statPreviewView');
+  state.showAllStats = saved === 'all';
+  updateStatToggleUI(btn, label);
+
+  btn.addEventListener('click', () => {
+    state.showAllStats = !state.showAllStats;
+    if (localStorage) localStorage.setItem('statPreviewView', state.showAllStats ? 'all' : 'preview');
+    updateStatToggleUI(btn, label);
+    render();
+  });
+}
+
+function updateStatToggleUI(btn, label) {
+  btn.classList.toggle('active', state.showAllStats);
+  label.textContent = state.showAllStats ? 'Collapse Stats' : 'Expand All Stats';
 }
 
 window.resetAll = resetAll;
