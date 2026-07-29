@@ -560,9 +560,8 @@ body.rune-icons .rune-btn.selected .rune-icon-img {
   background: rgba(5,6,12,0.82);
   backdrop-filter: blur(3px);
   z-index: 200;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   padding: 60px 20px;
   overflow-y: auto;
 }

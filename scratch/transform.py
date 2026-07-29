@@ -101,6 +101,48 @@ with open(os.path.join(ROOT, "data/runewords-data.js"), "w") as f:
 # ─────────────────────────── SET ITEMS ───────────────────────────
 CLASS_NAMES = ["Amazon", "Assassin", "Barbarian", "Druid", "Necromancer", "Paladin", "Sorceress", "Warlock"]
 
+SET_TIER_ORDER = ["Normal", "Exceptional", "Elite"]
+
+# Set tier (Normal/Exceptional/Elite) isn't present in the scraped source —
+# it's a fixed, curated classification based on each set's base item types.
+SET_TIER = {
+    "Aldur's Watchtower": "Exceptional",
+    "Angelic Raiment": "Normal",
+    "Arcanna's Tricks": "Normal",
+    "Arctic Gear": "Normal",
+    "Bane's Garments": "Elite",
+    "Berserker's Arsenal": "Normal",
+    "Bul-Kathos' Children": "Elite",
+    "Cathan's Traps": "Normal",
+    "Civerb's Vestments": "Normal",
+    "Cleglaw's Brace": "Normal",
+    "Cow King's Leathers": "Normal",
+    "Death's Disguise": "Normal",
+    "Griswold's Legacy": "Elite",
+    "Heaven's Brethren": "Exceptional",
+    "Horazon's Splendor": "Elite",
+    "Hsarus' Defense": "Normal",
+    "Hwanin's Majesty": "Exceptional",
+    "Immortal King": "Elite",
+    "Infernal Tools": "Normal",
+    "Iratha's Finery": "Normal",
+    "Isenhart's Armory": "Normal",
+    "M'avina's Battle Hymn": "Elite",
+    "Milabrega's Regalia": "Normal",
+    "Naj's Ancient Vestige": "Exceptional",
+    "Natalya's Odium": "Elite",
+    "Orphan's Call": "Exceptional",
+    "Sander's Folly": "Normal",
+    "Sazabi's Grand Tribute": "Exceptional",
+    "Sigon's Complete Steel": "Normal",
+    "Tal Rasha's Wrappings": "Exceptional",
+    "Tancred's Battlegear": "Normal",
+    "The Disciple": "Exceptional",
+    "Trang-Oul's Avatar": "Exceptional",
+    "Vidala's Rig": "Normal",
+    "Warlord's Glory": "Normal",
+}
+
 PARTIAL_RE = re.compile(r"^(.*?)\s*\((\d+)\s*[Ii]tems?\)\s*$")
 
 # broad slot category classifier for individual pieces
@@ -191,6 +233,7 @@ for sid, sname in enumerate(set_order, start=1):
         "id": sid,
         "name": sname,
         "class": found_class,
+        "tier": SET_TIER.get(sname, "Normal"),
         "isNew": is_new,
         "level": max(levels) if levels else None,
         "pieceCount": len(pieces),
@@ -205,6 +248,7 @@ sets_js = (
     "/* Generated from scrape data — do not hand-edit; see scratch/transform.py */\n"
     "'use strict';\n\n"
     "const SET_CLASS_ORDER = " + json.dumps(["Any"] + CLASS_NAMES) + ";\n\n"
+    "const SET_TIER_ORDER = " + json.dumps(SET_TIER_ORDER) + ";\n\n"
     "const SETS_DATA = " + json.dumps(sets_out, ensure_ascii=False) + ";\n"
 )
 with open(os.path.join(ROOT, "data/sets-data.js"), "w") as f:

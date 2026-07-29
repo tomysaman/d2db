@@ -5,23 +5,48 @@
 
 'use strict';
 
-const CATEGORY_ORDER_SETS = ['Helm', 'Torso Armor', 'Shield', 'Weapon', 'Gloves', 'Belt', 'Boots', 'Amulet', 'Ring', 'Other'];
-
 let state = {
   filters: {
     search: '',
+    tier: 'all',
     klass: 'all',
-    category: 'all',
     content: 'all'
   },
   sort: 'name'
 };
 
 function init() {
+  buildTierPills();
   buildClassPills();
-  buildCategoryPills();
   wireEvents();
   render();
+}
+
+function buildTierPills() {
+  const container = document.getElementById('tierFilter');
+  const all = document.createElement('button');
+  all.className = 'pill active';
+  all.dataset.tier = 'all';
+  all.textContent = 'All';
+  container.appendChild(all);
+
+  SET_TIER_ORDER.forEach(tier => {
+    if (!SETS_DATA.some(s => s.tier === tier)) return;
+    const btn = document.createElement('button');
+    btn.className = 'pill';
+    btn.dataset.tier = tier;
+    btn.textContent = tier;
+    container.appendChild(btn);
+  });
+
+  container.addEventListener('click', e => {
+    const btn = e.target.closest('.pill');
+    if (!btn) return;
+    container.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    state.filters.tier = btn.dataset.tier;
+    render();
+  });
 }
 
 function buildClassPills() {
@@ -33,11 +58,12 @@ function buildClassPills() {
   container.appendChild(all);
 
   SET_CLASS_ORDER.forEach(c => {
+    if (c === 'Any') return;
     if (!SETS_DATA.some(s => s.class === c)) return;
     const btn = document.createElement('button');
     btn.className = 'pill';
     btn.dataset.class = c;
-    btn.textContent = c === 'Any' ? 'Any Class' : c;
+    btn.textContent = c;
     container.appendChild(btn);
   });
 
@@ -47,36 +73,6 @@ function buildClassPills() {
     container.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     state.filters.klass = btn.dataset.class;
-    render();
-  });
-}
-
-function buildCategoryPills() {
-  const container = document.getElementById('categoryFilter');
-  const all = document.createElement('button');
-  all.className = 'pill active';
-  all.dataset.category = 'all';
-  all.textContent = 'All Slots';
-  container.appendChild(all);
-
-  const present = new Set();
-  SETS_DATA.forEach(s => s.pieces.forEach(p => present.add(p.category)));
-
-  CATEGORY_ORDER_SETS.forEach(cat => {
-    if (!present.has(cat)) return;
-    const btn = document.createElement('button');
-    btn.className = 'pill';
-    btn.dataset.category = cat;
-    btn.textContent = cat;
-    container.appendChild(btn);
-  });
-
-  container.addEventListener('click', e => {
-    const btn = e.target.closest('.pill');
-    if (!btn) return;
-    container.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    state.filters.category = btn.dataset.category;
     render();
   });
 }
@@ -122,17 +118,17 @@ function wireEvents() {
 }
 
 function getFilteredSets() {
-  const { search, klass, category, content } = state.filters;
+  const { search, tier, klass, content } = state.filters;
 
   return SETS_DATA.filter(s => {
+    if (tier !== 'all' && s.tier !== tier) return false;
     if (klass !== 'all' && s.class !== klass) return false;
-    if (category !== 'all' && !s.pieces.some(p => p.category === category)) return false;
     if (content === 'new' && !s.isNew) return false;
     if (content === 'classic' && s.isNew) return false;
 
     if (search) {
       const hay = [
-        s.name, s.class,
+        s.name, s.class, s.tier,
         ...s.pieces.map(p => p.name + ' ' + p.type),
         ...s.pieces.flatMap(p => p.stats),
         ...s.fullBonuses
@@ -150,9 +146,6 @@ function sortSets(list) {
     case 'level':
       sorted.sort((a, b) => (a.level || 0) - (b.level || 0) || a.name.localeCompare(b.name));
       break;
-    case 'pieces':
-      sorted.sort((a, b) => b.pieceCount - a.pieceCount || a.name.localeCompare(b.name));
-      break;
     default:
       sorted.sort((a, b) => a.name.localeCompare(b.name));
   }
@@ -161,23 +154,44 @@ function sortSets(list) {
 
 function render() {
   const filtered = getFilteredSets();
-  const sorted = sortSets(filtered);
 
   document.getElementById('statTotal').textContent = `${SETS_DATA.length} sets`;
-  document.getElementById('statShown').textContent = `${sorted.length} shown`;
+  document.getElementById('statShown').textContent = `${filtered.length} shown`;
 
   const grid = document.getElementById('setsGrid');
   const emptyState = document.getElementById('emptyState');
   grid.innerHTML = '';
-  grid.className = 'sets-grid';
+  grid.className = 'sets-tier-groups';
 
-  if (sorted.length === 0) {
+  if (filtered.length === 0) {
     emptyState.classList.remove('hidden');
     return;
   }
   emptyState.classList.add('hidden');
 
-  sorted.forEach(s => grid.appendChild(buildCard(s)));
+  const groups = {};
+  SET_TIER_ORDER.forEach(t => groups[t] = []);
+  filtered.forEach(s => { if (groups[s.tier]) groups[s.tier].push(s); });
+
+  SET_TIER_ORDER.forEach(tier => {
+    const sets = groups[tier];
+    if (!sets || sets.length === 0) return;
+
+    const sorted = sortSets(sets);
+
+    const wrapper = document.createElement('div');
+    wrapper.className = `sets-tier-section tier-${tier}`;
+    wrapper.innerHTML = `
+      <div class="tier-header">
+        <span class="tier-header-text">${tier} Sets</span>
+        <span class="tier-header-line"></span>
+      </div>
+      <div class="sets-grid tier-grid"></div>`;
+
+    const innerGrid = wrapper.querySelector('.tier-grid');
+    sorted.forEach(s => innerGrid.appendChild(buildCard(s)));
+    grid.appendChild(wrapper);
+  });
 }
 
 function iconMarkup(icon, name, sizeClass) {
@@ -187,13 +201,14 @@ function iconMarkup(icon, name, sizeClass) {
 
 function buildCard(s) {
   const card = document.createElement('div');
-  card.className = 'set-card' + (s.isNew ? ' is-new' : '');
+  card.className = `set-card tier-${s.tier}` + (s.isNew ? ' is-new' : '');
   card.innerHTML = `
     <div class="set-card-top">
       <div class="set-name">${s.name}</div>
       ${s.level ? `<div class="set-level">Req. Lvl ${s.level}</div>` : ''}
     </div>
     <div class="set-badges">
+      <span class="badge badge-tier-${s.tier}">${s.tier}</span>
       <span class="badge badge-class">${s.class === 'Any' ? 'Any Class' : s.class}</span>
       <span class="badge badge-type">${s.pieceCount} Piece${s.pieceCount > 1 ? 's' : ''}</span>
       ${s.isNew ? `<span class="badge badge-new">Reign of the Warlock</span>` : ''}
@@ -222,6 +237,7 @@ function openModal(s) {
     <div class="modal-inner">
       <div class="modal-name ${nameClass}">${s.name}</div>
       <div class="modal-meta">
+        <span class="badge badge-tier-${s.tier}" style="font-size:0.82rem;padding:4px 12px;">${s.tier}</span>
         <span class="badge badge-class" style="font-size:0.82rem;padding:4px 12px;">${s.class === 'Any' ? 'Any Class' : s.class}</span>
         ${s.level ? `<span class="badge badge-type" style="font-size:0.82rem;padding:4px 12px;">Req. Level ${s.level}</span>` : ''}
         <span class="badge badge-type" style="font-size:0.82rem;padding:4px 12px;">${s.pieceCount} Piece${s.pieceCount > 1 ? 's' : ''}</span>
@@ -267,12 +283,12 @@ function closeModal() {
 }
 
 function resetAll() {
-  state.filters = { search: '', klass: 'all', category: 'all', content: 'all' };
+  state.filters = { search: '', tier: 'all', klass: 'all', content: 'all' };
   state.sort = 'name';
 
   document.getElementById('searchInput').value = '';
+  document.querySelectorAll('#tierFilter .pill').forEach((p, i) => p.classList.toggle('active', i === 0));
   document.querySelectorAll('#classFilter .pill').forEach((p, i) => p.classList.toggle('active', i === 0));
-  document.querySelectorAll('#categoryFilter .pill').forEach((p, i) => p.classList.toggle('active', i === 0));
   document.querySelectorAll('#contentFilter .pill').forEach((p, i) => p.classList.toggle('active', i === 0));
   document.querySelectorAll('.sort-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
 

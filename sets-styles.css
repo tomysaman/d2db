@@ -2,6 +2,56 @@
    ITEM SET PAGE — set card + piece styles
    ===================================================== */
 
+:root {
+  --tier-normal:      #4ade80;
+  --tier-normal-dim:  #2f5540;
+  --tier-exceptional: var(--amber);
+  --tier-exceptional-dim: #7a5a30;
+  --tier-elite:       #e2685f;
+  --tier-elite-dim:   #7a3530;
+}
+
+/* ── Tier groups ── */
+.sets-tier-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.tier-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.tier-header-text {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tier-header-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, currentColor, transparent);
+  opacity: 0.35;
+}
+
+.tier-Normal .tier-header-text      { color: var(--tier-normal); }
+.tier-Exceptional .tier-header-text { color: var(--tier-exceptional); }
+.tier-Elite .tier-header-text       { color: var(--tier-elite); }
+.tier-Normal .tier-header-line      { color: var(--tier-normal); }
+.tier-Exceptional .tier-header-line { color: var(--tier-exceptional); }
+.tier-Elite .tier-header-line       { color: var(--tier-elite); }
+
+.badge-tier-Normal      { background: rgba(74,222,128,0.12); border-color: var(--tier-normal-dim); color: var(--tier-normal); }
+.badge-tier-Exceptional { background: rgba(224,168,96,0.1); border-color: var(--tier-exceptional-dim); color: var(--tier-exceptional); }
+.badge-tier-Elite       { background: rgba(226,104,95,0.1); border-color: var(--tier-elite-dim); color: var(--tier-elite); }
+
 .sets-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -25,7 +75,9 @@
   box-shadow: var(--shadow-card), var(--shadow-glow);
 }
 
-.set-card.is-new { border-left: 3px solid var(--violet); }
+.set-card.tier-Normal      { border-left: 3px solid var(--tier-normal); }
+.set-card.tier-Exceptional { border-left: 3px solid var(--tier-exceptional); }
+.set-card.tier-Elite       { border-left: 3px solid var(--tier-elite); }
 
 .set-card-top {
   display: flex;
