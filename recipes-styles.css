@@ -3,20 +3,22 @@
    ===================================================== */
 
 :root {
-  --cat-quest:     #e0a860;
+  --cat-quest:     #9ca3af;
   --cat-socketing: #5fd6d0;
-  --cat-upgrade:   #4ade80;
-  --cat-reroll:    #8b7bf0;
+  --cat-upgrade:   #f472b6;
+  --cat-reroll:    #ef4444;
   --cat-crafting:  #f0913c;
   --cat-magic:     #6da8f0;
-  --cat-jewelry:   #e2685f;
-  --cat-runes:     #d8a34a;
-  --cat-gems:      #63e0b8;
-  --cat-potions:   #d76fb0;
-  --cat-repair:    #9aa6d8;
-  --cat-respec:    #b8aeff;
-  --cat-misc:      #8b96c4;
+  --cat-jewelry:   #16a34a;
+  --cat-runes:     #f8fafc;
+  --cat-gems:      #4ade80;
+  --cat-potions:   #34d399;
+  --cat-repair:    #059669;
+  --cat-respec:    #84cc16;
+  --cat-misc:      #22c55e;
 }
+
+.filter-block.hidden { display: none; }
 
 /* ── Category groups ── */
 .recipes-category-groups {
@@ -271,18 +273,18 @@
   color: var(--cat-misc);
 }
 
-.badge-cat-quest     { color: var(--cat-quest);     border-color: #7a5a30; background: rgba(224,168,96,0.1); }
+.badge-cat-quest     { color: var(--cat-quest);     border-color: #4b5563; background: rgba(156,163,175,0.1); }
 .badge-cat-socketing { color: var(--cat-socketing); border-color: var(--teal-dim); background: rgba(95,214,208,0.1); }
-.badge-cat-upgrade   { color: var(--cat-upgrade);   border-color: #2f5540; background: rgba(74,222,128,0.1); }
-.badge-cat-reroll    { color: var(--cat-reroll);    border-color: var(--violet-dim); background: rgba(139,123,240,0.1); }
+.badge-cat-upgrade   { color: var(--cat-upgrade);   border-color: #831843; background: rgba(244,114,182,0.1); }
+.badge-cat-reroll    { color: var(--cat-reroll);    border-color: #7f1d1d; background: rgba(239,68,68,0.1); }
 .badge-cat-crafting  { color: var(--cat-crafting);  border-color: #7a4a1e; background: rgba(240,145,60,0.1); }
 .badge-cat-magic     { color: var(--cat-magic);     border-color: #2f4a7a; background: rgba(109,168,240,0.1); }
-.badge-cat-jewelry   { color: var(--cat-jewelry);   border-color: #7a3530; background: rgba(226,104,95,0.1); }
-.badge-cat-runes     { color: var(--cat-runes);     border-color: #6e5426; background: rgba(216,163,74,0.1); }
-.badge-cat-gems      { color: var(--cat-gems);      border-color: #2b6b57; background: rgba(99,224,184,0.1); }
-.badge-cat-potions   { color: var(--cat-potions);   border-color: #6e3558; background: rgba(215,111,176,0.1); }
-.badge-cat-repair    { color: var(--cat-repair);    border-color: #454f7a; background: rgba(154,166,216,0.1); }
-.badge-cat-respec    { color: var(--cat-respec);    border-color: var(--violet-dim); background: rgba(184,174,255,0.1); }
+.badge-cat-jewelry   { color: var(--cat-jewelry);   border-color: #14532d; background: rgba(22,163,74,0.1); }
+.badge-cat-runes     { color: var(--cat-runes);     border-color: #64748b; background: rgba(248,250,252,0.1); }
+.badge-cat-gems      { color: var(--cat-gems);      border-color: #166534; background: rgba(74,222,128,0.1); }
+.badge-cat-potions   { color: var(--cat-potions);   border-color: #065f46; background: rgba(52,211,153,0.1); }
+.badge-cat-repair    { color: var(--cat-repair);    border-color: #064e3b; background: rgba(5,150,105,0.1); }
+.badge-cat-respec    { color: var(--cat-respec);    border-color: #3f6212; background: rgba(132,204,22,0.1); }
 
 /* ── Modal ── */
 .modal-recipe-desc {

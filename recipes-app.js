@@ -16,6 +16,7 @@ let state = {
   filters: {
     search: '',
     category: 'all',
+    subcategory: 'all',
     content: 'all'
   },
   sort: 'category'
@@ -24,6 +25,7 @@ let state = {
 function init() {
   buildCategoryPills();
   wireEvents();
+  buildSubcategoryPills();
   render();
 }
 
@@ -50,7 +52,46 @@ function buildCategoryPills() {
     container.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     state.filters.category = btn.dataset.category;
+    state.filters.subcategory = 'all';
+    buildSubcategoryPills();
     render();
+  });
+}
+
+/* Distinct subcategory labels for a category, in authored (data) order. */
+function subcategoriesFor(cat) {
+  const seen = [];
+  RECIPES_DATA.forEach(r => {
+    if (r.category === cat && r.subcategory && !seen.includes(r.subcategory)) seen.push(r.subcategory);
+  });
+  return seen;
+}
+
+function buildSubcategoryPills() {
+  const block = document.getElementById('subcategoryFilterBlock');
+  const container = document.getElementById('subcategoryFilter');
+  const cat = state.filters.category;
+  const subcats = cat !== 'all' ? subcategoriesFor(cat) : [];
+
+  container.innerHTML = '';
+  if (subcats.length < 2) {
+    block.classList.add('hidden');
+    return;
+  }
+  block.classList.remove('hidden');
+
+  const all = document.createElement('button');
+  all.className = 'pill active';
+  all.dataset.subcategory = 'all';
+  all.textContent = 'All';
+  container.appendChild(all);
+
+  subcats.forEach(sub => {
+    const btn = document.createElement('button');
+    btn.className = 'pill';
+    btn.dataset.subcategory = sub;
+    btn.textContent = sub;
+    container.appendChild(btn);
   });
 }
 
@@ -71,6 +112,15 @@ function wireEvents() {
     document.getElementById('contentFilter').querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     state.filters.content = btn.dataset.content;
+    render();
+  });
+
+  document.getElementById('subcategoryFilter').addEventListener('click', e => {
+    const btn = e.target.closest('.pill');
+    if (!btn) return;
+    document.getElementById('subcategoryFilter').querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    state.filters.subcategory = btn.dataset.subcategory;
     render();
   });
 
@@ -95,10 +145,11 @@ function wireEvents() {
 }
 
 function getFilteredRecipes() {
-  const { search, category, content } = state.filters;
+  const { search, category, subcategory, content } = state.filters;
 
   return RECIPES_DATA.filter(r => {
     if (category !== 'all' && r.category !== category) return false;
+    if (subcategory !== 'all' && r.subcategory !== subcategory) return false;
     if (content === 'new' && !r.isNew) return false;
     if (content === 'classic' && r.isNew) return false;
 
@@ -233,7 +284,7 @@ function buildCard(r) {
       <div class="recipe-name">${r.name}</div>
     </div>
     <div class="recipe-badges">${badgesHtml(r)}</div>
-    <p class="recipe-desc">${r.description}</p>
+    ${r.category !== 'crafting' ? `<p class="recipe-desc">${r.description}</p>` : ''}
     ${guaranteedHtml(r)}
     <div class="recipe-formula">
       <div class="recipe-column">
@@ -272,7 +323,7 @@ function openModal(r) {
       <div class="modal-name ${r.isNew ? 'modal-expansion-name' : ''}">${r.name}</div>
       <div class="modal-meta">${badgesHtml(r)}</div>
 
-      <p class="modal-recipe-desc">${r.description}</p>
+      ${r.category !== 'crafting' ? `<p class="modal-recipe-desc">${r.description}</p>` : ''}
 
       ${r.guaranteed && r.guaranteed.length ? `
       <div class="modal-section-label">Guaranteed Stats</div>
@@ -314,13 +365,14 @@ function closeModal() {
 }
 
 function resetAll() {
-  state.filters = { search: '', category: 'all', content: 'all' };
+  state.filters = { search: '', category: 'all', subcategory: 'all', content: 'all' };
   state.sort = 'category';
 
   document.getElementById('searchInput').value = '';
   document.querySelectorAll('#categoryFilter .pill').forEach((p, i) => p.classList.toggle('active', i === 0));
   document.querySelectorAll('#contentFilter .pill').forEach((p, i) => p.classList.toggle('active', i === 0));
   document.querySelectorAll('.sort-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+  buildSubcategoryPills();
 
   render();
 }

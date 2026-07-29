@@ -26,12 +26,12 @@
 'use strict';
 
 const RECIPE_CATEGORY_ORDER = [
-  'quest', 'socketing', 'upgrade', 'reroll', 'crafting', 'magic',
-  'jewelry', 'runes', 'gems', 'potions', 'repair', 'respec', 'misc'
+  'crafting', 'socketing', 'upgrade', 'reroll', 'magic',
+  'runes', 'jewelry', 'gems', 'misc', 'potions', 'repair', 'respec', 'quest'
 ];
 
 const RECIPE_CATEGORY_LABELS = {
-  quest:     'Quests, Cow Level & Ubers',
+  quest:     'Quests',
   socketing: 'Socketing',
   upgrade:   'Item Upgrades',
   reroll:    'Rerolling',
@@ -43,7 +43,7 @@ const RECIPE_CATEGORY_LABELS = {
   potions:   'Potions',
   repair:    'Repair & Recharge',
   respec:    'Respec',
-  misc:      'Miscellaneous'
+  misc:      'Bow & Throwing'
 };
 
 /* Shared by all 36 crafting recipes — the number of extra random Affixes a
@@ -1520,7 +1520,7 @@ const RECIPES_DATA = [
     id: 172,
     name: "Repair & Recharge a Weapon",
     category: "repair",
-    subcategory: "Repair & Recharge",
+    subcategory: "Recharge",
     description: "Fully repairs the Durability and replenishes any Charges of any Weapon type.",
     inputs: [
       { quantity: 1, item: "Any Weapon (Viper Barb Short Sword)" },
@@ -1534,7 +1534,7 @@ const RECIPES_DATA = [
     id: 173,
     name: "Repair & Recharge an Armor",
     category: "repair",
-    subcategory: "Repair & Recharge",
+    subcategory: "Recharge",
     description: "Fully repairs the Durability and replenishes any Charges of any Armor type.",
     inputs: [
       { quantity: 1, item: "Any Armor (Arachnid Mesh)" },
@@ -1571,7 +1571,7 @@ const RECIPES_DATA = [
     id: 190,
     name: "Quiver of Arrows",
     category: "misc",
-    subcategory: "Ammunition",
+    subcategory: "Bow Ammunition",
     description: "Creates a quiver of Arrows with a random quantity, up to the maximum in one stack.",
     inputs: [{ quantity: 2, item: "Bolts" }],
     outputs: [{ item: "Arrows" }]
@@ -1580,7 +1580,7 @@ const RECIPES_DATA = [
     id: 191,
     name: "Quiver of Bolts",
     category: "misc",
-    subcategory: "Ammunition",
+    subcategory: "Bow Ammunition",
     description: "Creates a quiver of Bolts with a random quantity, up to the maximum in one stack.",
     inputs: [{ quantity: 2, item: "Arrows" }],
     outputs: [{ item: "Bolts" }]
@@ -1589,7 +1589,7 @@ const RECIPES_DATA = [
     id: 192,
     name: "Stack of Javelins",
     category: "misc",
-    subcategory: "Ammunition",
+    subcategory: "Throw Ammunition",
     description: "Creates a Javelin with a random quantity, up to the maximum in one stack.",
     inputs: [
       { quantity: 1, item: "Spear (any type or quality)" },
@@ -1601,7 +1601,7 @@ const RECIPES_DATA = [
     id: 193,
     name: "Stack of Throwing Axes",
     category: "misc",
-    subcategory: "Ammunition",
+    subcategory: "Throw Ammunition",
     description: "Creates a Throwing Axe with a random quantity, up to the maximum in one stack.",
     inputs: [
       { quantity: 1, item: "Axe (any type or quality)" },
