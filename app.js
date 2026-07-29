@@ -26,7 +26,23 @@ function init() {
   buildRuneGrid();
   wireEvents();
   initRuneViewToggle();
+  wireRuneTagTooltips(document.getElementById('runewordGrid'));
+  wireRuneTagTooltips(document.getElementById('modal'));
   render();
+}
+
+function wireRuneTagTooltips(container) {
+  if (!container) return;
+  container.addEventListener('mouseover', e => {
+    const tag = e.target.closest('.rune-tag, .modal-rune-tag');
+    if (!tag) return;
+    showRuneTooltip(tag, tag.dataset.rune);
+  });
+  container.addEventListener('mouseout', e => {
+    const tag = e.target.closest('.rune-tag, .modal-rune-tag');
+    if (!tag) return;
+    hideRuneTooltip();
+  });
 }
 
 function buildCategoryPills() {
@@ -42,10 +58,15 @@ function buildCategoryPills() {
 
   CATEGORY_ORDER.forEach(cat => {
     if (!allTypes.has(cat)) return;
+    if (cat === 'Sword') {
+      const lineBreak = document.createElement('div');
+      lineBreak.className = 'pill-row-break';
+      container.appendChild(lineBreak);
+    }
     const btn = document.createElement('button');
     btn.className = 'pill';
     btn.dataset.category = cat;
-    btn.textContent = cat;
+    btn.textContent = cat === 'Weapon' ? 'Any Weapon' : cat;
     container.appendChild(btn);
   });
 
@@ -65,10 +86,16 @@ function buildRuneGrid() {
     const btn = document.createElement('button');
     btn.className = 'rune-btn';
     btn.dataset.rune = rune;
-    btn.title = `Filter by ${rune} rune`;
+    btn.setAttribute('aria-label', `Filter by ${rune} rune`);
     btn.innerHTML = `<img class="rune-icon-img" src="${runeImg(rune)}" alt="${rune}"><span class="rune-icon-label">${rune}</span>`;
+    btn.addEventListener('mouseenter', () => showRuneTooltip(btn, rune));
+    btn.addEventListener('mouseleave', hideRuneTooltip);
+    btn.addEventListener('focus', () => showRuneTooltip(btn, rune));
+    btn.addEventListener('blur', hideRuneTooltip);
     grid.appendChild(btn);
   });
+
+  grid.addEventListener('scroll', hideRuneTooltip);
 
   grid.addEventListener('click', e => {
     const btn = e.target.closest('.rune-btn');
@@ -90,6 +117,32 @@ function buildRuneGrid() {
     render();
   });
 }
+
+let runeTooltipEl = null;
+
+function showRuneTooltip(btn, rune) {
+  if (!runeTooltipEl) {
+    runeTooltipEl = document.createElement('div');
+    runeTooltipEl.className = 'rune-tooltip';
+    document.body.appendChild(runeTooltipEl);
+  }
+  runeTooltipEl.textContent = rune;
+  runeTooltipEl.classList.add('visible');
+
+  const btnRect = btn.getBoundingClientRect();
+  const tipRect = runeTooltipEl.getBoundingClientRect();
+  let left = btnRect.left + btnRect.width / 2 - tipRect.width / 2;
+  left = Math.max(6, Math.min(left, window.innerWidth - tipRect.width - 6));
+  const top = btnRect.top - tipRect.height - 8;
+  runeTooltipEl.style.left = `${left}px`;
+  runeTooltipEl.style.top = `${top}px`;
+}
+
+function hideRuneTooltip() {
+  if (runeTooltipEl) runeTooltipEl.classList.remove('visible');
+}
+
+window.addEventListener('scroll', hideRuneTooltip, true);
 
 function wireEvents() {
   const searchInput = document.getElementById('searchInput');
@@ -262,8 +315,8 @@ function buildCard(rw) {
 
 function formatRunes(runes) {
   return runes.map((r, i) =>
-    `<span class="rune-tag">
-       <img class="rune-tag-img" src="${runeImg(r)}" alt="${r}" title="${r}">
+    `<span class="rune-tag" data-rune="${r}">
+       <img class="rune-tag-img" src="${runeImg(r)}" alt="${r}">
        <span class="rune-tag-label">${r}</span>
      </span>${i < runes.length - 1 ? '<span class="rune-arrow">›</span>' : ''}`
   ).join('');
@@ -286,8 +339,8 @@ function openModal(rw) {
       <div class="modal-section-label">Rune Order</div>
       <div class="modal-runes">
         ${rw.runes.map((r, i) =>
-          `<span class="modal-rune-tag">
-             <img class="rune-tag-img" src="${runeImg(r)}" alt="${r}" title="${r}">
+          `<span class="modal-rune-tag" data-rune="${r}">
+             <img class="rune-tag-img" src="${runeImg(r)}" alt="${r}">
              <span class="rune-tag-label">${r}</span>
            </span>${i < rw.runes.length - 1 ? '<span class="modal-rune-arrow">›</span>' : ''}`
         ).join('')}
@@ -318,6 +371,7 @@ function closeModal() {
   document.getElementById('modal').classList.add('hidden');
   document.body.style.overflow = '';
   history.replaceState(null, '', window.location.pathname + window.location.search);
+  hideRuneTooltip();
 }
 
 function resetAll() {
