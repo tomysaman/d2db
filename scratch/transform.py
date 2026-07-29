@@ -69,10 +69,27 @@ CATEGORY_ORDER = [
 # our flat scrape), rewrite in the more informative
 # "+(N Per Character Level) LO-HI Stat" form instead. Left as flat text where
 # the rate/range couldn't be independently confirmed.
+#
+# Dragon/Dream/Ice/Infinity/Pride: the reference source gave a min-max range
+# but no explicit per-level rate. D2's per-level scaling is linear (value at
+# level N = rate * N), so rate = lo (value at level 1) — verified exactly
+# against every case above where the rate WAS given explicitly (rate * 99 ==
+# hi with no rounding), then applied here since rate * 99 lands exactly on
+# the given hi and floor(hi) matches our existing flat value in all 6 cases.
+# Fortitude's own range is a literal "+X To Life" placeholder in the
+# reference source (no numbers at all), so it's left unconverted.
 RUNEWORD_STAT_OVERRIDES = {
     "Death": {
         "+49% Deadly Strike (Based on Character Level)":
             "+(0.5 Per Character Level) 0.5-49.5% Deadly Strike",
+    },
+    "Dragon": {
+        "+37 to Strength (Based on Character Level)":
+            "+(0.375 Per Character Level) 0.375-37.125 to Strength",
+    },
+    "Dream": {
+        "+61 to Mana (Based on Character Level)":
+            "+(0.625 Per Character Level) 0.625-61.875 to Mana",
     },
     "Enigma": {
         "+74 to Strength (Based on Character Level)":
@@ -80,9 +97,25 @@ RUNEWORD_STAT_OVERRIDES = {
         "99% Better Chance of Getting Magic Items (Based on Character Level)":
             "(1 Per Character Level) 1-99% Better Chance of Getting Magic Items",
     },
+    # Unlike the others above, the source already shows a range (8-12) rather
+    # than a single flat value, meaning the per-level rate itself varies
+    # 8-12 instead of being a fixed number — confirmed by the user's read of
+    # the item. Value at level 1 = 8*1 = 8, at level 99 = 12*99 = 1188.
+    "Fortitude": {
+        "8–12 to Life (Based on Character Level)":
+            "(8-12 Per Character Level) 8-1188 to Life",
+    },
     "Grief": {
         "+185% Damage to Demons (Based on Character Level)":
             "+(1.875 Per Character Level) 1.875-185.625% Damage to Demons",
+    },
+    "Ice": {
+        "309% Extra Gold from Monsters (Based on Character Level)":
+            "(3.125 Per Character Level) 3.125-309.375% Extra Gold from Monsters",
+    },
+    "Infinity": {
+        "+49 to Vitality (Based on Character Level)":
+            "+(0.5 Per Character Level) 0.5-49.5 to Vitality",
     },
     "Leaf": {
         "+198 Defense (Based on Character Level)":
@@ -91,6 +124,12 @@ RUNEWORD_STAT_OVERRIDES = {
     "Plague": {
         "+37% Deadly Strike (Based on Character Level)":
             "+(0.375 Per Character Level) 0.375-37.125% Deadly Strike",
+    },
+    "Pride": {
+        "+99% Damage to Demons (Based on Character Level)":
+            "+(1 Per Character Level) 1-99% Damage to Demons",
+        "185% Extra Gold from Monsters (Based on Character Level)":
+            "(1.875 Per Character Level) 1.875-185.625% Extra Gold from Monsters",
     },
 }
 
