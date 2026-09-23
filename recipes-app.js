@@ -1,5 +1,5 @@
 /* =====================================================
-   SANCTUARY CODEX — Horadric Cube Recipes app.js
+   DIABLO II CODEX — Horadric Cube Recipes app.js
    Data loaded from data/recipes-data.js
    (RECIPES_DATA, RECIPE_CATEGORY_ORDER, RECIPE_CATEGORY_LABELS)
    ===================================================== */
@@ -297,7 +297,7 @@ function buildCard(r) {
         ${r.outputs.map(outputLine).join('')}
       </div>
     </div>
-    ${r.notes || r.tables ? `<div class="recipe-more">Details ↗</div>` : ''}
+    ${r.notes || r.tables ? `<div class="recipe-more">More details</div>` : ''}
   `;
   card.addEventListener('click', () => openModal(r));
   return card;
@@ -350,7 +350,7 @@ function openModal(r) {
 
       ${(r.tables || []).map(tableHtml).join('')}
 
-      ${r.isNew ? `<div class="modal-expansion-note">✦ New in Diablo II: Resurrected — <em>Reign of the Warlock</em>.</div>` : ''}
+      ${r.isNew ? `<div class="modal-expansion-note">New in Diablo II: Resurrected — <em>Reign of the Warlock</em>.</div>` : ''}
     </div>`;
 
   document.getElementById('modalContent').innerHTML = html;

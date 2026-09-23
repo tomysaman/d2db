@@ -1,5 +1,5 @@
 /* =====================================================
-   SANCTUARY CODEX — Runewords app.js
+   DIABLO II CODEX — Runewords app.js
    Data loaded from data/runewords-data.js (RUNEWORDS_DATA, RUNE_ORDER, CATEGORY_ORDER)
    ===================================================== */
 
@@ -337,11 +337,11 @@ function openModal(rw) {
     <div class="modal-inner">
       <div class="modal-name ${nameClass}">${rw.name}</div>
       <div class="modal-meta">
-        <span class="badge badge-type" style="font-size:0.82rem;padding:4px 12px;">Req. Level ${rw.level}</span>
-        <span class="badge badge-type" style="font-size:0.82rem;padding:4px 12px;">${rw.sockets} Socket${rw.sockets > 1 ? 's' : ''}</span>
-        ${rw.ladder ? `<span class="badge badge-ladder" style="font-size:0.82rem;padding:4px 12px;">Ladder Only</span>` : ''}
-        ${rw.ladderDisabled ? `<span class="badge badge-disabled" style="font-size:0.82rem;padding:4px 12px;">Disabled in Ladder</span>` : ''}
-        ${rw.isNew ? `<span class="badge badge-new" style="font-size:0.82rem;padding:4px 12px;">Reign of the Warlock</span>` : ''}
+        <span class="badge badge-type">Req. Level ${rw.level}</span>
+        <span class="badge badge-type">${rw.sockets} Socket${rw.sockets > 1 ? 's' : ''}</span>
+        ${rw.ladder ? `<span class="badge badge-ladder">Ladder Only</span>` : ''}
+        ${rw.ladderDisabled ? `<span class="badge badge-disabled">Disabled in Ladder</span>` : ''}
+        ${rw.isNew ? `<span class="badge badge-new">Reign of the Warlock</span>` : ''}
       </div>
 
       <div class="modal-section-label">Rune Order</div>
@@ -364,9 +364,9 @@ function openModal(rw) {
         ${rw.stats.map(s => `<li class="modal-stat-item">${s}</li>`).join('')}
       </ul>
 
-      ${rw.ladder ? `<div class="modal-ladder-note">⚠ This runeword can only be created on Ladder-mode characters during an active season.</div>` : ''}
-      ${rw.ladderDisabled ? `<div class="modal-disabled-note">⚠ This runeword is currently disabled on Ladder.</div>` : ''}
-      ${rw.isNew ? `<div class="modal-expansion-note">✦ New in Diablo II: Resurrected — <em>Reign of the Warlock</em>.</div>` : ''}
+      ${rw.ladder ? `<div class="modal-ladder-note">This runeword can only be created on Ladder-mode characters during an active season.</div>` : ''}
+      ${rw.ladderDisabled ? `<div class="modal-disabled-note">This runeword is currently disabled on Ladder.</div>` : ''}
+      ${rw.isNew ? `<div class="modal-expansion-note">New in Diablo II: Resurrected — <em>Reign of the Warlock</em>.</div>` : ''}
       ${rw.url ? `<a class="modal-source-link" href="${rw.url}" target="_blank" rel="noopener">View source ↗</a>` : ''}
     </div>
   `;
@@ -408,12 +408,12 @@ function initRuneViewToggle() {
   const saved = localStorage && localStorage.getItem('runeView');
   if (saved === 'icons') {
     document.body.classList.add('rune-icons');
-    label.textContent = 'Show Text';
+    label.textContent = 'Show text';
   }
 
   btn.addEventListener('click', () => {
     const isIcons = document.body.classList.toggle('rune-icons');
-    label.textContent = isIcons ? 'Show Text' : 'Show Icons';
+    label.textContent = isIcons ? 'Show text' : 'Show icons';
     if (localStorage) localStorage.setItem('runeView', isIcons ? 'icons' : 'text');
   });
 }
@@ -436,7 +436,7 @@ function initStatViewToggle() {
 
 function updateStatToggleUI(btn, label) {
   btn.classList.toggle('active', state.showAllStats);
-  label.textContent = state.showAllStats ? 'Collapse Stats' : 'Expand All Stats';
+  label.textContent = state.showAllStats ? 'Collapse stats' : 'Expand all stats';
 }
 
 window.resetAll = resetAll;

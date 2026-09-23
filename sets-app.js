@@ -1,5 +1,5 @@
 /* =====================================================
-   SANCTUARY CODEX — Item Sets app.js
+   DIABLO II CODEX — Item Sets app.js
    Data loaded from data/sets-data.js (SETS_DATA, SET_CLASS_ORDER)
    ===================================================== */
 
@@ -49,7 +49,7 @@ function initStatViewToggle() {
 
 function updateStatToggleUI(btn, label) {
   btn.classList.toggle('active', state.showAllStats);
-  label.textContent = state.showAllStats ? 'Collapse Stats' : 'Expand All Stats';
+  label.textContent = state.showAllStats ? 'Collapse stats' : 'Expand all stats';
 }
 
 function buildTierPills() {
@@ -226,7 +226,7 @@ function render() {
 
 function iconMarkup(icon, name, sizeClass) {
   if (icon) return `<img src="${icon}" alt="${name}" loading="lazy">`;
-  return `<span class="${sizeClass}">✦</span>`;
+  return `<span class="${sizeClass}">—</span>`;
 }
 
 function formatPartialBonus(line) {
@@ -278,11 +278,11 @@ function openModal(s) {
     <div class="modal-inner">
       <div class="modal-name ${nameClass}">${s.name}</div>
       <div class="modal-meta">
-        <span class="badge badge-tier-${s.tier}" style="font-size:0.82rem;padding:4px 12px;">${s.tier}</span>
-        <span class="badge badge-class" style="font-size:0.82rem;padding:4px 12px;">${s.class === 'Any' ? 'Any Class' : s.class}</span>
-        ${s.level ? `<span class="badge badge-type" style="font-size:0.82rem;padding:4px 12px;">Req. Level ${s.level}</span>` : ''}
-        <span class="badge badge-type" style="font-size:0.82rem;padding:4px 12px;">${s.pieceCount} Piece${s.pieceCount > 1 ? 's' : ''}</span>
-        ${s.isNew ? `<span class="badge badge-new" style="font-size:0.82rem;padding:4px 12px;">Reign of the Warlock</span>` : ''}
+        <span class="badge badge-tier-${s.tier}">${s.tier}</span>
+        <span class="badge badge-class">${s.class === 'Any' ? 'Any Class' : s.class}</span>
+        ${s.level ? `<span class="badge badge-type">Req. Level ${s.level}</span>` : ''}
+        <span class="badge badge-type">${s.pieceCount} Piece${s.pieceCount > 1 ? 's' : ''}</span>
+        ${s.isNew ? `<span class="badge badge-new">Reign of the Warlock</span>` : ''}
       </div>
 
       ${s.partialBonuses.length ? `
@@ -324,7 +324,7 @@ function openModal(s) {
         `).join('')}
       </div>
 
-      ${s.isNew ? `<div class="modal-expansion-note">✦ New in Diablo II: Resurrected — <em>Reign of the Warlock</em>.</div>` : ''}
+      ${s.isNew ? `<div class="modal-expansion-note">New in Diablo II: Resurrected — <em>Reign of the Warlock</em>.</div>` : ''}
     </div>
   `;
   document.getElementById('modalContent').innerHTML = html;

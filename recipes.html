@@ -7,7 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="recipes-styles.css" />
 </head>
@@ -17,11 +17,8 @@
   <header class="site-header">
     <div class="header-inner">
       <div class="header-title-block">
-        <div class="header-sigil">⬡</div>
-        <div>
-          <h1 class="site-title"><span class="title-cap">D</span>iablo<span class="title-cap">II</span> <span class="title-cap">C</span>odex</h1>
-          <p class="site-subtitle">Diablo II: Resurrected — Including Reign of the Warlock (2026)</p>
-        </div>
+        <h1 class="site-title">Diablo II Codex</h1>
+        <p class="site-subtitle">Diablo II: Resurrected · Reign of the Warlock</p>
       </div>
       <nav class="site-nav">
         <a href="index.html" class="nav-link">Runewords</a>
@@ -42,6 +39,7 @@
           <div class="header-stats" id="headerStats">
             <span class="stat-pill" id="statTotal">— recipes</span>
             <span class="stat-pill" id="statShown">— shown</span>
+            <button class="reset-btn" id="resetBtn">Reset filters</button>
           </div>
         </div>
       </div>
@@ -62,13 +60,9 @@
           <div class="pill-group" id="contentFilter">
             <button class="pill active" data-content="all">All</button>
             <button class="pill" data-content="classic">Classic / LoD / 2.6</button>
-            <button class="pill" data-content="new">⚔ Reign of the Warlock</button>
+            <button class="pill" data-content="new">Reign of the Warlock</button>
           </div>
         </div>
-      </div>
-
-      <div class="filter-actions">
-        <button class="reset-btn" id="resetBtn">↺ Reset All Filters</button>
       </div>
 
     </div>
@@ -78,14 +72,13 @@
   <main class="results-section">
 
     <div class="sort-bar">
-      <span class="sort-label">Sort by:</span>
+      <span class="sort-label">Sort</span>
       <button class="sort-btn active" data-sort="category">Category</button>
       <button class="sort-btn" data-sort="name">Name</button>
     </div>
 
     <div id="recipesGrid" class="recipes-category-groups"></div>
     <div id="emptyState" class="empty-state hidden">
-      <div class="empty-icon">⬡</div>
       <p>No recipes match your current filters.</p>
       <button class="reset-btn" onclick="resetAll()">Reset Filters</button>
     </div>

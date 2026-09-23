@@ -7,7 +7,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="runewords-styles.css" />
 </head>
@@ -17,11 +17,8 @@
   <header class="site-header">
     <div class="header-inner">
       <div class="header-title-block">
-        <div class="header-sigil">ᛝ</div>
-        <div>
-          <h1 class="site-title"><span class="title-cap">D</span>iablo<span class="title-cap">II</span> <span class="title-cap">C</span>odex</h1>
-          <p class="site-subtitle">Diablo II: Resurrected — Including Reign of the Warlock (2026)</p>
-        </div>
+        <h1 class="site-title">Diablo II Codex</h1>
+        <p class="site-subtitle">Diablo II: Resurrected · Reign of the Warlock</p>
       </div>
       <nav class="site-nav">
         <a href="index.html" class="nav-link active">Runewords</a>
@@ -42,17 +39,16 @@
           <div class="header-stats" id="headerStats">
             <span class="stat-pill" id="statTotal">— runewords</span>
             <span class="stat-pill" id="statShown">— shown</span>
+            <button class="reset-btn" id="resetBtn">Reset filters</button>
             <button class="rune-view-toggle" id="runeViewToggle" title="Toggle rune display">
-              <span class="toggle-icon-text">𝐓</span>
-              <span class="toggle-icon-img">⬡</span>
-              <span class="toggle-label" id="toggleLabel">Show Icons</span>
+              <span class="toggle-label" id="toggleLabel">Show icons</span>
             </button>
           </div>
         </div>
       </div>
 
       <div class="filter-block">
-        <label class="filter-label">Item Type</label>
+        <label class="filter-label">Item type</label>
         <div class="pill-group" id="categoryFilter"></div>
       </div>
 
@@ -69,9 +65,12 @@
       </div>
 
       <div class="filter-block filter-rune-block">
-        <label class="filter-label">Find by Runes <span class="filter-label-sub">— 1 rune: any runeword containing it &nbsp;·&nbsp; 2+ runes: must contain all selected</span></label>
+        <label class="filter-label">Runes</label>
         <div class="rune-grid" id="runeGrid"></div>
-        <button class="clear-runes-btn" id="clearRunesBtn">Clear Runes</button>
+        <div class="rune-grid-foot">
+          <span class="filter-hint">One rune matches any runeword containing it; two or more must all be present.</span>
+          <button class="clear-runes-btn" id="clearRunesBtn">Clear runes</button>
+        </div>
       </div>
 
       <div class="filter-block filter-source-ladder-row">
@@ -80,7 +79,7 @@
           <div class="pill-group" id="contentFilter">
             <button class="pill active" data-content="all">All</button>
             <button class="pill" data-content="classic">Classic / LoD</button>
-            <button class="pill" data-content="new">⚔ Reign of the Warlock</button>
+            <button class="pill" data-content="new">Reign of the Warlock</button>
           </div>
         </div>
         <div class="source-ladder-group">
@@ -93,27 +92,22 @@
         </div>
       </div>
 
-      <div class="filter-actions">
-        <button class="reset-btn" id="resetBtn">↺ Reset All Filters</button>
-      </div>
-
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════ RESULTS ══ -->
   <main class="results-section">
     <div class="sort-bar">
-      <span class="sort-label">Sort by:</span>
+      <span class="sort-label">Sort</span>
       <button class="sort-btn active" data-sort="category">Category</button>
-      <button class="sort-btn" data-sort="level">Required Level</button>
+      <button class="sort-btn" data-sort="level">Level</button>
       <button class="sort-btn" data-sort="name">Name</button>
       <button class="sort-btn" data-sort="sockets">Sockets</button>
-      <button class="stat-view-toggle" id="statViewToggle"><span id="statToggleLabel">Expand All Stats</span></button>
+      <button class="stat-view-toggle" id="statViewToggle"><span id="statToggleLabel">Expand all stats</span></button>
     </div>
 
     <div id="runewordGrid" class="runeword-grid"></div>
     <div id="emptyState" class="empty-state hidden">
-      <div class="empty-icon">⛧</div>
       <p>No runewords match your current filters.</p>
       <button class="reset-btn" onclick="resetAll()">Reset Filters</button>
     </div>
