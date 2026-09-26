@@ -1,337 +1,163 @@
 /* =====================================================
    DIABLO II CODEX — shared styles (header, filters, cards, modal, footer)
-   "Paper-cut diorama" theme: layered cut-paper scenery, cream stock,
-   hanging tag title, torn-edge chips. Accent colors still follow in-game
-   item colors, darkened for paper: ochre = runeword/unique, moss = set,
-   burnt orange = rune/crafted.
+   Neutral warm-dark base. Accent colors follow in-game item colors:
+   gold = runeword/unique, green = set, orange = rune/crafted.
    ===================================================== */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --frame:       #1f3a3c;  /* the dark teal box the diorama sits in */
-  --cream:       #f3e8d2;  /* page paper */
-  --bg:          #f3e8d2;
-  --surface:     #fbf4e2;  /* card stock */
-  --surface-2:   #efe3c9;
-  --line:        rgba(59,43,29,0.16);
-  --line-strong: rgba(59,43,29,0.34);
+  --bg:          #111010;
+  --surface:     #181716;
+  --surface-2:   #201f1d;
+  --line:        #2b2926;
+  --line-strong: #3d3a36;
 
-  --text:        #3b2b1d;
-  --text-2:      #6b5540;
-  --text-3:      #7a6450;
+  --text:        #e8e4dc;
+  --text-2:      #a8a197;
+  --text-3:      #7a746b;
 
-  --gold:        #8a5a14;  /* runeword / unique names — ochre */
-  --green:       #3f6a3f;  /* set items — moss */
-  --orange:      #a8481a;  /* runes, crafted — burnt orange */
-  --blue:        #2f5f7a;  /* magic */
-  --red:         #a33a24;
-  --purple:      #6a4b8a;  /* Reign of the Warlock content */
+  --gold:        #c9b37e;  /* runeword / unique names */
+  --green:       #7fb069;  /* set items */
+  --orange:      #d9953f;  /* runes, crafted */
+  --blue:        #8a9ae0;  /* magic */
+  --red:         #d0715f;
+  --purple:      #a898d8;  /* Reign of the Warlock content */
 
-  /* paper stock colours (header scene, tooltip, modal backing) */
-  --paper-ochre: #d9a45b;
-  --paper-sage:  #9bb89b;
-  --paper-teal:  #274e52;
-  --paper-orange:#c8642d;
+  --radius:    6px;
+  --radius-sm: 4px;
 
-  --shade: rgba(58,38,18,0.34);
-  --edge:  rgba(255,250,236,0.6);
-
-  --radius:    3px;
-  --radius-sm: 2px;
-
-  --font-display: 'EB Garamond', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
-  --font-ui: var(--font-display);
+  --font-display: 'EB Garamond', Georgia, serif;
+  --font-ui: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --page-max: 1600px;
   --gutter: 28px;
-
-  /* fine paper fibre, reused on every sheet */
-  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .33 0 0 0 0 .2 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-
-  /* torn-paper outline for chips and pills */
-  --torn: polygon(2% 6%, 30% 0, 62% 4%, 99% 1%, 100% 52%, 98% 96%, 64% 100%, 34% 97%, 1% 100%, 0 48%);
 }
 
-html {
-  scroll-behavior: smooth;
-  background: var(--frame);
-  -webkit-text-size-adjust: 100%;
-}
+html { scroll-behavior: smooth; }
 
-/* The page is one big sheet mounted inside the teal box, with a cream mat */
 body {
-  margin: 16px;
-  min-height: calc(100vh - 32px);
-  background-color: var(--cream);
-  background-image: var(--grain);
-  border: 6px solid #efe3c9;
-  border-radius: 22px;
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.25), 0 18px 40px -12px rgba(0,0,0,0.55);
+  background: var(--bg);
   color: var(--text);
   font-family: var(--font-ui);
-  font-size: 16.5px;
+  font-size: 15px;
   line-height: 1.5;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
-
-::selection { background: rgba(200,100,45,0.25); }
 
 button { font: inherit; color: inherit; }
 
 :focus-visible {
-  outline: 2px dashed var(--paper-orange);
-  outline-offset: 3px;
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }
 
 /* ══════════════════════════════════════════
-   HEADER — a small paper diorama
+   HEADER
 ══════════════════════════════════════════ */
 .site-header {
-  position: relative;
-  height: 340px;
-  overflow: hidden;
-  z-index: 0;  /* own stacking context so the cut layers order predictably */
-  border-radius: 16px 16px 0 0;
-  background:
-    var(--grain),
-    radial-gradient(120% 90% at 70% 10%, #fbf3e1 0%, #f3e8d2 45%, #ecd9b4 100%);
-}
-
-/* Four stacked cut layers, back to front; each casts its own shadow */
-.site-header::before,
-.site-header::after,
-.header-inner::before,
-.header-inner::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  background-repeat: repeat-x;
-  background-position: center bottom;
-  filter: drop-shadow(0 -1px 0 var(--edge)) drop-shadow(0 4px 6px var(--shade));
-}
-
-/* 1 — far hills with Tristram cathedral; a red portal, the Horadric Cube
-       and a few crows hang on strings in the sky */
-.site-header::before {
-  z-index: 0;
+  position: sticky;
   top: 0;
-  background-image:
-    url("assets/paper/portal.svg"),
-    url("assets/paper/cube.svg"),
-    url("assets/paper/crows.svg"),
-    url("assets/paper/cathedral.svg"),
-    url("assets/paper/far.svg");
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x;
-  background-size: 118px auto, 116px auto, 200px auto, auto 160px, auto 220px;
-  background-position: 64% -62px, 48% -52px, 32% -18px, left 73% bottom 112px, center bottom;
-  animation: sway 7s ease-in-out infinite alternate;
-  transform-origin: 50% 0;
-}
-
-/* 2 — sage ridge: pines and bare trees */
-.site-header::after {
-  z-index: 1;
-  height: 190px;
-  background-image: url("assets/paper/ridge.svg");
-  background-size: auto 190px;
-}
-
-/* 3 — moss meadow: the Cairn Stones and the Burial Grounds */
-.header-inner::before {
-  z-index: 2;
-  height: 150px;
-  background-image: url("assets/paper/cairn.svg"), url("assets/paper/meadow.svg");
-  background-repeat: no-repeat, repeat-x;
-  background-size: auto 100px, auto 150px;
-  background-position: left 36% bottom 38px, center bottom;
-  filter: drop-shadow(0 -1px 0 var(--edge)) drop-shadow(0 5px 7px var(--shade));
-}
-
-/* 4 — dark teal foreground: gnarled dead trees at the edges, grassy bank */
-.header-inner::after {
-  z-index: 3;
-  height: 280px;
-  background-image:
-    url("assets/paper/trees-left.svg"),
-    url("assets/paper/trees-right.svg"),
-    url("assets/paper/front.svg");
-  background-repeat: no-repeat, no-repeat, repeat-x;
-  background-size: auto 280px, auto 280px, auto 70px;
-  background-position: left -30px bottom 10px, right -30px bottom 10px, center bottom;
-  filter: drop-shadow(0 -1px 0 rgba(255,250,236,0.25)) drop-shadow(0 6px 8px var(--shade));
-}
-
-@keyframes sway {
-  from { transform: rotate(-0.25deg); }
-  to   { transform: rotate(0.25deg); }
+  z-index: 100;
+  background: rgba(17,16,16,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
 }
 
 .header-inner {
   max-width: var(--page-max);
   margin: 0 auto;
   padding: 0 var(--gutter);
-  height: 100%;
+  height: 60px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
 }
 
-/* The title hangs as a luggage tag, clipped corners and all */
 .header-title-block {
-  position: relative;
-  z-index: 5;
-  flex: none;
-  margin-top: 34px;
-  margin-left: 2vw;
-  width: 260px;
-  padding: 44px 22px 22px;
-  text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  background:
-    linear-gradient(135deg, transparent 38px, #f8efdb 38.5px) left top / 51% 100% no-repeat,
-    linear-gradient(225deg, transparent 38px, #f8efdb 38.5px) right top / 51% 100% no-repeat;
-  filter: drop-shadow(2px 10px 9px var(--shade));
-  transform-origin: 50% -34px;
-  animation: tagswing 6s ease-in-out infinite alternate;
-}
-
-@keyframes tagswing {
-  from { transform: rotate(-2.2deg); }
-  to   { transform: rotate(0.6deg); }
-}
-
-/* dashed inner border */
-.header-title-block::after {
-  content: "";
-  position: absolute;
-  inset: 7px;
-  border: 1px dashed rgba(122,78,40,0.4);
-  clip-path: polygon(15% 0, 85% 0, 100% 14%, 100% 100%, 0 100%, 0 14%);
-  pointer-events: none;
-}
-
-/* eyelet */
-.header-title-block::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 13px;
-  width: 16px;
-  height: 16px;
-  margin-left: -8px;
-  border-radius: 50%;
-  background: var(--frame);
-  box-shadow: 0 0 0 3.5px var(--paper-ochre), 0 0 0 4.5px rgba(90,56,24,0.35);
-}
-
-/* the string it hangs from */
-.site-title::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% - 21px);
-  width: 1px;
-  height: 90px;
-  background: linear-gradient(rgba(74,54,34,0.2), rgba(74,54,34,0.75));
+  align-items: baseline;
+  gap: 14px;
+  min-width: 0;
 }
 
 .site-title {
   font-family: var(--font-display);
-  font-size: 2.35rem;
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -0.01em;
+  font-size: 1.5rem;
+  font-weight: 600;
   color: var(--text);
-}
-
-.site-title em {
-  display: block;
-  font-style: italic;
-  font-size: 1.12em;
-  color: var(--paper-orange);
-}
-
-/* dotted moss rule under the title */
-.site-subtitle::before {
-  content: "";
-  display: block;
-  width: 44px;
-  height: 6px;
-  margin: 12px auto 10px;
-  background: radial-gradient(circle, #5f7f5b 1.4px, transparent 1.8px) 0 50% / 9px 6px repeat-x;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .site-subtitle {
-  max-width: 22ch;
-  font-size: 0.95rem;
-  font-style: italic;
-  line-height: 1.35;
-  color: #5b4632;
+  font-size: 0.8rem;
+  color: var(--text-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Navigation: torn paper chips pinned to the sky */
 .site-nav {
-  position: relative;
-  z-index: 5;
   display: flex;
-  gap: 12px;
-  margin-top: 26px;
-  filter: drop-shadow(0 4px 5px var(--shade));
+  align-self: stretch;
+  gap: 28px;
 }
 
 .nav-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  padding: 9px 18px 10px;
-  font-size: 1.05rem;
-  font-style: italic;
-  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-2);
   text-decoration: none;
-  background: #f8efdb;
-  clip-path: var(--torn);
-  transition: transform 0.25s cubic-bezier(.3,1.6,.5,1), background-color 0.3s ease;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.12s ease;
 }
 
-.nav-link:hover { transform: translateY(-2px) rotate(-1deg); }
+.nav-link:hover { color: var(--text); }
 
 .nav-link.active {
-  background: var(--paper-teal);
-  color: #f8efdb;
+  color: var(--text);
+  border-bottom-color: var(--gold);
 }
+
+/* The paper theme italicises "Codex"; this theme keeps the title upright */
+.site-title em { font-style: normal; }
+
+/* Theme switch — a quiet secondary button at the end of the nav */
+.theme-toggle {
+  align-self: center;
+  height: 30px;
+  padding: 0 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.12s ease, border-color 0.12s ease;
+}
+
+.theme-toggle:hover { color: var(--gold); border-color: var(--gold); }
 
 /* ══════════════════════════════════════════
    FILTERS
 ══════════════════════════════════════════ */
-/* The page paper has a torn top edge that overlaps the diorama */
 .filters-section {
-  position: relative;
-  z-index: 1;
-  border-bottom: 0;
-}
-
-.filters-section::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -24px;
-  height: 28px;
-  background: url("assets/paper/edge.svg") repeat-x center bottom / auto 28px;
-  filter: drop-shadow(0 -3px 3px rgba(58,38,18,0.25));
-  pointer-events: none;
+  border-bottom: 1px solid var(--line);
 }
 
 .filters-inner {
   max-width: var(--page-max);
   margin: 0 auto;
-  padding: 22px var(--gutter) 26px;
+  padding: 24px var(--gutter);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -348,18 +174,16 @@ button { font: inherit; color: inherit; }
 
 .filter-block.hidden { display: none; }
 
-.filter-label,
-.sort-label {
+.filter-label {
   font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #9a5526;
-  line-height: 34px;  /* matches pill height so labels align with first row */
+  font-weight: 500;
+  color: var(--text-3);
+  line-height: 30px;  /* matches pill height so labels align with first row */
   white-space: nowrap;
 }
 
 .filter-search-block { margin-bottom: 8px; }
-.filter-search-block .filter-label { line-height: 42px; }
+.filter-search-block .filter-label { line-height: 36px; }
 
 .search-stats-row {
   display: flex;
@@ -368,25 +192,22 @@ button { font: inherit; color: inherit; }
   flex-wrap: wrap;
 }
 
-/* Search is a window cut into the paper */
 .search-input {
-  flex: 0 1 440px;
+  flex: 0 1 420px;
   min-width: 220px;
-  height: 42px;
-  background: #e9dcc0;
-  border: 0;
-  border-radius: 10px;
-  box-shadow: inset 0 3px 6px rgba(58,38,18,0.28), inset 0 -1px 0 rgba(255,250,236,0.7);
+  height: 36px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
   color: var(--text);
   font-family: var(--font-ui);
-  font-size: 1.1rem;
-  font-style: italic;
-  padding: 0 16px;
+  font-size: 0.95rem;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
   outline: none;
-  transition: box-shadow 0.2s ease;
+  transition: border-color 0.12s ease;
 }
 
-.search-input:focus { box-shadow: inset 0 3px 6px rgba(58,38,18,0.28), 0 0 0 2px var(--paper-orange); }
+.search-input:focus { border-color: var(--text-2); }
 .search-input::placeholder { color: var(--text-3); }
 
 .header-stats {
@@ -395,23 +216,15 @@ button { font: inherit; color: inherit; }
   gap: 8px 16px;
   flex-wrap: wrap;
   margin-left: auto;
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--text-2);
+  font-size: 0.85rem;
+  color: var(--text-3);
 }
 
-.stat-pill { white-space: nowrap; font-variant-numeric: oldstyle-nums; }
+.stat-pill { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .stat-pill + .stat-pill { margin-left: -8px; }
 .stat-pill + .stat-pill::before { content: '·'; margin-right: 8px; color: var(--text-3); }
 
-/* Pill groups carry the shadow so clipped chips still cast one */
-.pill-group,
-.sort-bar,
-.rune-grid {
-  filter: drop-shadow(0 3px 3px rgba(58,38,18,0.26));
-}
-
-/* Secondary action buttons — torn chips */
+/* Secondary action buttons (reset, toggles, source links) */
 .rune-view-toggle,
 .reset-btn,
 .clear-runes-btn,
@@ -419,38 +232,34 @@ button { font: inherit; color: inherit; }
 .modal-source-link {
   display: inline-flex;
   align-items: center;
-  height: 36px;
-  padding: 0 16px;
-  font-size: 1rem;
-  font-style: italic;
+  height: 30px;
+  padding: 0 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
   color: var(--text);
-  background: #f8efdb;
-  border: 0;
-  clip-path: var(--torn);
-  box-shadow: inset 0 -3px 0 rgba(58,38,18,0.14);
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
-  transition: transform 0.25s cubic-bezier(.3,1.6,.5,1), background-color 0.3s ease;
+  transition: color 0.12s ease, border-color 0.12s ease, background 0.12s ease;
 }
 
 .rune-view-toggle:hover,
 .reset-btn:hover,
 .clear-runes-btn:hover,
 .stat-view-toggle:hover,
-.modal-source-link:hover { transform: translateY(-2px) rotate(-1deg); background: #fff7e4; }
+.modal-source-link:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
 
-.rune-view-toggle:active,
-.reset-btn:active,
-.clear-runes-btn:active,
-.stat-view-toggle:active,
-.modal-source-link:active { transform: translateY(1px) scale(0.98); }
-
-/* Pills */
+/* Pills — compact square-ish chips */
 .pill-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
+  gap: 6px;
 }
 
 .pill-row-break {
@@ -458,27 +267,26 @@ button { font: inherit; color: inherit; }
   height: 0;
 }
 
-.pill,
-.sort-btn {
-  height: 34px;
-  font-size: 1rem;
-  color: var(--text);
-  background: #f8efdb;
-  border: 0;
-  padding: 0 13px;
-  clip-path: var(--torn);
+.pill {
+  height: 30px;
+  font-size: 0.85rem;
+  color: var(--text-2);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  padding: 0 11px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   white-space: nowrap;
-  transition: transform 0.25s cubic-bezier(.3,1.6,.5,1), background-color 0.3s ease, color 0.3s ease;
+  transition: color 0.12s ease, border-color 0.12s ease, background 0.12s ease;
 }
 
-.pill:hover,
-.sort-btn:hover { transform: translateY(-2px) rotate(-1deg); background: #fff7e4; }
+.pill:hover { color: var(--text); border-color: var(--text-3); }
 
-.pill.active,
-.sort-btn.active {
-  background: var(--orange);
-  color: #fbf4e2;
+.pill.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg);
+  font-weight: 500;
 }
 
 .filter-source-ladder-row {
@@ -505,9 +313,9 @@ button { font: inherit; color: inherit; }
 .rune-grid {
   display: flex;
   flex-wrap: nowrap;
-  gap: 4px;
+  gap: 3px;
   overflow-x: auto;
-  padding: 2px 2px 6px;
+  padding-bottom: 4px;
   scrollbar-width: thin;
   scrollbar-color: var(--line-strong) transparent;
 }
@@ -517,44 +325,43 @@ button { font: inherit; color: inherit; }
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  min-width: 36px;
-  height: 34px;
-  background: #f8efdb;
-  border: 0;
-  clip-path: var(--torn);
-  padding: 0 6px;
+  min-width: 32px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  padding: 0 5px;
   cursor: pointer;
-  transition: transform 0.25s cubic-bezier(.3,1.6,.5,1), background-color 0.3s ease;
+  transition: border-color 0.12s ease, background 0.12s ease;
 }
 
-.rune-btn:hover { transform: translateY(-2px); background: #fff7e4; }
-.rune-btn.selected { background: var(--orange); }
+.rune-btn:hover { border-color: var(--text-3); }
+.rune-btn.selected { background: var(--orange); border-color: var(--orange); }
 
-.rune-icon-img { width: 26px; height: 26px; object-fit: contain; transition: transform 0.2s ease, opacity 0.2s ease; }
-.rune-icon-label { font-size: 1rem; color: var(--text); white-space: nowrap; }
-.rune-btn.selected .rune-icon-label { color: #fbf4e2; }
+.rune-icon-img { width: 26px; height: 26px; object-fit: contain; transition: transform 0.12s ease, opacity 0.12s ease; }
+.rune-icon-label { font-size: 0.85rem; color: var(--text-2); white-space: nowrap; }
+.rune-btn:hover .rune-icon-label { color: var(--text); }
+.rune-btn.selected .rune-icon-label { color: var(--bg); font-weight: 600; }
 
 /* Icon / text toggle — mirrors .rune-tag behavior on runeword cards */
 body.rune-icons .rune-icon-label { display: none; }
 body:not(.rune-icons) .rune-icon-img { display: none; }
 
-body.rune-icons .rune-grid { gap: 2px; }
+body.rune-icons .rune-grid { gap: 1px; }
 
 body.rune-icons .rune-btn {
   height: auto;
   min-width: 0;
-  background: transparent;
-  clip-path: none;
-  border-radius: 50%;
-  padding: 3px;
+  border-color: transparent;
+  padding: 2px;
 }
 
-body.rune-icons .rune-btn .rune-icon-img { width: 38px; height: 38px; opacity: 0.85; }
+body.rune-icons .rune-btn .rune-icon-img { width: 38px; height: 38px; opacity: 0.75; }
 body.rune-icons .rune-btn:hover .rune-icon-img { opacity: 1; }
 
 body.rune-icons .rune-btn.selected {
-  background: var(--paper-ochre);
-  box-shadow: 0 0 0 2px var(--orange);
+  background: var(--surface-2);
+  border-color: var(--orange);
 }
 
 body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
@@ -567,21 +374,20 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
 }
 
 .filter-hint {
-  font-size: 0.95rem;
-  font-style: italic;
-  color: var(--text-2);
+  font-size: 0.8rem;
+  color: var(--text-3);
 }
 
-/* Instant custom tooltip — a tiny teal paper tag, so it stands off the cream page */
+/* Instant custom tooltip — replaces native title (which has a hover delay) */
 .rune-tooltip {
   position: fixed;
   z-index: 1000;
-  background: var(--paper-teal);
-  color: #f8efdb;
-  font-size: 0.95rem;
-  font-style: italic;
-  padding: 3px 10px;
-  clip-path: var(--torn);
+  background: var(--text);
+  color: var(--bg);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
   white-space: nowrap;
   pointer-events: none;
   opacity: 0;
@@ -596,68 +402,86 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
 .results-section {
   max-width: var(--page-max);
   margin: 0 auto;
-  padding: 26px var(--gutter) 64px;
-  border-top: 1px dashed rgba(122,78,40,0.35);
+  padding: 20px var(--gutter) 64px;
 }
 
 .sort-bar {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   flex-wrap: wrap;
-  margin-bottom: 26px;
+  margin-bottom: 20px;
 }
 
-.sort-label { margin-right: 8px; line-height: 1; }
+.sort-label {
+  font-size: 0.85rem;
+  color: var(--text-3);
+  margin-right: 8px;
+}
+
+.sort-btn {
+  height: 30px;
+  font-size: 0.85rem;
+  color: var(--text-2);
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  padding: 0 11px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+
+.sort-btn:hover { color: var(--text); border-color: var(--text-3); }
+
+.sort-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg);
+  font-weight: 500;
+}
 
 .stat-view-toggle { margin-left: auto; }
-.stat-view-toggle.active { background: var(--paper-teal); color: #f8efdb; }
+.stat-view-toggle.active { border-color: var(--gold); color: var(--gold); }
 
 /* ══════════════════════════════════════════
-   BADGES — little coloured paper scraps
+   BADGES — small text tags, color only where it carries meaning
 ══════════════════════════════════════════ */
 .badge {
   display: inline-block;
-  font-size: 0.88rem;
-  font-style: italic;
+  font-size: 0.75rem;
   line-height: 1;
-  padding: 4px 8px 5px;
-  border-radius: 2px;
-  background: #ece3cd;
+  padding: 4px 7px;
+  border-radius: 3px;
+  background: var(--surface-2);
   color: var(--text-2);
   white-space: nowrap;
-  box-shadow: 0 1px 2px rgba(58,38,18,0.18);
 }
 
-.badge-type     { background: #e4e7d2; color: #4a5a40; }
-.badge-class    { background: #e4e7d2; color: #4a5a40; }
-.badge-ladder   { background: #f4dcc6; color: var(--orange); }
-.badge-disabled { background: #f2d4cc; color: var(--red); }
-.badge-new      { background: #e6dcef; color: var(--purple); }
+.badge-type     { color: var(--text-2); }
+.badge-class    { color: var(--text-2); }
+.badge-ladder   { color: var(--orange); }
+.badge-disabled { color: var(--red); }
+.badge-new      { color: var(--purple); }
 
 /* ══════════════════════════════════════════
-   CARD LIST SHARED — cut paper sheets
+   CARD LIST SHARED
 ══════════════════════════════════════════ */
 .rw-card,
 .set-card,
 .recipe-card {
-  position: relative;
-  top: 0;
-  background-color: var(--surface);
-  background-image: var(--grain);
-  border: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 18px 20px;
+  padding: 16px 18px;
   cursor: pointer;
-  box-shadow: 0 -1px 0 var(--edge), 0 3px 5px -1px var(--shade), 0 12px 20px -14px var(--shade);
-  transition: top 0.3s cubic-bezier(.3,1.5,.5,1), box-shadow 0.3s ease;
+  transition: border-color 0.12s ease, background 0.12s ease;
 }
 
 .rw-card:hover,
 .set-card:hover,
 .recipe-card:hover {
-  top: -4px;
-  box-shadow: 0 -1px 0 var(--edge), 0 6px 8px -2px var(--shade), 0 20px 28px -16px var(--shade);
+  border-color: var(--line-strong);
+  background: var(--surface-2);
 }
 
 /* Group headings (set tiers, recipe categories) */
@@ -665,50 +489,41 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
 .category-header {
   display: flex;
   align-items: baseline;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
 }
 
 .tier-header-text,
 .category-header-text {
   font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 400;
-  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 600;
   color: var(--text);
-  white-space: nowrap;
 }
 
 .category-header-count {
   font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  color: #9a5526;
-  font-variant-numeric: oldstyle-nums;
-  white-space: nowrap;
+  color: var(--text-3);
+  font-variant-numeric: tabular-nums;
 }
 
 .tier-header-line,
-.category-header-line {
-  display: block;
-  flex: 1;
-  align-self: center;
-  height: 6px;
-  background: radial-gradient(circle, #5f7f5b 1.4px, transparent 1.8px) 0 50% / 9px 6px repeat-x;
-}
+.category-header-line { display: none; }
 
 /* Stat lists — no bullet glyphs, just rhythm */
 .rw-stat-line,
 .set-bonus-line {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: var(--text);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .rw-stat-more,
 .set-bonus-more {
-  font-size: 0.92rem;
-  font-style: italic;
-  color: var(--text-2);
+  font-size: 0.8rem;
+  color: var(--text-3);
   margin-top: 2px;
 }
 
@@ -719,93 +534,59 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
   text-align: center;
   padding: 80px 20px;
   color: var(--text-2);
-  font-size: 1.15rem;
-  font-style: italic;
 }
 .empty-state.hidden { display: none; }
 .empty-icon { display: none; }
-.empty-state p { margin-bottom: 14px; }
-.empty-state .reset-btn { filter: drop-shadow(0 3px 3px rgba(58,38,18,0.26)); }
+.empty-state p { margin-bottom: 12px; }
 
 /* ══════════════════════════════════════════
-   MODAL — a sheet lifted out of the diorama
+   MODAL
 ══════════════════════════════════════════ */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse 90% 80% at 50% 40%, rgba(39,78,82,0.82), rgba(20,38,40,0.94));
+  background: rgba(0,0,0,0.7);
   z-index: 200;
   display: grid;
   place-items: center;
   padding: 48px 20px;
   overflow-y: auto;
-  overscroll-behavior: contain;
-  animation: fadein 0.25s ease both;
 }
 .modal-overlay.hidden { display: none; }
 
-@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-
 .modal-box {
-  background-color: #f8efdb;
-  background-image: var(--grain);
-  border: 0;
-  border-radius: var(--radius);
-  box-shadow: 0 -1px 0 var(--edge), 0 26px 50px -20px rgba(0,0,0,0.7);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
   max-width: 640px;
   width: 100%;
-  padding: 34px 38px 32px;
+  padding: 28px 32px 28px;
   position: relative;
-}
-
-/* ochre backing sheet peeking out behind the modal */
-.modal-box::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: var(--radius);
-  background: var(--paper-ochre) var(--grain);
-  transform: translate(9px, 10px) rotate(1deg);
-  box-shadow: 0 10px 24px -8px rgba(0,0,0,0.5);
-}
-
-/* dashed stitch around the edge */
-.modal-box::after {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border: 1px dashed rgba(122,78,40,0.38);
-  border-radius: 2px;
-  pointer-events: none;
 }
 
 .modal-close {
   position: absolute;
-  z-index: 1;
-  top: 16px;
-  right: 16px;
-  width: 38px;
-  height: 38px;
-  background: var(--paper-teal);
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  background: none;
   border: none;
-  border-radius: 50%;
-  color: #f8efdb;
+  border-radius: var(--radius-sm);
+  color: var(--text-3);
   cursor: pointer;
   font-size: 1rem;
-  box-shadow: 0 3px 5px var(--shade);
-  transition: transform 0.25s cubic-bezier(.3,1.6,.5,1), background-color 0.25s ease;
+  transition: color 0.12s ease, background 0.12s ease;
 }
-.modal-close:hover { transform: rotate(90deg); background: var(--paper-orange); }
+.modal-close:hover { color: var(--text); background: var(--surface-2); }
 
 .modal-name {
   font-family: var(--font-display);
-  font-size: 2.3rem;
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.05;
+  font-size: 1.9rem;
+  font-weight: 600;
+  line-height: 1.15;
   color: var(--gold);
-  margin: 0 44px 14px 0;
+  margin: 0 40px 12px 0;
 }
 
 .modal-meta {
@@ -816,20 +597,12 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
 }
 
 .modal-section-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #9a5526;
-  margin: 24px 0 10px;
-}
-.modal-section-label::after {
-  content: "";
-  flex: 1;
-  height: 6px;
-  background: radial-gradient(circle, #5f7f5b 1.4px, transparent 1.8px) 0 50% / 9px 6px repeat-x;
+  color: var(--text-3);
+  margin: 24px 0 8px;
 }
 .modal-inner > .modal-section-label:first-of-type { margin-top: 0; }
 
@@ -839,28 +612,27 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
   flex-direction: column;
   gap: 4px;
 }
-.modal-stat-item { font-size: 1.05rem; color: var(--text); }
+.modal-stat-item { font-size: 0.95rem; color: var(--text); }
 
 .modal-ladder-note,
 .modal-expansion-note,
 .modal-disabled-note {
   margin-top: 24px;
   padding: 10px 14px;
-  font-size: 0.98rem;
-  font-style: italic;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  font-size: 0.85rem;
   color: var(--text-2);
-  background: #efe3c9;
-  border-left: 4px solid var(--line-strong);
-  border-radius: 2px;
+  border-left: 2px solid var(--line-strong);
 }
-.modal-ladder-note   { border-left-color: var(--paper-orange); }
+.modal-ladder-note   { border-left-color: var(--orange); }
 .modal-expansion-note{ border-left-color: var(--purple); }
 .modal-disabled-note { border-left-color: var(--red); }
 .modal-ladder-note + .modal-disabled-note,
 .modal-ladder-note + .modal-expansion-note,
 .modal-disabled-note + .modal-expansion-note { margin-top: 8px; }
 
-.modal-source-link { margin-top: 20px; background: #efe3c9; }
+.modal-source-link { margin-top: 20px; }
 
 /* ══════════════════════════════════════════
    FOOTER
@@ -868,50 +640,30 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
 .site-footer {
   max-width: var(--page-max);
   margin: 0 auto;
-  padding: 24px var(--gutter) 34px;
-  color: var(--text-2);
-  font-size: 0.95rem;
-  font-style: italic;
-  text-align: center;
-  border-top: 1px dashed rgba(122,78,40,0.35);
+  padding: 24px var(--gutter) 40px;
+  color: var(--text-3);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--line);
 }
 
 /* ══════════════════════════════════════════
-   RESPONSIVE / MOTION
+   RESPONSIVE
 ══════════════════════════════════════════ */
 @media (max-width: 900px) {
-  .header-title-block { margin-left: 0; }
+  .site-subtitle { display: none; }
 }
 
 @media (max-width: 720px) {
   :root { --gutter: 16px; }
-  body { margin: 8px; border-width: 4px; border-radius: 16px; min-height: calc(100vh - 16px); }
-  .site-header { height: auto; min-height: 330px; border-radius: 12px 12px 0 0; }
-  /* the tag hangs centred here, so drop the sky pieces it would cover */
-  .site-header::before {
-    background-image: url("assets/paper/cathedral.svg"), url("assets/paper/far.svg");
-    background-repeat: no-repeat, repeat-x;
-    background-size: auto 130px, auto 220px;
-    background-position: left 80% bottom 118px, center bottom;
-  }
-  .header-inner { flex-direction: column; align-items: center; height: auto; padding-bottom: 150px; gap: 16px; }
-  .header-title-block { width: 230px; margin-top: 26px; padding: 40px 14px 18px; }
-  .site-title { font-size: 2rem; }
-  .site-nav { margin-top: 0; gap: 8px; flex-wrap: wrap; justify-content: center; }
-  .nav-link { font-size: 0.98rem; padding: 8px 14px 9px; }
+  .header-inner { height: auto; flex-wrap: wrap; padding-top: 12px; row-gap: 8px; }
+  .site-nav { width: 100%; gap: 20px; }
+  .nav-link { padding-bottom: 10px; }
+  .theme-toggle { margin: 0 0 8px auto; }
+  .site-title { font-size: 1.3rem; }
   .filter-block,
   .source-ladder-group,
   .source-ladder-group + .source-ladder-group { grid-template-columns: 1fr; row-gap: 4px; }
   .filter-label { line-height: 1.4; }
   .header-stats { margin-left: 0; }
-  .modal-box { padding: 28px 22px 24px; }
-  .modal-name { font-size: 1.9rem; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .site-header::before,
-  .header-title-block { animation: none; }
-  .modal-overlay { animation: none; }
-  .rw-card, .set-card, .recipe-card { transition: none; }
+  .modal-box { padding: 24px 20px; }
 }
