@@ -568,12 +568,12 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
   color: var(--text-2);
 }
 
-/* Instant custom tooltip — a tiny paper tag */
+/* Instant custom tooltip — a tiny teal paper tag, so it stands off the cream page */
 .rune-tooltip {
   position: fixed;
   z-index: 1000;
-  background: #f8efdb;
-  color: var(--text);
+  background: var(--paper-teal);
+  color: #f8efdb;
   font-size: 0.95rem;
   font-style: italic;
   padding: 3px 10px;
