@@ -114,23 +114,25 @@ button { font: inherit; color: inherit; }
   filter: drop-shadow(0 -1px 0 var(--edge)) drop-shadow(0 4px 6px var(--shade));
 }
 
-/* 1 — far hills, hanging sun and clouds on strings */
+/* 1 — far hills with Tristram cathedral; a red portal, the Horadric Cube
+       and a few crows hang on strings in the sky */
 .site-header::before {
   z-index: 0;
   top: 0;
   background-image:
-    url("assets/paper/sun.svg"),
-    url("assets/paper/cloud.svg"),
-    url("assets/paper/cloud.svg"),
+    url("assets/paper/portal.svg"),
+    url("assets/paper/cube.svg"),
+    url("assets/paper/crows.svg"),
+    url("assets/paper/cathedral.svg"),
     url("assets/paper/far.svg");
-  background-repeat: no-repeat, no-repeat, no-repeat, repeat-x;
-  background-size: 110px auto, 150px auto, 100px auto, auto 220px;
-  background-position: 62% 0, 38% -20px, 49% 10px, center bottom;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x;
+  background-size: 118px auto, 116px auto, 200px auto, auto 160px, auto 220px;
+  background-position: 64% -62px, 48% -52px, 32% -18px, left 73% bottom 112px, center bottom;
   animation: sway 7s ease-in-out infinite alternate;
   transform-origin: 50% 0;
 }
 
-/* 2 — sage pine ridge */
+/* 2 — sage ridge: pines and bare trees */
 .site-header::after {
   z-index: 1;
   height: 190px;
@@ -138,26 +140,28 @@ button { font: inherit; color: inherit; }
   background-size: auto 190px;
 }
 
-/* 3 — moss meadow */
+/* 3 — moss meadow: the Cairn Stones and the Burial Grounds */
 .header-inner::before {
   z-index: 2;
   height: 150px;
-  background-image: url("assets/paper/meadow.svg");
-  background-size: auto 150px;
+  background-image: url("assets/paper/cairn.svg"), url("assets/paper/meadow.svg");
+  background-repeat: no-repeat, repeat-x;
+  background-size: auto 100px, auto 150px;
+  background-position: left 36% bottom 38px, center bottom;
   filter: drop-shadow(0 -1px 0 var(--edge)) drop-shadow(0 5px 7px var(--shade));
 }
 
-/* 4 — dark teal foreground: tall pines at the edges, grassy bank */
+/* 4 — dark teal foreground: gnarled dead trees at the edges, grassy bank */
 .header-inner::after {
   z-index: 3;
-  height: 260px;
+  height: 280px;
   background-image:
-    url("assets/paper/pines-left.svg"),
-    url("assets/paper/pines-right.svg"),
+    url("assets/paper/trees-left.svg"),
+    url("assets/paper/trees-right.svg"),
     url("assets/paper/front.svg");
   background-repeat: no-repeat, no-repeat, repeat-x;
-  background-size: auto 260px, auto 260px, auto 70px;
-  background-position: left -20px bottom 10px, right -20px bottom 10px, center bottom;
+  background-size: auto 280px, auto 280px, auto 70px;
+  background-position: left -30px bottom 10px, right -30px bottom 10px, center bottom;
   filter: drop-shadow(0 -1px 0 rgba(255,250,236,0.25)) drop-shadow(0 6px 8px var(--shade));
 }
 
@@ -883,6 +887,13 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
   :root { --gutter: 16px; }
   body { margin: 8px; border-width: 4px; border-radius: 16px; min-height: calc(100vh - 16px); }
   .site-header { height: auto; min-height: 330px; border-radius: 12px 12px 0 0; }
+  /* the tag hangs centred here, so drop the sky pieces it would cover */
+  .site-header::before {
+    background-image: url("assets/paper/cathedral.svg"), url("assets/paper/far.svg");
+    background-repeat: no-repeat, repeat-x;
+    background-size: auto 130px, auto 220px;
+    background-position: left 80% bottom 118px, center bottom;
+  }
   .header-inner { flex-direction: column; align-items: center; height: auto; padding-bottom: 150px; gap: 16px; }
   .header-title-block { width: 230px; margin-top: 26px; padding: 40px 14px 18px; }
   .site-title { font-size: 2rem; }
