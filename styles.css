@@ -28,7 +28,7 @@
   --red:         #a33a24;
   --purple:      #6a4b8a;  /* Reign of the Warlock content */
 
-  /* paper stock used for the coloured backing layers */
+  /* paper stock colours (header scene, tooltip, modal backing) */
   --paper-ochre: #d9a45b;
   --paper-sage:  #9bb89b;
   --paper-teal:  #274e52;
@@ -632,21 +632,11 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
 .badge-new      { background: #e6dcef; color: var(--purple); }
 
 /* ══════════════════════════════════════════
-   CARD LIST SHARED — cut sheets with a coloured backing layer
+   CARD LIST SHARED — cut paper sheets
 ══════════════════════════════════════════ */
-/* The grids form a stacking context so each card's backing sheet
-   (z-index -1) sits behind its card but above the page paper. */
-.runeword-grid,
-.sets-grid,
-.recipes-grid {
-  position: relative;
-  z-index: 0;
-}
-
 .rw-card,
 .set-card,
 .recipe-card {
-  --backing: var(--paper-ochre);
   position: relative;
   top: 0;
   background-color: var(--surface);
@@ -659,42 +649,12 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
   transition: top 0.3s cubic-bezier(.3,1.5,.5,1), box-shadow 0.3s ease;
 }
 
-.set-card    { --backing: var(--paper-sage); }
-.recipe-card { --backing: var(--paper-teal); }
-
-.rw-card::before,
-.set-card::before,
-.recipe-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: var(--radius);
-  background-color: var(--backing);
-  background-image: var(--grain);
-  box-shadow: 0 4px 8px -2px var(--shade);
-  transform: translate(5px, 6px) rotate(0.8deg);
-  transition: transform 0.35s cubic-bezier(.3,1.5,.5,1);
-}
-
-.rw-card:nth-child(even)::before,
-.set-card:nth-child(even)::before,
-.recipe-card:nth-child(even)::before { transform: translate(-5px, 6px) rotate(-0.8deg); }
-
 .rw-card:hover,
 .set-card:hover,
 .recipe-card:hover {
   top: -4px;
   box-shadow: 0 -1px 0 var(--edge), 0 6px 8px -2px var(--shade), 0 20px 28px -16px var(--shade);
 }
-
-.rw-card:hover::before,
-.set-card:hover::before,
-.recipe-card:hover::before { transform: translate(7px, 10px) rotate(1.6deg); }
-
-.rw-card:nth-child(even):hover::before,
-.set-card:nth-child(even):hover::before,
-.recipe-card:nth-child(even):hover::before { transform: translate(-7px, 10px) rotate(-1.6deg); }
 
 /* Group headings (set tiers, recipe categories) */
 .tier-header,
@@ -942,6 +902,5 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
   .site-header::before,
   .header-title-block { animation: none; }
   .modal-overlay { animation: none; }
-  .rw-card, .set-card, .recipe-card,
-  .rw-card::before, .set-card::before, .recipe-card::before { transition: none; }
+  .rw-card, .set-card, .recipe-card { transition: none; }
 }
