@@ -114,14 +114,14 @@ button { font: inherit; color: inherit; }
   filter: drop-shadow(0 -1px 0 var(--edge)) drop-shadow(0 4px 6px var(--shade));
 }
 
-/* 1 — far hills with Tristram cathedral; a red portal, the Horadric Cube
+/* 1 — far hills with Tristram cathedral; a red portal, a healing potion
        and a few crows hang on strings in the sky */
 .site-header::before {
   z-index: 0;
   top: 0;
   background-image:
     url("assets/paper/portal.svg"),
-    url("assets/paper/cube.svg"),
+    url("assets/paper/potion.svg"),
     url("assets/paper/crows.svg"),
     url("assets/paper/cathedral.svg"),
     url("assets/paper/far.svg");
@@ -935,7 +935,7 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
   .site-header::before {
     background-image:
       url("assets/paper/portal.svg"),
-      url("assets/paper/cube.svg"),
+      url("assets/paper/potion.svg"),
       url("assets/paper/cathedral.svg"),
       url("assets/paper/far.svg");
     background-repeat: no-repeat, no-repeat, no-repeat, repeat-x;
