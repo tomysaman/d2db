@@ -13,7 +13,7 @@ A static, browser-based archive of **Diablo II: Resurrected** runewords, item se
 - Runewords: search by name or any effect stat (e.g. "+2 to all skills"); filter by item category, socket count, rune content, and ladder status; sort by category, level, name, or socket count; toggle a rune-grid view
 - Item sets: search by name or any effect stat; filter by class and category; view full set details (pieces, partial/full bonuses) in a modal
 - Horadric Cube recipes: search by recipe, ingredient, or result; filter by category and expansion content; grouped by category with rune ingredient icons and probability tables
-- Two themes, switchable from the nav and remembered per browser: **Dark** (default) and **Paper**, a cut-paper diorama with Diablo II scenery
+- Two themes, switchable from the nav and remembered per browser: **Minimal Dark** (default) and **Paper**, a cut-paper diorama with Diablo II scenery
 
 ## Pages
 
@@ -23,7 +23,7 @@ A static, browser-based archive of **Diablo II: Resurrected** runewords, item se
 
 ## Themes
 
-- `styles.css` is the **Dark** theme and `styles-paper.css` the **Paper** theme; both are shared by all three pages, with page-specific styles in `*-styles.css`.
+- `styles.css` is the **Minimal Dark** theme and `styles-paper.css` the **Paper** theme; both are shared by all three pages, with page-specific styles in `*-styles.css`.
 - `theme.js` (loaded in `<head>`) disables the inactive theme stylesheet before first paint and wires up the nav toggle. The choice is saved in `localStorage`.
 - The Paper theme's header scenery lives in `assets/paper/*.svg`.
 

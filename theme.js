@@ -1,5 +1,5 @@
 /* =====================================================
-   THEME SWITCH — "dark" (styles.css) or "paper" (styles-paper.css)
+   THEME SWITCH — "minimal" = Minimal Dark (styles.css) or "paper" = Paper (styles-paper.css)
    Loaded synchronously in <head>, right after both theme stylesheets,
    so the inactive one is disabled before the first paint (no flash).
    ===================================================== */
@@ -7,8 +7,8 @@
 (function () {
   const STORAGE_KEY = 'd2codex-theme';
   const THEMES = {
-    dark:  { sheet: 'theme-dark',  next: 'paper', label: 'Paper theme' },
-    paper: { sheet: 'theme-paper', next: 'dark',  label: 'Dark theme' },
+    minimal: { sheet: 'theme-minimal', name: 'Minimal Dark', next: 'paper' },
+    paper:   { sheet: 'theme-paper',   name: 'Paper',        next: 'minimal' },
   };
 
   function readTheme() {
@@ -16,7 +16,7 @@
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved in THEMES) return saved;
     } catch (e) { /* storage blocked (e.g. private mode) — fall back to default */ }
-    return 'dark';
+    return 'minimal';
   }
 
   function applyTheme(theme) {
@@ -28,8 +28,9 @@
 
     const btn = document.getElementById('themeToggle');
     if (btn) {
-      btn.textContent = THEMES[theme].label;
-      btn.title = `Switch to the ${THEMES[theme].next} theme`;
+      const next = THEMES[THEMES[theme].next].name;
+      btn.textContent = `${next} theme`;
+      btn.title = `Switch to the ${next} theme`;
     }
   }
 

@@ -127,7 +127,7 @@ button { font: inherit; color: inherit; }
     url("assets/paper/far.svg");
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x;
   background-size: 118px auto, 116px auto, 200px auto, auto 160px, auto 220px;
-  background-position: 60% -62px, 46% -52px, 31% -18px, left 73% bottom 112px, center bottom;
+  background-position: 58% -18px, 44% -16px, 30% 14px, left 73% bottom 112px, center bottom;
   animation: sway 7s ease-in-out infinite alternate;
   transform-origin: 50% 0;
 }
@@ -897,6 +897,20 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
 /* ══════════════════════════════════════════
    RESPONSIVE / MOTION
 ══════════════════════════════════════════ */
+/* Mid widths: no room for the crows between the tag and the nav */
+@media (max-width: 1200px) {
+  .site-header::before {
+    background-image:
+      url("assets/paper/portal.svg"),
+      url("assets/paper/cube.svg"),
+      url("assets/paper/cathedral.svg"),
+      url("assets/paper/far.svg");
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat-x;
+    background-size: 118px auto, 116px auto, auto 160px, auto 220px;
+    background-position: 58% -18px, 42% -16px, left 73% bottom 112px, center bottom;
+  }
+}
+
 @media (max-width: 900px) {
   .header-title-block { margin-left: 0; }
 }
