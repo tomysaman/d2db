@@ -29,7 +29,8 @@
     const btn = document.getElementById('themeToggle');
     if (btn) {
       const next = THEMES[THEMES[theme].next].name;
-      btn.textContent = `${next} theme`;
+      const label = btn.querySelector('.theme-toggle-label') || btn;
+      label.textContent = `${next} theme`;
       btn.title = `Switch to the ${next} theme`;
     }
   }

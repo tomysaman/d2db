@@ -129,23 +129,47 @@ button { font: inherit; color: inherit; }
 /* The paper theme italicises "Codex"; this theme keeps the title upright */
 .site-title em { font-style: normal; }
 
-/* Theme switch — a quiet secondary button at the end of the nav */
+/* Theme switch — sits apart from the page nav, behind a divider, and reads
+   as a preview chip (a swatch of the theme it switches to), not a link */
+.site-nav { margin-left: auto; }
+
+.site-nav::after {
+  content: "";
+  align-self: center;
+  width: 1px;
+  height: 22px;
+  margin-left: -4px;
+  background: var(--line-strong);
+}
+
 .theme-toggle {
   align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   height: 30px;
-  padding: 0 12px;
-  font-size: 0.85rem;
+  padding: 0 12px 0 6px;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-2);
-  background: var(--surface-2);
+  background: transparent;
   border: 1px solid var(--line-strong);
-  border-radius: var(--radius-sm);
+  border-radius: 999px;
   cursor: pointer;
   white-space: nowrap;
   transition: color 0.12s ease, border-color 0.12s ease;
 }
 
-.theme-toggle:hover { color: var(--gold); border-color: var(--gold); }
+.theme-toggle:hover { color: var(--text); border-color: var(--text-3); }
+
+/* preview of the Paper theme: cream sheet, teal and orange paper */
+.theme-toggle-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: conic-gradient(#274e52 0 120deg, #c8642d 120deg 200deg, #f3e8d2 200deg 360deg);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.15);
+}
 
 /* ══════════════════════════════════════════
    FILTERS
@@ -658,7 +682,9 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
   .header-inner { height: auto; flex-wrap: wrap; padding-top: 12px; row-gap: 8px; }
   .site-nav { width: 100%; gap: 20px; }
   .nav-link { padding-bottom: 10px; }
-  .theme-toggle { margin: 0 0 8px auto; }
+  .site-nav { order: 3; margin-left: 0; }
+  .site-nav::after { display: none; }
+  .theme-toggle { margin-left: auto; }
   .site-title { font-size: 1.3rem; }
   .filter-block,
   .source-ladder-group,

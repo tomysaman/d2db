@@ -306,23 +306,44 @@ button { font: inherit; color: inherit; }
   color: #f8efdb;
 }
 
-/* Theme switch — an ochre chip at the end of the nav */
+/* Theme switch — a little wooden sign board resting on the grass at the
+   bottom-right of the diorama, well away from the nav chips */
 .theme-toggle {
+  position: absolute;
+  z-index: 5;
+  right: clamp(90px, 9vw, 150px);
+  bottom: 30px;
   display: inline-flex;
   align-items: center;
-  padding: 9px 16px 10px;
+  gap: 8px;
+  padding: 7px 14px 8px 10px;
   font: inherit;
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   font-style: italic;
-  color: var(--text);
-  background: var(--paper-ochre);
+  color: #f8efdb;
+  background-color: #6b4a2b;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255,240,210,0.06) 0 2px, transparent 2px 6px),
+    var(--grain);
   border: 0;
-  clip-path: var(--torn);
+  border-radius: 2px;
+  clip-path: polygon(0 10%, 4% 0, 96% 3%, 100% 14%, 99% 88%, 95% 100%, 5% 97%, 1% 90%);
   cursor: pointer;
-  transition: transform 0.25s cubic-bezier(.3,1.6,.5,1), background-color 0.3s ease;
+  transform: rotate(-3deg);
+  transform-origin: 50% 100%;
+  transition: transform 0.3s cubic-bezier(.3,1.6,.5,1), background-color 0.3s ease;
 }
 
-.theme-toggle:hover { transform: translateY(-2px) rotate(1deg); background: #e3b46c; }
+.theme-toggle:hover { transform: rotate(0deg) translateY(-2px); background-color: #7a5634; }
+
+/* preview of the Minimal Dark theme: charcoal with a gold accent */
+.theme-toggle-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: conic-gradient(#c9b37e 0 110deg, #111010 110deg 360deg);
+  box-shadow: 0 0 0 1.5px #f8efdb;
+}
 
 /* ══════════════════════════════════════════
    FILTERS
