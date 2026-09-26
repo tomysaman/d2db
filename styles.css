@@ -330,31 +330,29 @@ button { font: inherit; color: inherit; }
 
 /* ── Rune grid ── */
 /* Runes row: label on top so the grid gets the full page width and
-   all 33 runes fit on one line (scrolls horizontally on narrow screens) */
+   all 33 runes share one line (wrapping only when they cannot fit) */
 .filter-rune-block { grid-template-columns: 1fr; row-gap: 6px; }
 .filter-rune-block .filter-label { line-height: 1.4; }
 
 .rune-grid {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 3px;
-  overflow-x: auto;
   padding-bottom: 4px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--line-strong) transparent;
 }
 
 .rune-btn {
   display: flex;
-  flex: 0 0 auto;
+  flex: 1 1 0;
   align-items: center;
   justify-content: center;
-  min-width: 32px;
+  min-width: auto;
+  max-width: 64px;  /* keeps a wrapped leftover from stretching */
   height: 30px;
   background: transparent;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
-  padding: 0 5px;
+  padding: 0 3px;
   cursor: pointer;
   transition: border-color 0.12s ease, background 0.12s ease;
 }
@@ -375,12 +373,13 @@ body.rune-icons .rune-grid { gap: 1px; }
 
 body.rune-icons .rune-btn {
   height: auto;
-  min-width: 0;
+  min-width: 24px;
+  max-width: 48px;
   border-color: transparent;
   padding: 2px;
 }
 
-body.rune-icons .rune-btn .rune-icon-img { width: 38px; height: 38px; opacity: 0.75; }
+body.rune-icons .rune-btn .rune-icon-img { width: 100%; max-width: 38px; height: auto; aspect-ratio: 1; opacity: 0.75; }
 body.rune-icons .rune-btn:hover .rune-icon-img { opacity: 1; }
 
 body.rune-icons .rune-btn.selected {
