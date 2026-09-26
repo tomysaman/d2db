@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 300" preserveAspectRatio="xMidYMax slice">
+  <!-- Meadow theme header: a quiet evening outside Tristram — the cathedral
+       on the far hill, the Rogue camp fire, a dead tree and a few crows.
+       Flat shapes in the mixer palette (sage, moss, forest, sand, clay). -->
+  <style>
+    .fl { transform-box: fill-box; transform-origin: 50% 100%; }
+    .f1 { animation: flick 1.1s ease-in-out infinite alternate; }
+    .f2 { animation: flick .8s ease-in-out infinite alternate-reverse; }
+    .f3 { animation: flick .55s ease-in-out infinite alternate; }
+    .glow { animation: glow 1.6s ease-in-out infinite alternate; }
+    .crows { animation: drift 14s ease-in-out infinite alternate; }
+    @keyframes flick {
+      0% { transform: scale(1,1) skewX(0); }
+      35% { transform: scale(.95,1.08) skewX(3deg); }
+      70% { transform: scale(1.04,.94) skewX(-3deg); }
+      100% { transform: scale(.98,1.04) skewX(1.5deg); }
+    }
+    @keyframes glow { from { opacity: .5; } to { opacity: .9; } }
+    @keyframes drift { from { transform: translateX(-14px); } to { transform: translateX(16px); } }
+    @media (prefers-reduced-motion: reduce) { .f1, .f2, .f3, .glow, .crows { animation: none; } }
+  </style>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef0da"/>
+      <stop offset="1" stop-color="#f6f0d6"/>
+    </linearGradient>
+    <radialGradient id="fireglow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#dda15e" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#dda15e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="300" fill="url(#sky)"/>
+
+  <!-- low sun and clouds -->
+  <circle cx="900" cy="112" r="40" fill="#e9c99c" opacity=".75"/>
+  <g fill="#fffdf0">
+    <path d="M530 96a22 22 0 0 1 36-17 30 30 0 0 1 56 6 18 18 0 0 1 8 35h-94a14 14 0 0 1-6-24z"/>
+    <path d="M1236 58a16 16 0 0 1 27-12 23 23 0 0 1 42 5 13 13 0 0 1 5 26h-70a11 11 0 0 1-4-19z" opacity=".85"/>
+  </g>
+
+  <!-- crows -->
+  <g class="crows" fill="none" stroke="#283618" stroke-width="2.4" stroke-linecap="round" opacity=".7">
+    <path d="M1196 50q7-7 14 0q7-7 14 0"/>
+    <path d="M1232 36q5-5 10 0q5-5 10 0"/>
+    <path d="M1178 64q5-5 10 0q5-5 10 0"/>
+  </g>
+
+  <!-- far hills -->
+  <path d="M0 214C140 180 260 172 400 188S640 212 780 184 1040 150 1180 170 1440 196 1600 176V300H0Z" fill="#cfd6b0"/>
+
+  <!-- Tristram cathedral on the far hill -->
+  <g fill="#9aa378">
+    <rect x="1034" y="128" width="96" height="48"/>
+    <path d="M1030 130l52-26 52 26z"/>
+    <rect x="1008" y="98" width="30" height="80"/>
+    <path d="M1004 100l19-42 19 42z"/>
+    <rect x="1126" y="112" width="24" height="66"/>
+    <path d="M1123 114l15-32 15 32z"/>
+    <rect x="1021" y="42" width="4" height="18"/>
+    <rect x="1016" y="48" width="14" height="3"/>
+  </g>
+  <g fill="#cfd6b0">
+    <path d="M1076 176v-22a6 6 0 0 1 12 0v22z"/>
+    <path d="M1017 132v-12a6 6 0 0 1 12 0v12z"/>
+    <circle cx="1082" cy="126" r="6"/>
+  </g>
+
+  <!-- middle hills -->
+  <path d="M0 238C120 214 220 206 340 220S560 246 700 228 900 198 1040 206 1300 236 1440 222 1560 210 1600 214V300H0Z" fill="#a3b18a"/>
+
+  <!-- dead tree on the hill, kept low so the title stays clear -->
+  <g transform="translate(470 238) scale(.8) translate(-232 -226)" fill="none" stroke="#4a5530" stroke-linecap="round">
+    <path d="M232 226C230 196 236 172 228 140" stroke-width="7"/>
+    <path d="M230 176c-14-8-22-20-26-34M229 158c12-8 22-10 32-24M228 142c-4-12 2-22 0-30M204 144c-8-2-12-8-14-14M258 136c4-8 12-10 16-16" stroke-width="3.5"/>
+  </g>
+
+  <!-- foreground bank -->
+  <path d="M0 262C180 244 360 240 560 250S860 270 1040 258 1360 238 1600 250V300H0Z" fill="#606c38"/>
+
+  <!-- the Rogue camp fire -->
+  <ellipse class="glow" cx="640" cy="244" rx="120" ry="44" fill="url(#fireglow)"/>
+  <ellipse cx="640" cy="262" rx="62" ry="9" fill="#4a5530"/>
+  <g fill="#8d8a76">
+    <ellipse cx="598" cy="258" rx="11" ry="7"/>
+    <ellipse cx="682" cy="258" rx="11" ry="7"/>
+    <ellipse cx="620" cy="264" rx="10" ry="6"/>
+    <ellipse cx="660" cy="264" rx="10" ry="6"/>
+  </g>
+  <g>
+    <path class="fl f1" d="M640 256c-26 0-36-18-30-36 4-12 14-18 12-32 12 8 16 18 16 26 6-6 6-16 4-24 16 10 30 26 28 44-2 14-12 22-30 22z" fill="#bc6c25"/>
+    <path class="fl f2" d="M640 256c-15 0-22-10-19-22 2-8 9-12 9-21 8 6 11 13 11 19 4-4 5-9 4-14 9 6 16 16 15 27-1 7-8 11-20 11z" fill="#dda15e"/>
+    <path class="fl f3" d="M640 256c-7 0-11-5-9-11 1-5 5-7 5-12 5 4 7 8 7 11 3-2 4-5 3-8 5 4 8 9 7 14-1 4-5 6-13 6z" fill="#fefae0"/>
+  </g>
+  <g stroke-linecap="round">
+    <path d="M608 262l66-16" stroke="#6b4426" stroke-width="10"/>
+    <path d="M606 246l68 16" stroke="#7d5230" stroke-width="10"/>
+  </g>
+
+  <!-- grass tufts -->
+  <g fill="none" stroke="#283618" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity=".55">
+    <path d="M90 268l6-16 5 12 5-14 6 18"/>
+    <path d="M420 262l5-13 4 10 4-12 5 15"/>
+    <path d="M850 272l6-16 5 12 5-14 6 18"/>
+    <path d="M1380 258l5-13 4 10 4-12 5 15"/>
+    <path d="M1520 270l6-16 5 12 5-14 6 18"/>
+  </g>
+</svg>

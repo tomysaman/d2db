@@ -1,14 +1,15 @@
 /* =====================================================
-   THEME SWITCH — "minimal" = Minimal Dark (styles.css) or "paper" = Paper (styles-paper.css)
-   Loaded synchronously in <head>, right after both theme stylesheets,
-   so the inactive one is disabled before the first paint (no flash).
+   THEME SWITCH — cycles Minimal Dark (styles.css) → Paper (styles-paper.css)
+   → Meadow (styles-meadow.css). Loaded synchronously in <head>, right after
+   the theme stylesheets, so inactive ones are disabled before the first paint.
    ===================================================== */
 
 (function () {
   const STORAGE_KEY = 'd2codex-theme';
   const THEMES = {
     minimal: { sheet: 'theme-minimal', name: 'Minimal Dark', next: 'paper' },
-    paper:   { sheet: 'theme-paper',   name: 'Paper',        next: 'minimal' },
+    paper:   { sheet: 'theme-paper',   name: 'Paper',        next: 'meadow' },
+    meadow:  { sheet: 'theme-meadow',  name: 'Meadow',       next: 'minimal' },
   };
 
   function readTheme() {
@@ -32,6 +33,7 @@
       const label = btn.querySelector('.theme-toggle-label') || btn;
       label.textContent = `${next} theme`;
       btn.title = `Switch to the ${next} theme`;
+      btn.setAttribute('aria-label', btn.title);
     }
   }
 
