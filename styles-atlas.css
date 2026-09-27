@@ -154,7 +154,12 @@ button { font: inherit; color: inherit; }
   line-height: 1.05;
   letter-spacing: 0.005em;
   color: var(--text);
-  text-shadow: 0 2px 14px rgba(0,0,0,0.8);
+  text-shadow:
+    0 0 1px rgba(0,0,0,0.95),
+    0 0 2px rgba(0,0,0,0.9),
+    0 1px 3px rgba(0,0,0,0.9),
+    0 0 8px rgba(0,0,0,0.75),
+    0 2px 16px rgba(0,0,0,0.8);
 }
 
 .site-title em {
@@ -170,6 +175,11 @@ button { font: inherit; color: inherit; }
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--text-3);
+  text-shadow:
+    0 0 1px rgba(0,0,0,0.95),
+    0 0 2px rgba(0,0,0,0.9),
+    0 1px 3px rgba(0,0,0,0.85),
+    0 0 8px rgba(0,0,0,0.7);
 }
 
 /* Nav: spaced capitals along the foot of the plate, a gilt rule under the
