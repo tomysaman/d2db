@@ -219,12 +219,12 @@ button { font: inherit; color: inherit; }
 
 .theme-toggle:hover { color: var(--text); border-color: var(--gold); }
 
-/* preview of the Minimal Dark theme: charcoal with a gold accent */
+/* preview of the Meadow theme: moss, sage and clay */
 .theme-toggle-swatch {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: conic-gradient(#c9b37e 0 110deg, #111010 110deg 360deg);
+  background: conic-gradient(#bc6c25 0 110deg, #a3b18a 110deg 230deg, #606c38 230deg 360deg);
   box-shadow: 0 0 0 1px var(--gold);
   transition: transform 0.4s var(--ease-out);
 }

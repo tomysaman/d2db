@@ -162,12 +162,12 @@ button { font: inherit; color: inherit; }
 
 .theme-toggle:hover { color: var(--text); border-color: var(--text-3); }
 
-/* preview of the Meadow theme: moss, sage and clay */
+/* preview of the Star Atlas theme: navy night with a gilt accent */
 .theme-toggle-swatch {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: conic-gradient(#bc6c25 0 110deg, #a3b18a 110deg 230deg, #606c38 230deg 360deg);
+  background: conic-gradient(#e3c47e 0 110deg, #0a1024 110deg 360deg);
   box-shadow: 0 0 0 1px rgba(255,255,255,0.15);
 }
 
