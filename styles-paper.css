@@ -349,12 +349,12 @@ button { font: inherit; color: inherit; }
 
 .theme-toggle:hover { transform: rotate(1deg); background-color: #7a5634; }
 
-/* preview of the Minimal Dark theme: charcoal with a gold accent */
+/* preview of the Stained Glass theme: a leaded roundel of red, blue and gold glass */
 .theme-toggle-swatch {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: conic-gradient(#c9b37e 0 110deg, #111010 110deg 360deg);
+  background: conic-gradient(#d8574f 0 120deg, #5d8ef0 120deg 240deg, #f0c35a 240deg 360deg);
   box-shadow: 0 0 0 1.5px #f8efdb;
 }
 

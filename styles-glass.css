@@ -1,0 +1,834 @@
+/* =====================================================
+   DIABLO II CODEX — shared styles (header, filters, cards, modal, footer)
+   "Stained Glass" theme: a cathedral after dark. Coursed ashlar behind
+   everything; cards are leaded — a heavy black rim around deep glass —
+   with arched tops like lancet windows. The header is a panel onto the
+   nave wall (assets/glass/scene.svg): a row of lit windows carrying
+   Diablo II motifs. Palatino missal face. Accent colors still follow in-game item
+   colors, as lit glass: gold = runeword/unique, emerald = set,
+   amber = rune/crafted.
+   ===================================================== */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --lead:      #07060a;
+  --stone:     #13101b;
+
+  --bg:          #13101b;
+  --bg-sunk:     #0d0b13;
+  --surface:     #1c1826;  /* card */
+  --surface-2:   #241f31;
+  --line:        #2f2939;
+  --line-strong: #4a4256;
+  --stone-joint: rgba(255,255,255,0.03);
+
+  --text:        #efe6d6;
+  --text-2:      #cfc3b0;
+  --text-3:      #9d9282;
+
+  --gold:        #f0c35a;  /* runeword / unique names */
+  --green:       #3fb883;  /* set items — emerald */
+  --orange:      #ef7b4f;  /* runes, crafted — amber */
+  --blue:        #5d8ef0;  /* magic */
+  --red:         #d8574f;
+  --purple:      #b56ad0;  /* Reign of the Warlock content */
+
+  --accent:      #d8574f;
+  --accent-ink:  #f08a7f;
+
+  --arch:    120px 120px 6px 6px / 30px 30px 6px 6px;  /* a lancet's pointed-ish head */
+
+  --radius:    6px;
+  --radius-sm: 4px;
+
+  --font-display: "Palatino Linotype", "Book Antiqua", Palatino, "Iowan Old Style", Georgia, serif;
+  --font-ui: var(--font-display);
+
+  --page-max: 1600px;
+  --gutter: 30px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Light falling through glass: a pale sheen from the top-left */
+  --sheen: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0) 45%);
+
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Coursed ashlar: long horizontal joints, staggered vertical ones */
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(0deg, var(--stone-joint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--stone-joint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--stone-joint) 1px, transparent 1px);
+  background-size: 100% 3.5rem, 9rem 7rem, 9rem 7rem;
+  background-position: 0 0, 0 0, 4.5rem 3.5rem;
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(240,195,90,0.35); color: #fff; }
+
+button { font: inherit; color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ══════════════════════════════════════════
+   HEADER — one leaded panel onto the nave wall: a row of lit lancet
+   windows, shafts of coloured light and candles on the sill
+══════════════════════════════════════════ */
+.site-header {
+  padding: 22px var(--gutter) 0;
+}
+
+.header-inner {
+  position: relative;
+  max-width: var(--page-max);
+  height: 280px;
+  margin: 0 auto;
+  padding: 30px 32px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  border: 3px solid var(--lead);
+  border-radius: 12px;
+  overflow: hidden;
+  /* a dark wash over the left so the title reads against the stone */
+  background:
+    linear-gradient(90deg, rgba(13,11,19,0.9) 0, rgba(13,11,19,0.55) 30%, rgba(13,11,19,0) 48%),
+    #1b1726 url("assets/glass/scene.svg") right bottom / cover no-repeat;
+  box-shadow:
+    inset 0 0 0 1px rgba(240,195,90,0.35),
+    0 3px 0 var(--gold),
+    0 24px 44px -26px rgba(0,0,0,0.95);
+}
+
+/* Brand: a small rose window, then the title */
+.header-title-block {
+  display: grid;
+  grid-template-columns: 56px auto;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.header-title-block::before {
+  content: "";
+  grid-row: 1 / span 2;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid var(--lead);
+  background:
+    radial-gradient(circle, var(--gold) 0 17%, var(--lead) 17% 27%, transparent 27%),
+    conic-gradient(from -22.5deg,
+      #d8574f 0 41deg,  var(--lead) 41deg 45deg,
+      #5d8ef0 45deg 86deg,  var(--lead) 86deg 90deg,
+      #f0c35a 90deg 131deg, var(--lead) 131deg 135deg,
+      #3fb883 135deg 176deg, var(--lead) 176deg 180deg,
+      #b56ad0 180deg 221deg, var(--lead) 221deg 225deg,
+      #d8574f 225deg 266deg, var(--lead) 266deg 270deg,
+      #5d8ef0 270deg 311deg, var(--lead) 311deg 315deg,
+      #3fb883 315deg 356deg, var(--lead) 356deg 360deg);
+  box-shadow: 0 0 0 2px #2a2433, 0 0 0 3px var(--line-strong), 0 0 18px -2px rgba(240,195,90,0.5);
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+
+.site-title em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.site-subtitle {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-variant-caps: small-caps;
+  color: var(--text-2);
+}
+
+/* Nav: plain leaded buttons along the foot of the panel */
+.site-nav {
+  display: flex;
+  gap: 6px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-2);
+  text-decoration: none;
+  background: rgba(28,24,38,0.85);
+  border: 2px solid var(--lead);
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+
+.nav-link:hover { color: var(--text); background: var(--surface-2); }
+
+.nav-link.active {
+  background: var(--sheen), var(--gold);
+  color: var(--lead);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3);
+}
+
+/* Theme switch — top-right corner of the panel */
+.theme-toggle {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  height: 36px;
+  padding: 0 14px 0 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-2);
+  background: rgba(28,24,38,0.9);
+  border: 2px solid var(--lead);
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+
+.theme-toggle:hover { background: var(--gold); color: var(--lead); }
+
+/* preview of the Minimal Dark theme: charcoal with a gold accent */
+.theme-toggle-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--lead);
+  background: conic-gradient(#c9b37e 0 110deg, #111010 110deg 360deg);
+}
+
+/* ══════════════════════════════════════════
+   FILTERS
+══════════════════════════════════════════ */
+.filters-inner {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 30px var(--gutter) 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Each filter row: label in a fixed left column, controls to the right */
+.filter-block {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: start;
+  column-gap: 20px;
+  row-gap: 8px;
+}
+
+.filter-block.hidden { display: none; }
+
+.filter-label,
+.sort-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-variant-caps: small-caps;
+  color: var(--accent-ink);
+  line-height: 34px;  /* matches pill height so labels align with first row */
+  white-space: nowrap;
+}
+
+.filter-search-block { margin-bottom: 6px; }
+.filter-search-block .filter-label { line-height: 42px; }
+
+.search-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 0 1 440px;
+  min-width: 220px;
+  height: 42px;
+  background: var(--surface);
+  border: 2px solid var(--lead);
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  padding: 0 18px;
+  outline: none;
+  transition: box-shadow 0.2s var(--ease-out);
+}
+
+.search-input:hover { box-shadow: inset 0 0 0 1px var(--text-3); }
+.search-input:focus { box-shadow: inset 0 0 0 2px var(--gold), 0 0 14px -4px rgba(240,195,90,0.6); }
+.search-input::placeholder { color: var(--text-3); font-style: italic; }
+
+.header-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px 14px;
+  flex-wrap: wrap;
+  margin-left: auto;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-2);
+}
+
+.stat-pill { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.stat-pill + .stat-pill { margin-left: -6px; }
+.stat-pill + .stat-pill::before { content: '◆'; margin-right: 8px; font-size: 0.6em; vertical-align: 0.2em; color: var(--gold); font-style: normal; }
+
+/* Secondary action buttons — plain leaded buttons */
+.rune-view-toggle,
+.reset-btn,
+.clear-runes-btn,
+.stat-view-toggle,
+.modal-source-link {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  background: var(--surface);
+  border: 2px solid var(--lead);
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+
+.rune-view-toggle:hover,
+.reset-btn:hover,
+.clear-runes-btn:hover,
+.stat-view-toggle:hover,
+.modal-source-link:hover { background: var(--gold); color: var(--lead); }
+
+.rune-view-toggle:active,
+.reset-btn:active,
+.clear-runes-btn:active,
+.stat-view-toggle:active,
+.modal-source-link:active { transform: translateY(1px); }
+
+/* Pills */
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill-row-break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.pill,
+.sort-btn {
+  height: 34px;
+  font-size: 0.88rem;
+  color: var(--text-2);
+  background: var(--surface);
+  border: 2px solid var(--lead);
+  border-radius: 6px;
+  padding: 0 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+
+.pill:hover,
+.sort-btn:hover { color: var(--text); background: var(--surface-2); }
+
+/* Active: a pane of red glass with a gold inner fillet, lit from above */
+.pill.active,
+.sort-btn.active {
+  background: var(--sheen), var(--accent);
+  color: #140c0c;
+  font-weight: 600;
+  box-shadow: inset 0 0 0 2px rgba(240,195,90,0.7);
+}
+
+.filter-source-ladder-row {
+  display: flex;
+  gap: 12px 40px;
+  flex-wrap: wrap;
+}
+
+.source-ladder-group {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  column-gap: 20px;
+  align-items: start;
+}
+
+.source-ladder-group + .source-ladder-group { grid-template-columns: auto 1fr; }
+
+/* ── Rune grid ── */
+/* Runes row: label on top so the grid gets the full page width and
+   all 33 runes share one line (wrapping only when they cannot fit) */
+.filter-rune-block { grid-template-columns: 1fr; row-gap: 6px; }
+.filter-rune-block .filter-label { line-height: 1.4; }
+
+.rune-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 2px 2px 6px;
+}
+
+.rune-btn {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  min-width: auto;
+  max-width: 64px;  /* keeps a wrapped leftover from stretching */
+  height: 34px;
+  background: var(--surface);
+  border: 2px solid var(--lead);
+  border-radius: 6px;
+  padding: 0 3px;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease-out);
+}
+
+.rune-btn:hover { background: var(--surface-2); }
+.rune-btn.selected { background: var(--sheen), var(--orange); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35); }
+
+.rune-icon-img { width: 26px; height: 26px; object-fit: contain; transition: transform 0.2s ease, opacity 0.2s ease; }
+.rune-icon-label { font-size: 0.88rem; color: var(--orange); white-space: nowrap; }
+.rune-btn.selected .rune-icon-label { color: #140c0c; font-weight: 600; }
+
+/* Icon / text toggle — mirrors .rune-tag behavior on runeword cards */
+body.rune-icons .rune-icon-label { display: none; }
+body:not(.rune-icons) .rune-icon-img { display: none; }
+
+body.rune-icons .rune-grid { gap: 2px; }
+
+body.rune-icons .rune-btn {
+  height: auto;
+  min-width: 24px;
+  max-width: 48px;
+  background: transparent;
+  border-color: transparent;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+body.rune-icons .rune-btn .rune-icon-img { width: 100%; max-width: 38px; height: auto; aspect-ratio: 1; opacity: 0.8; }
+body.rune-icons .rune-btn:hover .rune-icon-img { opacity: 1; }
+
+/* A selected rune glows like a lit roundel */
+body.rune-icons .rune-btn.selected {
+  background: radial-gradient(circle, rgba(239,123,79,0.45), rgba(239,123,79,0) 70%);
+  border-color: var(--lead);
+  box-shadow: 0 0 0 2px var(--gold), 0 0 14px -2px rgba(239,123,79,0.8);
+}
+
+body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
+
+.rune-grid-foot {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-hint {
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--text-3);
+}
+
+/* Instant custom tooltip — a small leaded label */
+.rune-tooltip {
+  position: fixed;
+  z-index: 1000;
+  background: var(--surface);
+  color: var(--text);
+  border: 2px solid var(--lead);
+  box-shadow: inset 0 0 0 1px var(--gold), 0 8px 18px -8px rgba(0,0,0,0.9);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.08s ease;
+}
+
+.rune-tooltip.visible { opacity: 1; }
+
+/* ══════════════════════════════════════════
+   RESULTS / SORT BAR
+══════════════════════════════════════════ */
+.results-section {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 24px var(--gutter) 64px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.sort-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.sort-label { margin-right: 10px; line-height: 1; }
+
+.stat-view-toggle { margin-left: auto; }
+.stat-view-toggle.active { background: var(--sheen), var(--gold); color: var(--lead); }
+
+/* ══════════════════════════════════════════
+   BADGES — little panes of coloured glass in lead
+══════════════════════════════════════════ */
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  padding: 4px 8px;
+  border: 2px solid var(--lead);
+  border-radius: 4px;
+  background: var(--sheen), var(--surface-2);
+  color: var(--text-2);
+  white-space: nowrap;
+}
+
+.badge-type     { background: var(--sheen), var(--green);  color: var(--lead); }
+.badge-class    { background: var(--sheen), var(--green);  color: var(--lead); }
+.badge-ladder   { background: var(--sheen), var(--gold);   color: var(--lead); }
+.badge-disabled { background: var(--sheen), var(--red);    color: var(--lead); }
+.badge-new      { background: var(--sheen), var(--purple); color: var(--lead); }
+
+/* ══════════════════════════════════════════
+   CARD LIST SHARED — leaded panels with arched heads
+══════════════════════════════════════════ */
+.rw-card,
+.set-card,
+.recipe-card {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(240,195,90,0.07), rgba(240,195,90,0) 90px),
+    var(--surface);
+  border: 3px solid var(--lead);
+  border-radius: var(--arch);
+  padding: 24px 22px 20px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition: box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.rw-card:hover,
+.set-card:hover,
+.recipe-card:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 0 0 1px rgba(240,195,90,0.55), 0 0 24px -6px rgba(240,195,90,0.4);
+}
+
+/* Group headings (set tiers, recipe categories) */
+.tier-header,
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.tier-header-text,
+.category-header-text {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+/* Gold lozenges either side of the count, like the eyebrow in the reference */
+.category-header-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.category-header-count::before {
+  content: "";
+  width: 0.5em;
+  height: 0.5em;
+  background: var(--gold);
+  border: 1.5px solid var(--lead);
+  transform: rotate(45deg);
+}
+
+.tier-header-line,
+.category-header-line {
+  display: block;
+  flex: 1;
+  height: 3px;
+  background: var(--lead);
+  box-shadow: 0 1px 0 var(--line-strong);
+}
+
+.rw-stat-line,
+.set-bonus-line {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.rw-stat-more,
+.set-bonus-more {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+/* ══════════════════════════════════════════
+   EMPTY STATE
+══════════════════════════════════════════ */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-2);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+.empty-state.hidden { display: none; }
+.empty-icon { display: none; }
+.empty-state p { margin-bottom: 16px; }
+
+/* ══════════════════════════════════════════
+   MODAL — a tall window in the nave wall
+══════════════════════════════════════════ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7,6,10,0.8);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 48px 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  animation: fadein 0.25s ease both;
+}
+.modal-overlay.hidden { display: none; }
+
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+.modal-box {
+  position: relative;
+  max-width: 640px;
+  width: 100%;
+  padding: 44px 38px 32px;
+  background:
+    linear-gradient(180deg, rgba(240,195,90,0.08), rgba(240,195,90,0) 140px),
+    var(--surface);
+  border: 4px solid var(--lead);
+  border-radius: 320px 320px 8px 8px / 70px 70px 8px 8px;
+  box-shadow: inset 0 0 0 2px rgba(240,195,90,0.55), 0 0 60px -18px rgba(240,195,90,0.35), 0 30px 60px -24px rgba(0,0,0,0.95);
+  animation: rise 0.45s var(--ease-out) both;
+}
+
+.modal-close {
+  position: absolute;
+  top: 46px;  /* clear of the arched head */
+  right: 26px;
+  width: 36px;
+  height: 36px;
+  background: var(--surface-2);
+  border: 2px solid var(--lead);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+  color: var(--text-2);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out);
+}
+.modal-close:hover { background: var(--gold); color: var(--lead); }
+
+.modal-name {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  color: var(--gold);
+  margin: 0 44px 14px 0;
+}
+
+.modal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 26px;
+}
+
+.modal-section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-variant-caps: small-caps;
+  color: var(--accent-ink);
+  margin: 26px 0 10px;
+}
+.modal-section-label::before {
+  content: "";
+  flex: none;
+  width: 0.5em;
+  height: 0.5em;
+  background: var(--gold);
+  border: 1.5px solid var(--lead);
+  transform: rotate(45deg);
+}
+.modal-section-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line-strong);
+}
+.modal-inner > .modal-section-label:first-of-type { margin-top: 0; }
+
+.modal-stats {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.modal-stat-item { font-size: 1rem; color: var(--text); }
+
+.modal-ladder-note,
+.modal-expansion-note,
+.modal-disabled-note {
+  margin-top: 24px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-2);
+  background: var(--surface-2);
+  border: 2px solid var(--lead);
+  border-left: 6px solid var(--line-strong);
+  border-radius: 4px;
+}
+.modal-ladder-note   { border-left-color: var(--gold); }
+.modal-expansion-note{ border-left-color: var(--purple); }
+.modal-disabled-note { border-left-color: var(--red); }
+.modal-ladder-note + .modal-disabled-note,
+.modal-ladder-note + .modal-expansion-note,
+.modal-disabled-note + .modal-expansion-note { margin-top: 8px; }
+
+.modal-source-link { margin-top: 22px; }
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+.site-footer {
+  padding: 26px var(--gutter) 36px;
+  color: var(--text-3);
+  font-size: 0.88rem;
+  font-style: italic;
+  text-align: center;
+  background: var(--bg-sunk);
+  border-top: 3px solid var(--lead);
+  box-shadow: inset 0 3px 0 var(--gold);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE / MOTION
+══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .header-inner {
+    background:
+      linear-gradient(180deg, rgba(13,11,19,0.92) 0, rgba(13,11,19,0.6) 45%, rgba(13,11,19,0.1) 75%),
+      #1b1726 url("assets/glass/scene.svg") right bottom / cover no-repeat;
+  }
+}
+
+@media (max-width: 720px) {
+  :root { --gutter: 14px; }
+  .site-header { padding-top: 14px; }
+  .header-inner { height: auto; min-height: 300px; padding: 20px 18px 150px; gap: 16px; border-radius: 10px; }
+  .header-title-block { grid-template-columns: 44px auto; column-gap: 12px; padding-right: 50px; }
+  .header-title-block::before { width: 44px; height: 44px; }
+  .site-title { font-size: 1.7rem; }
+  .site-subtitle { font-size: 0.68rem; letter-spacing: 0.12em; }
+  .site-nav { flex-wrap: wrap; gap: 5px; }
+  .nav-link { height: 34px; padding: 0 12px; font-size: 0.85rem; }
+  .theme-toggle { top: 18px; right: 14px; padding: 0 6px; }
+  .theme-toggle-label { display: none; }
+  .filter-block,
+  .source-ladder-group,
+  .source-ladder-group + .source-ladder-group { grid-template-columns: 1fr; row-gap: 4px; }
+  .filter-label { line-height: 1.4; }
+  .header-stats { margin-left: 0; }
+  .modal-box { padding: 36px 20px 22px; border-radius: 200px 200px 8px 8px / 44px 44px 8px 8px; }
+  .modal-close { top: 32px; right: 16px; }
+  .modal-name { font-size: 1.8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .modal-overlay, .modal-box { animation: none; }
+  .rw-card, .set-card, .recipe-card { transition: none; }
+}
