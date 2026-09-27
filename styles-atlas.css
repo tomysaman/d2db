@@ -237,12 +237,12 @@ button { font: inherit; color: inherit; }
 
 .theme-toggle:hover { color: var(--text); border-color: var(--gold); }
 
-/* preview of the Stained Glass theme: a roundel of red, blue and gold glass */
+/* preview of the Paper theme: cream sheet, teal and orange paper */
 .theme-toggle-swatch {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: conic-gradient(#d8574f 0 120deg, #5d8ef0 120deg 240deg, #f0c35a 240deg 360deg);
+  background: conic-gradient(#274e52 0 120deg, #c8642d 120deg 200deg, #f3e8d2 200deg 360deg);
   box-shadow: 0 0 0 1px var(--gold);
   transition: transform 0.4s var(--ease-out);
 }

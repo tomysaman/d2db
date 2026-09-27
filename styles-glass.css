@@ -228,13 +228,13 @@ button { font: inherit; color: inherit; }
 
 .theme-toggle:hover { background: var(--gold); color: var(--lead); }
 
-/* preview of the Paper theme: cream sheet, teal and orange paper */
+/* preview of the Star Atlas theme: navy night with a gilt accent */
 .theme-toggle-swatch {
   width: 22px;
   height: 22px;
   border-radius: 50%;
   border: 2px solid var(--lead);
-  background: conic-gradient(#274e52 0 120deg, #c8642d 120deg 200deg, #f3e8d2 200deg 360deg);
+  background: conic-gradient(#e3c47e 0 110deg, #0a1024 110deg 360deg);
 }
 
 /* ══════════════════════════════════════════

@@ -1,6 +1,6 @@
 /* =====================================================
-   THEME SWITCH — cycles Minimal Dark (styles.css) → Star Atlas
-   (styles-atlas.css) → Stained Glass (styles-glass.css) → Paper
+   THEME SWITCH — cycles Minimal Dark (styles.css) → Stained Glass
+   (styles-glass.css) → Star Atlas (styles-atlas.css) → Paper
    (styles-paper.css) → Meadow (styles-meadow.css).
    Loaded synchronously in <head>, right after the theme stylesheets, so
    inactive ones are disabled before the first paint.
@@ -9,9 +9,9 @@
 (function () {
   const STORAGE_KEY = 'd2codex-theme';
   const THEMES = {
-    minimal: { sheet: 'theme-minimal', name: 'Minimal Dark',  next: 'atlas' },
-    atlas:   { sheet: 'theme-atlas',   name: 'Star Atlas',    next: 'glass' },
-    glass:   { sheet: 'theme-glass',   name: 'Stained Glass', next: 'paper' },
+    minimal: { sheet: 'theme-minimal', name: 'Minimal Dark',  next: 'glass' },
+    glass:   { sheet: 'theme-glass',   name: 'Stained Glass', next: 'atlas' },
+    atlas:   { sheet: 'theme-atlas',   name: 'Star Atlas',    next: 'paper' },
     paper:   { sheet: 'theme-paper',   name: 'Paper',         next: 'meadow' },
     meadow:  { sheet: 'theme-meadow',  name: 'Meadow',        next: 'minimal' },
   };

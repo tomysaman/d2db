@@ -162,12 +162,12 @@ button { font: inherit; color: inherit; }
 
 .theme-toggle:hover { color: var(--text); border-color: var(--text-3); }
 
-/* preview of the Star Atlas theme: navy night with a gilt accent */
+/* preview of the Stained Glass theme: a roundel of red, blue and gold glass */
 .theme-toggle-swatch {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: conic-gradient(#e3c47e 0 110deg, #0a1024 110deg 360deg);
+  background: conic-gradient(#d8574f 0 120deg, #5d8ef0 120deg 240deg, #f0c35a 240deg 360deg);
   box-shadow: 0 0 0 1px rgba(255,255,255,0.15);
 }
 
