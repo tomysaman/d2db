@@ -219,12 +219,12 @@ button { font: inherit; color: inherit; }
 
 .theme-toggle:hover { color: var(--text); border-color: var(--gold); }
 
-/* preview of the Meadow theme: moss, sage and clay */
+/* preview of the Stained Glass theme: a roundel of red, blue and gold glass */
 .theme-toggle-swatch {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: conic-gradient(#bc6c25 0 110deg, #a3b18a 110deg 230deg, #606c38 230deg 360deg);
+  background: conic-gradient(#d8574f 0 120deg, #5d8ef0 120deg 240deg, #f0c35a 240deg 360deg);
   box-shadow: 0 0 0 1px var(--gold);
   transition: transform 0.4s var(--ease-out);
 }
