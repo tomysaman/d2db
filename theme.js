@@ -4,6 +4,7 @@
    (styles-paper.css) → Meadow (styles-meadow.css).
    Loaded synchronously in <head>, right after the theme stylesheets, so
    inactive ones are disabled before the first paint.
+   A ?theme= URL parameter (key or 1-based position) overrides the saved one.
    ===================================================== */
 
 (function () {
@@ -16,7 +17,26 @@
     meadow:  { sheet: 'theme-meadow',  name: 'Meadow',        next: 'minimal' },
   };
 
+  // ?theme=atlas picks a theme by key; ?theme=3 by its 1-based position in
+  // the switch order above.
+  function urlTheme() {
+    let param;
+    try { param = new URLSearchParams(location.search).get('theme'); } catch (e) { return null; }
+    if (!param) return null;
+    param = param.trim().toLowerCase();
+    if (param in THEMES) return param;
+    const keys = Object.keys(THEMES);
+    const n = Number(param);
+    return Number.isInteger(n) && n >= 1 && n <= keys.length ? keys[n - 1] : null;
+  }
+
   function readTheme() {
+    const fromUrl = urlTheme();
+    if (fromUrl) {
+      // Saved so the choice carries over to the other pages' plain links.
+      try { localStorage.setItem(STORAGE_KEY, fromUrl); } catch (e) { /* not persisted */ }
+      return fromUrl;
+    }
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved in THEMES) return saved;
@@ -52,6 +72,11 @@
       current = THEMES[current].next;
       applyTheme(current);
       try { localStorage.setItem(STORAGE_KEY, current); } catch (e) { /* not persisted */ }
+      try {
+        const url = new URL(location.href);
+        url.searchParams.set('theme', current);
+        history.replaceState(history.state, '', url);
+      } catch (e) { /* URL left as is */ }
     });
   });
 })();
