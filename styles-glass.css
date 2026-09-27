@@ -3,8 +3,8 @@
    "Stained Glass" theme: a cathedral after dark. Coursed ashlar behind
    everything; cards are leaded — a heavy black rim around deep glass —
    with arched tops like lancet windows. The header is a panel onto the
-   nave wall (assets/glass/scene.svg): a row of lit windows carrying
-   Diablo II motifs. Palatino missal face. Accent colors still follow in-game item
+   nave wall (assets/glass/scene.svg): eight lit windows, one for each
+   class, in its colours and with its emblem. Palatino missal face. Accent colors still follow in-game item
    colors, as lit glass: gold = runeword/unique, emerald = set,
    amber = rune/crafted.
    ===================================================== */
@@ -112,7 +112,7 @@ button { font: inherit; color: inherit; }
   overflow: hidden;
   /* a dark wash over the left so the title reads against the stone */
   background:
-    linear-gradient(90deg, rgba(13,11,19,0.9) 0, rgba(13,11,19,0.55) 30%, rgba(13,11,19,0) 48%),
+    linear-gradient(90deg, rgba(13,11,19,0.9) 0, rgba(13,11,19,0.5) 24%, rgba(13,11,19,0) 36%),
     #1b1726 url("assets/glass/scene.svg") right bottom / cover no-repeat;
   box-shadow:
     inset 0 0 0 1px rgba(240,195,90,0.35),
