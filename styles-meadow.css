@@ -195,13 +195,13 @@ button { font: inherit; color: inherit; }
 
 .theme-toggle:hover { color: var(--text); border-color: rgba(40,54,24,0.3); }
 
-/* preview of the Minimal Dark theme: a charcoal switch with a gold knob */
+/* preview of the Star Atlas theme: a navy switch with a gilt knob */
 .theme-toggle-swatch {
   position: relative;
   width: 36px;
   height: 22px;
   border-radius: 999px;
-  background: #1a1918;
+  background: #0a1024;
 }
 
 .theme-toggle-swatch::after {
@@ -212,7 +212,7 @@ button { font: inherit; color: inherit; }
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #c9b37e;
+  background: #e3c47e;
   box-shadow: 0 1px 3px rgba(0,0,0,0.4);
   transition: transform 0.35s cubic-bezier(.3,1.5,.5,1);
 }

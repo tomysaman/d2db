@@ -1,7 +1,8 @@
 /* =====================================================
    THEME SWITCH — cycles Minimal Dark (styles.css) → Paper (styles-paper.css)
-   → Meadow (styles-meadow.css). Loaded synchronously in <head>, right after
-   the theme stylesheets, so inactive ones are disabled before the first paint.
+   → Meadow (styles-meadow.css) → Star Atlas (styles-atlas.css). Loaded
+   synchronously in <head>, right after the theme stylesheets, so inactive
+   ones are disabled before the first paint.
    ===================================================== */
 
 (function () {
@@ -9,7 +10,8 @@
   const THEMES = {
     minimal: { sheet: 'theme-minimal', name: 'Minimal Dark', next: 'paper' },
     paper:   { sheet: 'theme-paper',   name: 'Paper',        next: 'meadow' },
-    meadow:  { sheet: 'theme-meadow',  name: 'Meadow',       next: 'minimal' },
+    meadow:  { sheet: 'theme-meadow',  name: 'Meadow',       next: 'atlas' },
+    atlas:   { sheet: 'theme-atlas',   name: 'Star Atlas',   next: 'minimal' },
   };
 
   function readTheme() {
