@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 300" preserveAspectRatio="xMidYMax slice">
-  <!-- Meadow theme header: a quiet evening outside Tristram — the cathedral
-       on the far hill, the Rogue camp fire, a dead tree and a few crows.
+  <!-- Meadow theme header: a quiet evening at the Rogue Encampment — the
+       Tristram cathedral and the Cairn Stones on the far hill, the camp's
+       palisade and watchtower, Rogue tents and the stash round the fire,
+       two Fallen creeping over the ridge, a waypoint and a town portal.
        Flat shapes in the mixer palette (sage, moss, forest, sand, clay). -->
   <style>
     .fl { transform-box: fill-box; transform-origin: 50% 100%; }
@@ -17,7 +19,15 @@
     }
     @keyframes glow { from { opacity: .5; } to { opacity: .9; } }
     @keyframes drift { from { transform: translateX(-14px); } to { transform: translateX(16px); } }
-    @media (prefers-reduced-motion: reduce) { .f1, .f2, .f3, .glow, .crows { animation: none; } }
+    .flag { transform-box: fill-box; transform-origin: 0 50%; animation: wave 2.4s ease-in-out infinite alternate; }
+    .wp { animation: pulse 2.6s ease-in-out infinite alternate; }
+    .swirl { transform-box: fill-box; transform-origin: 50% 50%; animation: spin 9s linear infinite; }
+    .sneak { animation: sneak 6s ease-in-out infinite alternate; }
+    @keyframes wave { from { transform: skewY(-6deg) scaleX(.9); } to { transform: skewY(5deg) scaleX(1.05); } }
+    @keyframes pulse { from { opacity: .35; } to { opacity: .95; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes sneak { from { transform: translateX(0); } to { transform: translateX(-10px); } }
+    @media (prefers-reduced-motion: reduce) { .f1, .f2, .f3, .glow, .crows, .flag, .wp, .swirl, .sneak { animation: none; } }
   </style>
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
@@ -27,6 +37,19 @@
     <radialGradient id="fireglow" cx=".5" cy=".5" r=".5">
       <stop offset="0" stop-color="#dda15e" stop-opacity=".75"/>
       <stop offset="1" stop-color="#dda15e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="wpglow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#8fc3d6" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#8fc3d6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#8fc3d6" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#8fc3d6" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="portal" cx=".5" cy=".55" r=".55">
+      <stop offset="0" stop-color="#eef6f4"/>
+      <stop offset=".45" stop-color="#9cc9d8"/>
+      <stop offset="1" stop-color="#3f7896"/>
     </radialGradient>
   </defs>
 
@@ -66,8 +89,65 @@
     <circle cx="1082" cy="126" r="6"/>
   </g>
 
+  <!-- the Cairn Stones, a ring of five on the far hill -->
+  <g fill="#aeb68d">
+    <rect x="748" y="176.0" width="10" height="17" rx="4"/>
+    <rect x="764" y="169.7" width="10" height="22" rx="4"/>
+    <rect x="781" y="171.4" width="10" height="19" rx="4"/>
+    <rect x="798" y="166.0" width="10" height="23" rx="4"/>
+    <rect x="815" y="171.6" width="10" height="16" rx="4"/>
+  </g>
+
+  <!-- the Rogue Encampment palisade and its watchtower -->
+  <g>
+    <path d="M58 250V202.1L63.5 194.1L69 202.1V250Z" fill="#8e6038"/>
+    <path d="M70 250V204.9L75.5 196.9L81 204.9V250Z" fill="#7d5230"/>
+    <path d="M82 250V203.3L87.5 195.3L93 203.3V250Z" fill="#8e6038"/>
+    <path d="M94 250V205.4L99.5 197.4L105 205.4V250Z" fill="#7d5230"/>
+    <path d="M106 250V205.6L111.5 197.6L117 205.6V250Z" fill="#8e6038"/>
+    <path d="M118 250V200.6L123.5 192.6L129 200.6V250Z" fill="#7d5230"/>
+    <path d="M130 250V200.1L135.5 192.1L141 200.1V250Z" fill="#8e6038"/>
+    <path d="M142 250V207.5L147.5 199.5L153 207.5V250Z" fill="#7d5230"/>
+    <path d="M154 250V202.3L159.5 194.3L165 202.3V250Z" fill="#8e6038"/>
+    <path d="M166 250V202.1L171.5 194.1L177 202.1V250Z" fill="#7d5230"/>
+    <path d="M178 250V209.0L183.5 201.0L189 209.0V250Z" fill="#8e6038"/>
+    <path d="M190 250V204.2L195.5 196.2L201 204.2V250Z" fill="#7d5230"/>
+    <path d="M202 250V207.5L207.5 199.5L213 207.5V250Z" fill="#8e6038"/>
+    <path d="M214 250V204.3L219.5 196.3L225 204.3V250Z" fill="#7d5230"/>
+    <path d="M226 250V205.8L231.5 197.8L237 205.8V250Z" fill="#8e6038"/>
+    <path d="M238 250V201.4L243.5 193.4L249 201.4V250Z" fill="#7d5230"/>
+    <path d="M250 250V205.7L255.5 197.7L261 205.7V250Z" fill="#8e6038"/>
+    <path d="M262 250V207.8L267.5 199.8L273 207.8V250Z" fill="#7d5230"/>
+    <path d="M274 250V204.7L279.5 196.7L285 204.7V250Z" fill="#8e6038"/>
+    <path d="M286 250V206.7L291.5 198.7L297 206.7V250Z" fill="#7d5230"/>
+    <path d="M298 250V206.0L303.5 198.0L309 206.0V250Z" fill="#8e6038"/>
+    <path d="M310 250V200.6L315.5 192.6L321 200.6V250Z" fill="#7d5230"/>
+    <path d="M322 250V206.8L327.5 198.8L333 206.8V250Z" fill="#8e6038"/>
+    <path d="M334 250V205.3L339.5 197.3L345 205.3V250Z" fill="#7d5230"/>
+    <path d="M346 250V202.7L351.5 194.7L357 202.7V250Z" fill="#8e6038"/>
+    <path d="M358 250V200.3L363.5 192.3L369 200.3V250Z" fill="#7d5230"/>
+    <path d="M370 250V207.8L375.5 199.8L381 207.8V250Z" fill="#8e6038"/>
+    <path d="M56 214L372 210" stroke="#5e3b20" stroke-width="4"/>
+    <g transform="translate(0 24)">
+    <g fill="#6b4426">
+      <rect x="384" y="150" width="5" height="100"/><rect x="415" y="150" width="5" height="100"/>
+      <path d="M386 196L418 170M386 170L418 196" stroke="#6b4426" stroke-width="3"/>
+      <rect x="378" y="146" width="48" height="8" rx="1"/>
+      <rect x="380" y="132" width="4" height="16"/><rect x="420" y="132" width="4" height="16"/>
+    </g>
+    <path d="M372 134L402 112L432 134Z" fill="#bc6c25"/>
+    <path class="flag" d="M402 112V96M402 96l14 4-14 5z" fill="#dda15e" stroke="#5e3b20" stroke-width="1.5"/>
+    </g>
+  </g>
+
   <!-- middle hills -->
   <path d="M0 238C120 214 220 206 340 220S560 246 700 228 900 198 1040 206 1300 236 1440 222 1560 210 1600 214V300H0Z" fill="#a3b18a"/>
+
+  <!-- two Fallen creeping over the ridge -->
+  <g class="sneak" fill="#4a5530">
+    <g transform="translate(1178 224) scale(1.25)"><circle cx="0" cy="-17" r="5"/><path d="M-3-21l-4-6 2 7M3-21l4-6-2 7"/><path d="M-5-13q5-4 10 0l2 9h-3l-2 4h-2l-1-4h-2l-2 4h-2l0-4h-3z"/><path d="M8-24L2 2" stroke="#4a5530" stroke-width="1.8" fill="none"/><path d="M8-24l-2 6 4-1z"/></g>
+    <g transform="translate(1210 226) scale(1.25)"><circle cx="0" cy="-17" r="5"/><path d="M-3-21l-4-6 2 7M3-21l4-6-2 7"/><path d="M-5-13q5-4 10 0l2 9h-3l-2 4h-2l-1-4h-2l-2 4h-2l0-4h-3z"/><path d="M8-24L2 2" stroke="#4a5530" stroke-width="1.8" fill="none"/><path d="M8-24l-2 6 4-1z"/></g>
+  </g>
 
   <!-- dead tree on the hill, kept low so the title stays clear -->
   <g transform="translate(470 238) scale(.8) translate(-232 -226)" fill="none" stroke="#4a5530" stroke-linecap="round">
@@ -77,6 +157,51 @@
 
   <!-- foreground bank -->
   <path d="M0 262C180 244 360 240 560 250S860 270 1040 258 1360 238 1600 250V300H0Z" fill="#606c38"/>
+
+  <!-- Rogue tents with pennants -->
+  <path d="M478.0 250L520 196L562.0 250Z" fill="#dda15e"/>
+  <path d="M478.0 250L520 196L509.9 250Z" fill="#c98b4b"/>
+  <path d="M511.6 250L520 220.3L528.4 250Z" fill="#4a3520"/>
+  <path d="M520 196V180" stroke="#5e3b20" stroke-width="2"/>
+  <path class="flag" d="M520 180l13 4-13 5z" fill="#bc6c25"/>
+  <path d="M772.0 262L808 216L844.0 262Z" fill="#dda15e"/>
+  <path d="M772.0 262L808 216L799.4 262Z" fill="#c98b4b"/>
+  <path d="M800.8 262L808 236.7L815.2 262Z" fill="#4a3520"/>
+  <path d="M808 216V200" stroke="#5e3b20" stroke-width="2"/>
+  <path class="flag" d="M808 200l13 4-13 5z" fill="#bc6c25"/>
+
+  <!-- the stash by the fire -->
+  <g>
+    <rect x="712" y="244" width="34" height="18" rx="2" fill="#7d5230"/>
+    <path d="M712 246a17 7 0 0 1 34 0z" fill="#8e6038"/>
+    <rect x="712" y="244" width="34" height="3" fill="#5e3b20"/>
+    <rect x="726" y="240" width="6" height="22" fill="#dda15e"/>
+    <rect x="727" y="249" width="4" height="5" fill="#5e3b20"/>
+  </g>
+
+  <!-- a waypoint: a stone dais with its ring of runes lit and a column of light -->
+  <g>
+    <ellipse class="wp" cx="1300" cy="240" rx="72" ry="22" fill="url(#wpglow)"/>
+    <path class="wp" d="M1268 248V170h64v78z" fill="url(#beam)"/>
+    <ellipse cx="1300" cy="253" rx="58" ry="10" fill="#7c7a66"/>
+    <ellipse cx="1300" cy="249" rx="52" ry="8" fill="#a8a58f"/>
+    <ellipse class="wp" cx="1300" cy="249" rx="34" ry="5" fill="none" stroke="#6fb1c9" stroke-width="3"/>
+    <g fill="#4f8fa8">
+      <rect x="1278" y="245" width="3" height="3"/><rect x="1298" y="243" width="4" height="3"/>
+      <rect x="1319" y="245" width="3" height="3"/><rect x="1288" y="252" width="3" height="3"/>
+      <rect x="1309" y="252" width="3" height="3"/>
+    </g>
+  </g>
+
+  <!-- a town portal -->
+  <g>
+    <ellipse class="wp" cx="1450" cy="244" rx="46" ry="12" fill="url(#wpglow)"/>
+    <ellipse cx="1450" cy="212" rx="21" ry="36" fill="url(#portal)" stroke="#2f5f7a" stroke-width="3"/>
+    <g class="swirl" fill="none" stroke="#eef6f4" stroke-width="2" stroke-linecap="round" opacity=".75">
+      <path d="M1450 190c10 4 12 16 4 22s-18 2-16-8"/>
+      <path d="M1442 228c-6-6-4-14 2-16"/>
+    </g>
+  </g>
 
   <!-- the Rogue camp fire -->
   <ellipse class="glow" cx="640" cy="244" rx="120" ry="44" fill="url(#fireglow)"/>
