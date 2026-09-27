@@ -19,7 +19,7 @@ let state = {
     selectedRunes: new Set()
   },
   sort: 'category',
-  showAllStats: false
+  showAllStats: true
 };
 
 function init() {
@@ -423,7 +423,7 @@ function initStatViewToggle() {
   const label = document.getElementById('statToggleLabel');
 
   const saved = localStorage && localStorage.getItem('statPreviewView');
-  state.showAllStats = saved === 'all';
+  state.showAllStats = saved !== 'preview';  // expanded unless the visitor collapsed them
   updateStatToggleUI(btn, label);
 
   btn.addEventListener('click', () => {
