@@ -1,17 +1,17 @@
 /* =====================================================
-   THEME SWITCH — cycles Minimal Dark (styles.css) → Paper (styles-paper.css)
-   → Meadow (styles-meadow.css) → Star Atlas (styles-atlas.css). Loaded
-   synchronously in <head>, right after the theme stylesheets, so inactive
-   ones are disabled before the first paint.
+   THEME SWITCH — cycles Star Atlas (styles-atlas.css) → Minimal Dark
+   (styles.css) → Meadow (styles-meadow.css) → Paper (styles-paper.css).
+   Loaded synchronously in <head>, right after the theme stylesheets, so
+   inactive ones are disabled before the first paint.
    ===================================================== */
 
 (function () {
   const STORAGE_KEY = 'd2codex-theme';
   const THEMES = {
-    minimal: { sheet: 'theme-minimal', name: 'Minimal Dark', next: 'paper' },
-    paper:   { sheet: 'theme-paper',   name: 'Paper',        next: 'meadow' },
-    meadow:  { sheet: 'theme-meadow',  name: 'Meadow',       next: 'atlas' },
     atlas:   { sheet: 'theme-atlas',   name: 'Star Atlas',   next: 'minimal' },
+    minimal: { sheet: 'theme-minimal', name: 'Minimal Dark', next: 'meadow' },
+    meadow:  { sheet: 'theme-meadow',  name: 'Meadow',       next: 'paper' },
+    paper:   { sheet: 'theme-paper',   name: 'Paper',        next: 'atlas' },
   };
 
   function readTheme() {
@@ -19,7 +19,7 @@
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved in THEMES) return saved;
     } catch (e) { /* storage blocked (e.g. private mode) — fall back to default */ }
-    return 'minimal';
+    return 'atlas';
   }
 
   function applyTheme(theme) {

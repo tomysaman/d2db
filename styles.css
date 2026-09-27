@@ -162,12 +162,12 @@ button { font: inherit; color: inherit; }
 
 .theme-toggle:hover { color: var(--text); border-color: var(--text-3); }
 
-/* preview of the Paper theme: cream sheet, teal and orange paper */
+/* preview of the Meadow theme: moss, sage and clay */
 .theme-toggle-swatch {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: conic-gradient(#274e52 0 120deg, #c8642d 120deg 200deg, #f3e8d2 200deg 360deg);
+  background: conic-gradient(#bc6c25 0 110deg, #a3b18a 110deg 230deg, #606c38 230deg 360deg);
   box-shadow: 0 0 0 1px rgba(255,255,255,0.15);
 }
 
