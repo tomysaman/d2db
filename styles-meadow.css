@@ -735,6 +735,8 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
   text-align: center;
   border-top: 1px solid var(--line);
 }
+.site-footer a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.site-footer a:hover { color: var(--gold); }
 
 /* ══════════════════════════════════════════
    RESPONSIVE / MOTION

@@ -803,6 +803,8 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
   border-top: 3px solid var(--lead);
   box-shadow: inset 0 3px 0 var(--gold);
 }
+.site-footer a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.site-footer a:hover { color: var(--gold); }
 
 /* ══════════════════════════════════════════
    RESPONSIVE / MOTION
