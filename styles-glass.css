@@ -806,6 +806,21 @@ body.rune-icons .rune-btn.selected .rune-icon-img { opacity: 1; }
 .site-footer a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .site-footer a:hover { color: var(--gold); }
 
+.site-footer .footer-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 7px 14px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  font-style: normal;
+  text-decoration: none;
+  transition: color .15s, background-color .15s;
+}
+.site-footer .footer-github:hover { color: var(--gold); background: color-mix(in srgb, currentColor 10%, transparent); }
+.site-footer .footer-github svg { flex: none; }
+
 /* ══════════════════════════════════════════
    RESPONSIVE / MOTION
 ══════════════════════════════════════════ */
