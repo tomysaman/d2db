@@ -1,6 +1,6 @@
 # Diablo II Codex
 
-A static, browser-based archive of **Diablo II: Resurrected** runewords, item sets, and Horadric Cube recipes — built for fast searching, filtering, and browsing without any backend.
+A static, browser-based archive of **Diablo II: Resurrected** runewords, item sets, and Horadric Cube recipes — built for fast searching, filtering, and browsing without any backend. Try it live at [tomysaman.github.io/d2db](https://tomysaman.github.io/d2db/).
 
 ## Why
 
